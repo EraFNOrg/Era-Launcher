@@ -31,6 +31,7 @@ namespace FortniteLauncher
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.VersionInformationBackground = new System.Windows.Forms.PictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.VersionInformationBackground)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +48,7 @@ namespace FortniteLauncher
             // 
             // VersionInformationBackground
             // 
-            this.VersionInformationBackground.BackColor = System.Drawing.Color.Black;
+            this.VersionInformationBackground.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.VersionInformationBackground.Dock = System.Windows.Forms.DockStyle.Left;
             this.VersionInformationBackground.Location = new System.Drawing.Point(0, 0);
             this.VersionInformationBackground.Name = "VersionInformationBackground";
@@ -56,13 +57,31 @@ namespace FortniteLauncher
             this.VersionInformationBackground.TabIndex = 1;
             this.VersionInformationBackground.TabStop = false;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(58, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(149, 46);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Fortnite";
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.BackgroundImage = global::FortniteLauncher.Properties.Resources.Bez_nazwy_2;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1262, 673);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.VersionInformationBackground);
             this.Controls.Add(this.pictureBox1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Main";
             this.Text = "Era Launcher";
             this.Load += new System.EventHandler(this.Main_Load);
@@ -77,6 +96,7 @@ namespace FortniteLauncher
 
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox VersionInformationBackground;
+        private System.Windows.Forms.Label label1;
     }
 }
 

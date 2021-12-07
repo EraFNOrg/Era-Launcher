@@ -59,5 +59,15 @@ namespace FortniteLauncher.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Wyszukuje zlokalizowany zasób typu System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Bez_nazwy_2 {
+            get {
+                object obj = ResourceManager.GetObject("Bez nazwy-2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
