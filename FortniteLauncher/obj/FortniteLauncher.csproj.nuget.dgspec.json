@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\repos\\FortniteLauncher\\FortniteLauncher\\FortniteLauncher.csproj": {}
+    "D:\\repos\\Era-Launcher\\FortniteLauncher\\FortniteLauncher.csproj": {}
   },
   "projects": {
-    "D:\\repos\\FortniteLauncher\\FortniteLauncher\\FortniteLauncher.csproj": {
+    "D:\\repos\\Era-Launcher\\FortniteLauncher\\FortniteLauncher.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\repos\\FortniteLauncher\\FortniteLauncher\\FortniteLauncher.csproj",
+        "projectUniqueName": "D:\\repos\\Era-Launcher\\FortniteLauncher\\FortniteLauncher.csproj",
         "projectName": "FortniteLauncher",
-        "projectPath": "D:\\repos\\FortniteLauncher\\FortniteLauncher\\FortniteLauncher.csproj",
+        "projectPath": "D:\\repos\\Era-Launcher\\FortniteLauncher\\FortniteLauncher.csproj",
         "packagesPath": "C:\\Users\\kolo7\\.nuget\\packages\\",
-        "outputPath": "D:\\repos\\FortniteLauncher\\FortniteLauncher\\obj\\",
+        "outputPath": "D:\\repos\\Era-Launcher\\FortniteLauncher\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -43,6 +43,12 @@
       "frameworks": {
         "net5.0-windows7.0": {
           "targetAlias": "net5.0-windows",
+          "dependencies": {
+            "FontAwesome.Sharp": {
+              "target": "Package",
+              "version": "[5.15.4, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

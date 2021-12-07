@@ -1,11 +1,44 @@
 {
   "version": 3,
   "targets": {
-    "net5.0-windows7.0": {}
+    "net5.0-windows7.0": {
+      "FontAwesome.Sharp/5.15.4": {
+        "type": "package",
+        "compile": {
+          "lib/net5.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net5.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "FontAwesome.Sharp/5.15.4": {
+      "sha512": "IqJe1IQas6tSVXMNHTWA/NJeP7azyxDTk6DCB+NMXOOED2F07IYI9nvfB1HP83r4yh5cntZoTdwSpIraA5XoXw==",
+      "type": "package",
+      "path": "fontawesome.sharp/5.15.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fontawesome.sharp.5.15.4.nupkg.sha512",
+        "fontawesome.sharp.nuspec",
+        "lib/net40/FontAwesome.Sharp.dll",
+        "lib/net45/FontAwesome.Sharp.dll",
+        "lib/net472/FontAwesome.Sharp.dll",
+        "lib/net48/FontAwesome.Sharp.dll",
+        "lib/net5.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net5.0-windows7.0": []
+    "net5.0-windows7.0": [
+      "FontAwesome.Sharp >= 5.15.4"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\kolo7\\.nuget\\packages\\": {},
@@ -14,11 +47,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\repos\\FortniteLauncher\\FortniteLauncher\\FortniteLauncher.csproj",
+      "projectUniqueName": "D:\\repos\\Era-Launcher\\FortniteLauncher\\FortniteLauncher.csproj",
       "projectName": "FortniteLauncher",
-      "projectPath": "D:\\repos\\FortniteLauncher\\FortniteLauncher\\FortniteLauncher.csproj",
+      "projectPath": "D:\\repos\\Era-Launcher\\FortniteLauncher\\FortniteLauncher.csproj",
       "packagesPath": "C:\\Users\\kolo7\\.nuget\\packages\\",
-      "outputPath": "D:\\repos\\FortniteLauncher\\FortniteLauncher\\obj\\",
+      "outputPath": "D:\\repos\\Era-Launcher\\FortniteLauncher\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +83,12 @@
     "frameworks": {
       "net5.0-windows7.0": {
         "targetAlias": "net5.0-windows",
+        "dependencies": {
+          "FontAwesome.Sharp": {
+            "target": "Package",
+            "version": "[5.15.4, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
