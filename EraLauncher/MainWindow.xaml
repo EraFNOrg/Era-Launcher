@@ -58,7 +58,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <ListView x:Name="TvBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="222" Margin="29,488,9.8,0" Grid.ColumnSpan="4" Background="{x:Null}">
+        <ListView x:Name="TvBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="262" Margin="0,458,10,0" Grid.ColumnSpan="4" Background="{x:Null}" BorderBrush="#00ABADB3">
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="Template">
