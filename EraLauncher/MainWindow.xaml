@@ -14,12 +14,27 @@
         <DockPanel x:Name="VersionInformationBackground" HorizontalAlignment="Left" Height="459" LastChildFill="False" VerticalAlignment="Top" Width="359" Background="Black" Opacity="0.3" Margin="0,24,0,0"/>
         <DockPanel x:Name="UpperPanel" HorizontalAlignment="Center" Height="49" LastChildFill="False" Margin="10,0,0,0" VerticalAlignment="Top" Width="1314" Grid.ColumnSpan="2" Background="#FF0F0F0F"/>
         <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="61,83,0,0" VerticalAlignment="Top" Foreground="White" FontSize="32" FontWeight="Bold"/>
-        <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="262" LastChildFill="False" Margin="-16,458,12,0" VerticalAlignment="Top" Width="1328" Background="#FF1B1B1B" Grid.ColumnSpan="2"/>
+        <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="289" LastChildFill="False" Margin="-16,458,-17,-27" VerticalAlignment="Top" Width="1357" Background="#FF1B1B1B" Grid.ColumnSpan="2"/>
         <Label x:Name="GameVersion" Content="9.9" HorizontalAlignment="Left" Margin="61,118,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Opacity="0.74" FontSize="23" Height="43"/>
-        <Button Content="Launch" HorizontalAlignment="Left" Margin="61,320,0,0" VerticalAlignment="Top" Width="224" Height="53" BorderBrush="#00707070" FontSize="16" FontWeight="Bold" Foreground="White">
-            <Button.Background>
-                <ImageBrush ImageSource="playbutton.png"/>
-            </Button.Background>
+        <Button Content="Launch" Margin="61,315,523,342" Foreground="white" FontSize="15" FontWeight="Medium">
+            <Button.Template>
+                <ControlTemplate TargetType="Button">
+                    <Border Width="200" Height="50" CornerRadius="4" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Style>
+                <Style TargetType="Button">
+                    <Setter Property="Background" Value="#FF95CA90"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="#FF7EB479"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
         </Button>
     </Grid>
 </Window>
