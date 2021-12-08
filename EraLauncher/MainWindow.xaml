@@ -70,7 +70,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                        <Button Content="{Binding Id}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="{x:Null}" FontWeight="Bold" Foreground="White" Click="ExecuteVersion_Event"/>
+                        <Button Content="{Binding Id}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="{x:Null}" FontWeight="Bold" Foreground="White" Height="150" Width="200" Click="ExecuteVersion_Event"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
