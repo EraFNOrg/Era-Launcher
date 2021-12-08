@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EraLauncher"
         mc:Ignorable="d"
         Title="Fortnite Launcher" Height="720" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
-    <Grid x:Name="GridBG" HorizontalAlignment="Left" Height="720" Margin="-24,0,-20,0" VerticalAlignment="Top" Width="1324" Background="#FF121017" MouseDown="GridBG_MouseDown" MouseMove="GridBG_MouseMove">
+    <Grid x:Name="GridBG" HorizontalAlignment="Left" Height="720" Margin="-24,0,-20,0" VerticalAlignment="Top" Width="1324" Background="#FF121017" MouseMove="GridBG_MouseMove">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="303*"/>
             <ColumnDefinition Width="481*"/>
@@ -17,7 +17,7 @@
         <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="61,83,0,0" VerticalAlignment="Top" Foreground="White" FontSize="32" FontWeight="Bold"/>
         <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="289" LastChildFill="False" Margin="-16,458,-17,-27" VerticalAlignment="Top" Width="1357" Background="#FF1B1B1B" Grid.ColumnSpan="3"/>
         <Label x:Name="GameVersion" Content="9.9" HorizontalAlignment="Left" Margin="61,118,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Opacity="0.74" FontSize="23" Height="43"/>
-        <Button Content="Launch" Margin="61,315,42.349,342" Foreground="white" FontSize="15" FontWeight="Medium" Click="Button_Click">
+        <Button Content="Launch" Margin="61,315,42.349,342" Foreground="white" FontSize="15" FontWeight="Medium" >
             <Button.Template>
                 <ControlTemplate TargetType="Button">
                     <Border Width="200" Height="50" CornerRadius="4" Background="{TemplateBinding Background}">

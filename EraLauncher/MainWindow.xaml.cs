@@ -17,37 +17,6 @@ namespace EraLauncher
             InitializeComponent();
 
         }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void GridBG_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void UpperPanel_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void UpperPanel_MouseMove(object sender, MouseEventArgs e)
-        {
-
-        }
-
-        private void UpperPanel_MouseUp(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
-        private void GridBG_MouseDown(object sender, MouseButtonEventArgs e)
-        {
-
-        }
-
         private void GridBG_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -60,5 +29,6 @@ namespace EraLauncher
         {
             this.Close();
         }
+
     }
 }
