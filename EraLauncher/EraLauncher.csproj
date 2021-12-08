@@ -103,5 +103,8 @@
   <ItemGroup>
     <Resource Include="playbutton.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Bez nazwy-2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
