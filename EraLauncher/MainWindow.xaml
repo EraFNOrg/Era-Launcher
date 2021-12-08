@@ -6,7 +6,10 @@
         xmlns:local="clr-namespace:EraLauncher"
         mc:Ignorable="d"
         Title="Fortnite Launcher" Height="720" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
-    <Grid x:Name="GridBG" HorizontalAlignment="Left" Height="720" Margin="-24,0,-20,0" VerticalAlignment="Top" Width="1324" Background="#FF121017" MouseMove="GridBG_MouseMove">
+    <Grid x:Name="GridBG" HorizontalAlignment="Left" Height="720" Margin="-24,0,-20,0" VerticalAlignment="Top" Width="1324" MouseMove="GridBG_MouseMove">
+        <Grid.Background>
+            <ImageBrush ImageSource="Bez nazwy-2.png"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="359*"/>
             <ColumnDefinition Width="426*"/>
@@ -38,7 +41,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="245" Grid.Column="3" Margin="61.8,-18,-26,0" RenderTransformOrigin="3.727,0.4" Click="Button_Click_1" Height="86" Foreground="White" FontFamily="Segoe UI Semibold">
+        <Button Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="245" Grid.Column="3" Margin="105,-19,-69,0" RenderTransformOrigin="3.727,0.4" Click="Button_Click_1" Height="86" Foreground="White" FontFamily="Segoe UI Semibold">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="35" Height="35" CornerRadius="4" Background="{TemplateBinding Background}">
@@ -59,18 +62,6 @@
             </Button.Style>
         </Button>
         <ListView x:Name="TvBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="262" Margin="0,458,10,0" Grid.ColumnSpan="4" Background="{x:Null}" BorderBrush="#00ABADB3">
-            <ListView.ItemContainerStyle>
-                <Style TargetType="{x:Type ListViewItem}">
-                    <Setter Property="Template">
-                        <Setter.Value>
-                            <ControlTemplate TargetType="{x:Type ListViewItem}">
-                                <Border CornerRadius="2">
-                                </Border>
-                            </ControlTemplate>
-                        </Setter.Value>
-                    </Setter>
-                </Style>
-            </ListView.ItemContainerStyle>
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="10" HorizontalAlignment="Stretch"/>
@@ -79,7 +70,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                        <TextBox Text="{Binding Title}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="{x:Null}" FontWeight="Bold" Foreground="White" />
+                        <Button Content="{Binding Id}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="{x:Null}" FontWeight="Bold" Foreground="White" Click="ExecuteVersion_Event"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>

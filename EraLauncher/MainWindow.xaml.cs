@@ -27,6 +27,7 @@ namespace EraLauncher
         //}
 
         public string CurrentLauncherDetails = "Project Era | By danii";
+        public MovieData CurrentVersion;
         public MainWindow()
         {
             InitializeComponent();
@@ -35,13 +36,11 @@ namespace EraLauncher
 
             this.TvBox.ItemsSource = new MovieData[]
 {
-            new MovieData{Title="Movie 1"},
-            new MovieData{Title="Movie 2"},
-            new MovieData{Title="Movie 3"},
-            new MovieData{Title="Movie 4"},
-            new MovieData{Title="Movie 5"},
-            new MovieData{Title="Movie 6"}
+            new MovieData{Id=3.2F},
+            new MovieData{Id=4.1F}
 };
+            CurrentVersion = new MovieData { Id = 5.1F};
+            GameVersion.Content = CurrentVersion.Id.ToString();
         }
 
         public void AddVersion()
@@ -50,9 +49,10 @@ namespace EraLauncher
 
             this.TvBox.ItemsSource = new MovieData[]
 {
-            new MovieData{Title="Movie 1"}
+            new MovieData{Id=0}
         };
         }
+
 
 
         private void GridBG_MouseMove(object sender, MouseEventArgs e)
@@ -74,14 +74,20 @@ namespace EraLauncher
         {
             AddVersion();
         }
+
+        private void ExecuteVersion_Event(object sender, RoutedEventArgs e)
+        {
+            var Version = (Button)sender;
+            this.GameVersion.Content = Version.Content.ToString();
+        }
     }
     public class MovieData
     {
-        private string _Title;
-        public string Title
+        private float _Id;
+        public float Id
         {
-            get { return this._Title; }
-            set { this._Title = value; }
+            get { return this._Id; }
+            set { this._Id = value; }
         }
 
 
