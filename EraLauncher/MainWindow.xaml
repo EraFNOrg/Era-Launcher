@@ -6,5 +6,20 @@
         xmlns:local="clr-namespace:EraLauncher"
         mc:Ignorable="d"
         Title="Fortnite Launcher" Height="720" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
-    <DockPanel HorizontalAlignment="Stretch" Height="148" LastChildFill="False" VerticalAlignment="Bottom" Width="1280" Background="#FF262726"/>
+    <Grid x:Name="GridBG" HorizontalAlignment="Left" Height="720" Margin="-24,0,-20,0" VerticalAlignment="Top" Width="1324" Background="#FF121017">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="196*"/>
+            <ColumnDefinition Width="135*"/>
+        </Grid.ColumnDefinitions>
+        <DockPanel x:Name="VersionInformationBackground" HorizontalAlignment="Left" Height="459" LastChildFill="False" VerticalAlignment="Top" Width="359" Background="Black" Opacity="0.3" Margin="0,24,0,0"/>
+        <DockPanel x:Name="UpperPanel" HorizontalAlignment="Center" Height="49" LastChildFill="False" Margin="10,0,0,0" VerticalAlignment="Top" Width="1314" Grid.ColumnSpan="2" Background="#FF0F0F0F"/>
+        <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="61,83,0,0" VerticalAlignment="Top" Foreground="White" FontSize="32" FontWeight="Bold"/>
+        <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="262" LastChildFill="False" Margin="-16,458,12,0" VerticalAlignment="Top" Width="1328" Background="#FF1B1B1B" Grid.ColumnSpan="2"/>
+        <Label x:Name="GameVersion" Content="9.9" HorizontalAlignment="Left" Margin="61,118,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Opacity="0.74" FontSize="23" Height="43"/>
+        <Button Content="Launch" HorizontalAlignment="Left" Margin="61,320,0,0" VerticalAlignment="Top" Width="224" Height="53" BorderBrush="#00707070" FontSize="16" FontWeight="Bold" Foreground="White">
+            <Button.Background>
+                <ImageBrush ImageSource="playbutton.png"/>
+            </Button.Background>
+        </Button>
+    </Grid>
 </Window>

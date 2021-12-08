@@ -100,5 +100,8 @@
   <ItemGroup>
     <Resource Include="_icon.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="playbutton.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
