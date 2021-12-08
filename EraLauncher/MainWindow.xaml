@@ -1,0 +1,10 @@
+﻿<Window x:Class="EraLauncher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EraLauncher"
+        mc:Ignorable="d"
+        Title="Fortnite Launcher" Height="720" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
+    <DockPanel HorizontalAlignment="Stretch" Height="148" LastChildFill="False" VerticalAlignment="Bottom" Width="1280" Background="#FF262726"/>
+</Window>
