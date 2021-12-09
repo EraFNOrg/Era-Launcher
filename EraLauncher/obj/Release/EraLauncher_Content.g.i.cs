@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("bez%20nazwy-2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("maxresdefault.jpg")]
 
 

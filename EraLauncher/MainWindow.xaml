@@ -6,22 +6,20 @@
         xmlns:local="clr-namespace:EraLauncher"
         mc:Ignorable="d"
         Title="Fortnite Launcher" Height="720" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
-    <Grid x:Name="GridBG" HorizontalAlignment="Left" Height="720" Margin="-24,0,-20,0" VerticalAlignment="Top" Width="1324" MouseMove="GridBG_MouseMove">
-        <Grid.Background>
-            <ImageBrush ImageSource="Bez nazwy-2.png"/>
-        </Grid.Background>
+    <Grid x:Name="GridBG" HorizontalAlignment="Left" Height="720" Margin="-24,0,0,0" VerticalAlignment="Top" Width="1304" MouseMove="GridBG_MouseMove" Background="#FF0E0C0C">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="359*"/>
-            <ColumnDefinition Width="426*"/>
-            <ColumnDefinition Width="259*"/>
-            <ColumnDefinition Width="281*"/>
+            <ColumnDefinition Width="354*"/>
+            <ColumnDefinition Width="418*"/>
+            <ColumnDefinition Width="6*"/>
+            <ColumnDefinition Width="249*"/>
+            <ColumnDefinition Width="277*"/>
         </Grid.ColumnDefinitions>
-        <DockPanel x:Name="VersionInformationBackground" HorizontalAlignment="Left" Height="459" LastChildFill="False" VerticalAlignment="Top" Width="359" Background="Black" Opacity="0.3" Margin="0,24,0,0"/>
-        <DockPanel x:Name="UpperPanel" HorizontalAlignment="Center" Height="49" LastChildFill="False" Margin="10,0,0.8,0" VerticalAlignment="Top" Width="1314" Grid.ColumnSpan="4" Background="#FF0F0F0F"/>
+        <DockPanel x:Name="VersionInformationBackground" HorizontalAlignment="Left" Height="459" LastChildFill="False" VerticalAlignment="Top" Width="359" Background="Black" Opacity="0.3" Margin="0,24,0,0" Grid.ColumnSpan="2"/>
+        <DockPanel x:Name="UpperPanel" HorizontalAlignment="Center" Height="49" LastChildFill="False" Margin="0,0,-10,0" VerticalAlignment="Top" Width="1314" Grid.ColumnSpan="5" Background="#FF0F0F0F"/>
         <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="61,83,0,0" VerticalAlignment="Top" Foreground="White" FontSize="32" FontWeight="Bold" Height="53" Width="131"/>
-        <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="289" LastChildFill="False" Margin="-16,458,-16.2,-27" VerticalAlignment="Top" Width="1357" Background="#FF1B1B1B" Grid.ColumnSpan="4"/>
+        <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="289" LastChildFill="False" Margin="-26,458,-27,-27" VerticalAlignment="Top" Width="1357" Background="#FF1B1B1B" Grid.ColumnSpan="5"/>
         <Label x:Name="GameVersion" Content="9.9" HorizontalAlignment="Left" Margin="61,118,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Opacity="0.74" FontSize="23" Height="43" Width="43"/>
-        <Button Content="Launch" Margin="61,321,96.2,336" Foreground="white" FontSize="15" FontWeight="Medium" >
+        <Button Content="Launch" Margin="61,321,96.6,336" Foreground="white" FontSize="15" FontWeight="Medium" >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="200" Height="50" CornerRadius="4" Background="{TemplateBinding Background}">
@@ -41,10 +39,10 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="245" Grid.Column="3" Margin="105,-19,-69,0" RenderTransformOrigin="3.727,0.4" Click="Button_Click_1" Height="86" Foreground="White" FontFamily="Segoe UI Semibold">
+        <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Grid.Column="4" Margin="225.8,3,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Width="35" Height="35" CornerRadius="4" Background="{TemplateBinding Background}">
+                    <Border Width="35" Height="25" CornerRadius="4" Background="{TemplateBinding Background}">
                         <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -61,7 +59,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <ListView x:Name="TvBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="262" Margin="0,458,10,0" Grid.ColumnSpan="4" Background="{x:Null}" BorderBrush="#00ABADB3">
+        <ListView x:Name="TvBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="262" Margin="0,458,10,0" Grid.ColumnSpan="5" Background="{x:Null}" BorderBrush="#00ABADB3" Foreground="#16000000">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="10" HorizontalAlignment="Stretch"/>
@@ -69,12 +67,43 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Opacity="1">
                         <Button Content="{Binding Id}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="{x:Null}" FontWeight="Bold" Foreground="White" Height="150" Width="200" Click="ExecuteVersion_Event"/>
                     </StackPanel>
                 </DataTemplate>
             </ListView.ItemTemplate>
+            <ListView.ItemContainerStyle>
+                <Style TargetType="{x:Type ListViewItem}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                <ContentPresenter />
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.ItemContainerStyle>
         </ListView>
         <Label x:Name="LauncherInformation" Content="Proggect Era" HorizontalAlignment="Left" Margin="61,161,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.32" FontSize="14" Height="155" Width="235"/>
+        <Button x:Name="MinimizeButton" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Grid.Column="4" Margin="178.8,3,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="35" Height="25" CornerRadius="4" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FF141414"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="#FF1B1B1B"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
     </Grid>
 </Window>

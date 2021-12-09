@@ -39,22 +39,42 @@ namespace EraLauncher
             new MovieData{Id=3.2F},
             new MovieData{Id=4.1F}
 };
-            CurrentVersion = new MovieData { Id = 5.1F};
-            GameVersion.Content = CurrentVersion.Id.ToString();
+            if(CurrentVersion == null)
+            {
+
+            }
+    //        CurrentVersion = new MovieData { Id = 5.1F};
+    //        ExecuteVersionPure(CurrentVersion.Id);
         }
 
+        // Start Versions code ---------------------------------------
         public void AddVersion()
         {
-
-
             this.TvBox.ItemsSource = new MovieData[]
-{
+            {
             new MovieData{Id=0}
-        };
+            };
         }
 
+        private void ExecuteVersion_Event(object sender, RoutedEventArgs e)
+        {
+            var Version = (Button)sender;
+            string abc = Version.Content.ToString();
+            float aID = float.Parse(abc);
+            ExecuteVersionPure(aID);
+        }
+
+        private void ExecuteVersionPure(float ID)
+        {
+            string StringF = ID.ToString();
+            string StringEF = StringF.Replace(",", ".");
+            this.GameVersion.Content = StringEF;
+        }
+
+        // End versions code ---------------------------------------
 
 
+        // Internal
         private void GridBG_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -65,20 +85,19 @@ namespace EraLauncher
             }
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
-        {
-            this.Close();
-        }
-
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddVersion();
         }
 
-        private void ExecuteVersion_Event(object sender, RoutedEventArgs e)
+        private void Close_Button_Event(object sender, RoutedEventArgs e)
         {
-            var Version = (Button)sender;
-            this.GameVersion.Content = Version.Content.ToString();
+            this.Close();
+        }
+
+        private void Minimalize_Button_Event(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
         }
     }
     public class MovieData

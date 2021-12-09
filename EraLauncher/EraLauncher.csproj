@@ -106,5 +106,8 @@
   <ItemGroup>
     <Resource Include="Bez nazwy-2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="maxresdefault.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
