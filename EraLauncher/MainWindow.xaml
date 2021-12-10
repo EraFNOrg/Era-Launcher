@@ -18,7 +18,7 @@
         <DockPanel x:Name="UpperPanel" HorizontalAlignment="Center" Height="49" LastChildFill="False" Margin="0,0,-10,0" VerticalAlignment="Top" Width="1314" Grid.ColumnSpan="5" Background="#FF0F0F0F"/>
         <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="61,83,0,0" VerticalAlignment="Top" Foreground="White" FontSize="32" FontWeight="Bold" Height="53" Width="131"/>
         <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="289" LastChildFill="False" Margin="-26,458,-27,-27" VerticalAlignment="Top" Width="1357" Background="#FF1B1B1B" Grid.ColumnSpan="5"/>
-        <Label x:Name="GameVersion" Content="9.9" HorizontalAlignment="Left" Margin="61,118,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Opacity="0.74" FontSize="23" Height="43" Width="43"/>
+        <Label x:Name="GameVersion" Content="Select Game Version:" HorizontalAlignment="Left" Margin="61,118,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Opacity="0.74" FontSize="23" Height="43" Width="235"/>
         <Button Content="Launch" Margin="61,321,96.6,336" Foreground="white" FontSize="15" FontWeight="Medium" >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -59,7 +59,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <ListView x:Name="TvBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="262" Margin="0,458,10,0" Grid.ColumnSpan="5" Background="{x:Null}" BorderBrush="#00ABADB3" Foreground="#16000000">
+        <ListView x:Name="VersionBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="262" Margin="0,458,10,0" Grid.ColumnSpan="5" Background="{x:Null}" BorderBrush="#00ABADB3" Foreground="#16000000">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="10" HorizontalAlignment="Stretch"/>

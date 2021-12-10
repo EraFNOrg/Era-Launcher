@@ -27,32 +27,33 @@ namespace EraLauncher
         //}
 
         public string CurrentLauncherDetails = "Project Era | By danii";
-        public MovieData CurrentVersion;
+        public VersionData CurrentVersion;
         public MainWindow()
         {
             InitializeComponent();
 
             this.LauncherInformation.Content = CurrentLauncherDetails;
 
-            this.TvBox.ItemsSource = new MovieData[]
+            this.VersionBox.ItemsSource = new VersionData[]
 {
-            new MovieData{Id=3.2F},
-            new MovieData{Id=4.1F}
+            new VersionData{Id=3.2F},
+            new VersionData{Id=4.1F},
+            new VersionData{Id=6.21F} //Ultimanite moment :O
 };
             if(CurrentVersion == null)
             {
 
             }
-    //        CurrentVersion = new MovieData { Id = 5.1F};
+    //        CurrentVersion = new VersionData { Id = 5.1F};
     //        ExecuteVersionPure(CurrentVersion.Id);
         }
 
         // Start Versions code ---------------------------------------
         public void AddVersion()
         {
-            this.TvBox.ItemsSource = new MovieData[]
+            this.VersionBox.ItemsSource = new VersionData[]
             {
-            new MovieData{Id=0}
+            new VersionData{Id=0}
             };
         }
 
@@ -99,8 +100,13 @@ namespace EraLauncher
         {
             this.WindowState = WindowState.Minimized;
         }
+
+        private void Button_Click_1()
+        {
+
+        }
     }
-    public class MovieData
+    public class VersionData
     {
         private float _Id;
         public float Id
