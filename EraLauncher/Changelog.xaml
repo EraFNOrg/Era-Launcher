@@ -1,0 +1,57 @@
+﻿<Window x:Class="EraLauncher.Changelog"
+         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:EraLauncher"
+        mc:Ignorable="d"
+        Title="Fortnite Launcher" Height="720" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
+    <Grid x:Name="GridBG" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="#FF0E0C0C" MouseMove="GridBG_MouseMove">
+        <DockPanel x:Name="UpperPanel" HorizontalAlignment="Center" Height="49" LastChildFill="False" VerticalAlignment="Top" Width="1304" Background="#FF0F0F0F"/>
+        <Label x:Name="Title" Content="What's new?" HorizontalAlignment="Left" Margin="61,83,0,0" VerticalAlignment="Top" Foreground="White" FontSize="64" FontWeight="Bold" Height="107" Width="429"/>
+        <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="63" Margin="1186,0,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="49" Foreground="White" FontFamily="Segoe UI Semibold">
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="35" Height="25" CornerRadius="4" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FF141414"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="#FF1B1B1B"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Button x:Name="Minimalize" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="63" Margin="1118,0,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="49" Foreground="White" FontFamily="Segoe UI Semibold">
+
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="35" Height="25" CornerRadius="4" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FF141414"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" Value="#FF1B1B1B"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
+        <Label x:Name="Logs_Content" Content="Test 123, find some fucking FTP" HorizontalAlignment="Left" Margin="61,195,0,0" VerticalAlignment="Top" Foreground="White" FontSize="25" FontWeight="Bold" Height="481" Width="1188"/>
+    </Grid>
+</Window>
+

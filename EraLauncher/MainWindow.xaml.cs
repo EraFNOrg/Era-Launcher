@@ -103,7 +103,13 @@ namespace EraLauncher
 
         private void Button_Click_1()
         {
+          
+        }
 
+        private void Changelog_Click(object sender, RoutedEventArgs e)
+        {
+            Changelog win2 = new Changelog();
+            win2.Show();
         }
     }
     public class VersionData
