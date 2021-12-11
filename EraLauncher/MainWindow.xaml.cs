@@ -21,61 +21,7 @@ namespace EraLauncher
 
     public partial class MainWindow : Window
     {
-        //  public List<FV> Versions
-        //{
-        //     get; set;
-        //}
-
-        public string CurrentLauncherDetails = "Project Era | By danii";
-        public VersionData CurrentVersion;
-        public MainWindow()
-        {
-            InitializeComponent();
-
-            this.LauncherInformation.Content = CurrentLauncherDetails;
-
-            this.VersionBox.ItemsSource = new VersionData[]
-{
-            new VersionData{Id=3.2F},
-            new VersionData{Id=4.1F},
-            new VersionData{Id=6.21F} //Ultimanite moment :O
-};
-            if(CurrentVersion == null)
-            {
-
-            }
-    //        CurrentVersion = new VersionData { Id = 5.1F};
-    //        ExecuteVersionPure(CurrentVersion.Id);
-        }
-
-        // Start Versions code ---------------------------------------
-        public void AddVersion()
-        {
-            this.VersionBox.ItemsSource = new VersionData[]
-            {
-            new VersionData{Id=0}
-            };
-        }
-
-        private void ExecuteVersion_Event(object sender, RoutedEventArgs e)
-        {
-            var Version = (Button)sender;
-            string abc = Version.Content.ToString();
-            float aID = float.Parse(abc);
-            ExecuteVersionPure(aID);
-        }
-
-        private void ExecuteVersionPure(float ID)
-        {
-            string StringF = ID.ToString();
-            string StringEF = StringF.Replace(",", ".");
-            this.GameVersion.Content = StringEF;
-        }
-
-        // End versions code ---------------------------------------
-
-
-        // Internal
+    
         private void GridBG_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
@@ -86,11 +32,7 @@ namespace EraLauncher
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            AddVersion();
-        }
-
+      
         private void Close_Button_Event(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -101,27 +43,14 @@ namespace EraLauncher
             this.WindowState = WindowState.Minimized;
         }
 
-        private void Button_Click_1()
+        private void MainPage_Btn_Event(object sender, RoutedEventArgs e)
         {
-          
+            
         }
 
-        private void Changelog_Click(object sender, RoutedEventArgs e)
+        private void Changelog_Btn_Event(object sender, RoutedEventArgs e)
         {
-            Changelog win2 = new Changelog();
-            win2.Show();
+            
         }
-    }
-    public class VersionData
-    {
-        private float _Id;
-        public float Id
-        {
-            get { return this._Id; }
-            set { this._Id = value; }
-        }
-
-
-
     }
 }
