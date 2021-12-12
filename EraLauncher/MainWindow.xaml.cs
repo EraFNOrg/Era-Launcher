@@ -52,6 +52,11 @@ namespace EraLauncher
         {
             lfn.ExecutePage(clvar, PageContent);
         }
+        private void PageContent_Loaded(object sender, RoutedEventArgs e)
+        {
+            App.ParentWindowRef = this;
+            this.PageContent.Navigate(new Home());
+        }
         // End EVENTS
     }
 }

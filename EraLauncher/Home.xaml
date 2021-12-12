@@ -16,9 +16,9 @@
         </Grid.ColumnDefinitions>
         <Image x:Name="BackgroundImage" HorizontalAlignment="Left" Height="747" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Source="2.png" Margin="0,0,0,-27"/>
         <DockPanel x:Name="VersionInformationBackground" HorizontalAlignment="Left" Height="459" LastChildFill="False" VerticalAlignment="Top" Width="359" Background="Black" Opacity="0.3" Margin="0,24,0,0" Grid.ColumnSpan="2"/>
-        <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="65,84,0,0" VerticalAlignment="Top" Foreground="White" FontSize="32" FontWeight="Bold" Height="53" Width="131"/>
+        <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="65,59,0,0" VerticalAlignment="Top" Foreground="White" FontSize="32" FontWeight="Bold" Height="53" Width="131"/>
         <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="289" LastChildFill="False" Margin="-26,458,-27,-27" VerticalAlignment="Top" Width="1357" Background="#FF1B1B1B" Grid.ColumnSpan="5"/>
-        <Label x:Name="GameVersion" Content="Select Game Version." HorizontalAlignment="Left" Margin="65,119,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.74" FontSize="23" Height="43" Width="235" FontWeight="SemiBold"/>
+        <Label x:Name="GameVersion" Content="Select Game Version." HorizontalAlignment="Left" Margin="65,94,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.74" FontSize="23" Height="43" Width="235" FontWeight="SemiBold"/>
         <Button x:Name="LaunchButton" Content="Launch" Margin="72,287,69.4,370" Foreground="white" FontSize="15" FontWeight="Medium" >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -39,8 +39,28 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Label x:Name="LauncherInformation" Content="Proggect Era" HorizontalAlignment="Left" Margin="65,155,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.32" FontSize="14" Height="132" Width="235"/>
+        <Label x:Name="LauncherInformation" Content="Proggect Era" HorizontalAlignment="Left" Margin="65,130,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.32" FontSize="14" Height="132" Width="235"/>
         <ListView x:Name="VersionsList" VerticalAlignment="Top" Height="219" Margin="18,470,10,0"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.ColumnSpan="5" Padding="40,0,60,0">
+            <ListView.Resources>
+                <Style TargetType="{x:Type ScrollBar}">
+                    <Setter Property="Background" Value="#FF33334B"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                <Grid Visibility="Hidden" x:Name="Bg" SnapsToDevicePixels="true">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
+                                        <RowDefinition Height="0.00001*"/>
+                                        <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
+                                    </Grid.RowDefinitions>
+                                    <Border BorderBrush="White" BorderThickness="5" Background="Gray" Grid.Row="1" CornerRadius="10"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.Resources>
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="Template">
