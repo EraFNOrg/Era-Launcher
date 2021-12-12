@@ -59,3 +59,7 @@ C:\Users\mateu\Documents\GitHub\Era-Launcher\EraLauncher\obj\Release\EraLauncher
 C:\Users\mateu\Documents\GitHub\Era-Launcher\EraLauncher\obj\Release\EraLauncher.pdb
 C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\obj\Release\Changelog.g.cs
 C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\obj\Release\Changelog.baml
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\Changelog.g.cs
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\Home.g.cs
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\Changelog.baml
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\Home.baml

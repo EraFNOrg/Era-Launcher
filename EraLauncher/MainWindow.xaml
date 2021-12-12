@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:EraLauncher"
         mc:Ignorable="d"
         Title="Fortnite Launcher" Height="720" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
-    <Grid x:Name="GridBG" HorizontalAlignment="Left" Height="720" Margin="-24,0,0,0" VerticalAlignment="Top" Width="1304" MouseMove="GridBG_MouseMove" Background="#FF0E0C0C">
+    <Grid x:Name="ApplicationBackground" HorizontalAlignment="Left" Height="720" Margin="-24,0,0,0" VerticalAlignment="Top" Width="1304" MouseMove="GridBG_MouseMove" Background="#FF0E0C0C">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="354*"/>
             <ColumnDefinition Width="418*"/>
@@ -95,5 +95,6 @@
                 </Style>
             </Button.Style>
         </Button>
+        <StackPanel x:Name="ContentPanel" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5"/>
     </Grid>
 </Window>

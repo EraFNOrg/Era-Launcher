@@ -1,4 +1,4 @@
-﻿<Window x:Class="EraLauncher.MainWindow"
+﻿<Window x:Class="EraLauncher.Home"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -38,7 +38,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <ListView x:Name="VersionBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="262" Margin="0,458,10,0" Grid.ColumnSpan="5" Background="{x:Null}" BorderBrush="#00ABADB3" Foreground="#16000000">
+        <ListView x:Name="VersionsList" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="262" Margin="0,458,10,0" Grid.ColumnSpan="5" Background="{x:Null}" BorderBrush="#00ABADB3" Foreground="#16000000">
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="10" HorizontalAlignment="Stretch"/>
@@ -64,6 +64,5 @@
             </ListView.ItemContainerStyle>
         </ListView>
         <Label x:Name="LauncherInformation" Content="Proggect Era" HorizontalAlignment="Left" Margin="61,161,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.32" FontSize="14" Height="155" Width="235"/>
-        <Frame x:Name="MainPage" Margin="-24,0,0,0"></Frame>
     </Grid>
 </Window>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -34,7 +35,7 @@ namespace EraLauncher
 
             this.LauncherInformation.Content = CurrentLauncherDetails;
 
-            this.VersionBox.ItemsSource = new VersionData[]
+            this.VersionsList.ItemsSource = new VersionData[]
 {
             new VersionData{Id=3.2F},
             new VersionData{Id=4.1F},
@@ -51,7 +52,7 @@ namespace EraLauncher
         // Start Versions code ---------------------------------------
         public void AddVersion()
         {
-            this.VersionBox.ItemsSource = new VersionData[]
+            this.VersionsList.ItemsSource = new VersionData[]
             {
             new VersionData{Id=0}
             };

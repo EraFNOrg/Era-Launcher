@@ -45,7 +45,7 @@ namespace EraLauncher
 
         private void MainPage_Btn_Event(object sender, RoutedEventArgs e)
         {
-            
+            this.ContentPanel = new Home();
         }
 
         private void Changelog_Btn_Event(object sender, RoutedEventArgs e)
