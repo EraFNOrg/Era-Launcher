@@ -78,14 +78,14 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="MainPage_Btn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="72" Margin="146,3,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold">
+        <Button x:Name="MainPage_Btn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="29" Margin="211,15,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="22" Foreground="White" FontFamily="Segoe UI Semibold">
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="7*"/>
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Play" Margin="0,-13,0.4,-2.2" Grid.ColumnSpan="2"/>
-                <Border Background="White" Margin="-6,6,-7.6,-6.2" Grid.ColumnSpan="2"/>
+                <TextBlock Text="Play" Margin="-43,-22,31,7"/>
+                <Border Background="White" Margin="-44,-3,29,3"/>
             </Grid>
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -103,14 +103,14 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.30" From="0.5" To="0.75"/>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.15" From="0.5" To="0.75"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.30" From="0.75" To="0.5"/>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.15" From="0.75" To="0.5"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
@@ -118,14 +118,10 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="Changelog_Btn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77" Margin="223,3,0,0" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
+        <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="47" Margin="265,15,42,683" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="22" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
             <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="7*"/>
-                    <ColumnDefinition Width="3*"/>
-                </Grid.ColumnDefinitions>
-                <TextBlock Text="News" Margin="0,-13,0.4,-2.2" Grid.ColumnSpan="2"/>
-                <Border Background="White" Margin="-6,6,-7.6,-6.2" Grid.ColumnSpan="2"/>
+                <TextBlock Text="News" Margin="-26,-22,26,7"/>
+                <Border Background="White" Margin="-34,-3,20,3" />
             </Grid>
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -143,14 +139,14 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.30" From="0.5" To="0.75"/>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.15" From="0.5" To="0.75"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.30" From="0.75" To="0.5"/>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.15" From="0.75" To="0.5"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
