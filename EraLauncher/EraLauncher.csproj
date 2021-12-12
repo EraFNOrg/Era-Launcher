@@ -145,5 +145,11 @@
   <ItemGroup>
     <Resource Include="maxresdefault.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Splash.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -14,6 +14,7 @@
             <ColumnDefinition Width="249*"/>
             <ColumnDefinition Width="277*"/>
         </Grid.ColumnDefinitions>
+        <Image x:Name="BackgroundImage" HorizontalAlignment="Left" Height="747" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Source="2.png" Margin="0,0,0,-27"/>
         <DockPanel x:Name="VersionInformationBackground" HorizontalAlignment="Left" Height="459" LastChildFill="False" VerticalAlignment="Top" Width="359" Background="Black" Opacity="0.3" Margin="0,24,0,0" Grid.ColumnSpan="2"/>
         <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="65,84,0,0" VerticalAlignment="Top" Foreground="White" FontSize="32" FontWeight="Bold" Height="53" Width="131"/>
         <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="289" LastChildFill="False" Margin="-26,458,-27,-27" VerticalAlignment="Top" Width="1357" Background="#FF1B1B1B" Grid.ColumnSpan="5"/>
@@ -51,17 +52,20 @@
                     </Setter>
                 </Style>
             </ListView.ItemContainerStyle>
-            <ItemsControl.ItemsPanel>
+            <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="8" Rows="1" Width="1280" Height="172" Margin="20,10,0,0" />
                 </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
+            </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Orientation="Vertical" Height="200">
-                        <TextBlock Text="{Binding Id}" Foreground="White" TextAlignment="Center" VerticalAlignment="Bottom"/>
-                        <Button x:Name="VersionButton" Content="{Binding Id}" Foreground="Transparent" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50,0,0,0" Background="Transparent" Click="SelectVersion_Event"/>
-                    </StackPanel>
+                    <Grid>
+                        <Image x:Name="VersionSplash" Source="Splash.bmp"/>
+                        <TextBlock Text="{Binding Id}" Foreground="White" Margin="75, 150, 50, 0" FontWeight="Bold" FontSize="10" />
+                        <StackPanel Orientation="Vertical" Height="200">
+                            <Button x:Name="VersionButton" Content="{Binding Id}" Foreground="Transparent" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50,0,0,0" Background="Transparent" Click="SelectVersion_Event"/>
+                        </StackPanel>
+                    </Grid>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

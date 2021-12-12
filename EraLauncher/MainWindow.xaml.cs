@@ -22,6 +22,8 @@ namespace EraLauncher
     public partial class MainWindow : Window
     {
         // Variables
+        Home homevar = new Home();
+        Changelog clvar = new Changelog();
         LauncherFunctions lfn = new LauncherFunctions();
         // EVENTS 
         private void GridBG_MouseMove(object sender, MouseEventArgs e)
@@ -44,11 +46,11 @@ namespace EraLauncher
 
         private void MainPage_Btn_Event(object sender, RoutedEventArgs e)
         {
-            lfn.ExecutePage(new Home(), PageContent);
+            lfn.ExecutePage(homevar, PageContent);
         }
         private void Changelog_Btn_Event(object sender, RoutedEventArgs e)
         {
-            lfn.ExecutePage(new Changelog(), PageContent);
+            lfn.ExecutePage(clvar, PageContent);
         }
         // End EVENTS
     }
