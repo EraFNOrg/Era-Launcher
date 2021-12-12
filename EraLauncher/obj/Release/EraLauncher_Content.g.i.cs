@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("2.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("eralauncher_kopia.png")]
 
 

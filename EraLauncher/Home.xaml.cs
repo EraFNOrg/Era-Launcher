@@ -76,6 +76,16 @@ namespace EraLauncher
             float aID = float.Parse(abc);
             ExecuteVersionPure(aID);
         }
+
+        private void EditVersion_Event(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void TestButtonAnimationEvent(object sender, MouseEventArgs e)
+        {
+           
+        }
     }
 
     // Classes

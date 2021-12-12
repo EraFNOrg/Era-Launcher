@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Frame x:Name="PageContent" Content="Frame" HorizontalAlignment="Left" Height="710" Margin="10,0,0,0" VerticalAlignment="Top" Width="1294" Grid.ColumnSpan="5" Loaded="PageContent_Loaded"/>
         <DockPanel x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" LastChildFill="False" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Background="#FF0F0F0F"/>
-        <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Grid.Column="4" Margin="225.8,3,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold">
+        <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Grid.Column="4" Margin="225.8,3,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="42" Foreground="White" FontSize="10">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="35" Height="25" CornerRadius="4" Background="{TemplateBinding Background}">
@@ -29,9 +29,20 @@
                     <Setter Property="Background" Value="#FF141414"/>
                     <Setter Property="Cursor" Value="Hand"/>
                     <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" Value="#FF1B1B1B"/>
-                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" Duration="00:00:00.15" From="#FF141414" To="#FF1B1B1B"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" Duration="00:00:00.15" From="#FF1B1B1B" To="#FF141414"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
@@ -49,14 +60,33 @@
                     <Setter Property="Background" Value="#FF141414"/>
                     <Setter Property="Cursor" Value="Hand"/>
                     <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" Value="#FF1B1B1B"/>
-                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" Duration="00:00:00.15" From="#FF141414" To="#FF1B1B1B"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" Duration="00:00:00.15" From="#FF1B1B1B" To="#FF141414"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="MainPage_Btn" Content="Play" HorizontalAlignment="Left" VerticalAlignment="Top" Width="178" Margin="70,3,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold">
+        <Button x:Name="MainPage_Btn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="72" Margin="146,3,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="Play" Margin="0,-13,0.4,-2.2" Grid.ColumnSpan="2"/>
+                <Border Background="White" Margin="-6,6,-7.6,-6.2" Grid.ColumnSpan="2"/>
+            </Grid>
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="100" Height="45" CornerRadius="4" Background="{TemplateBinding Background}">
@@ -66,17 +96,37 @@
             </Button.Template>
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="#FF141414"/>
-                    <Setter Property="Cursor" Value="Hand"/>
+                    <Setter Property="Opacity" Value="0.5"/>
+                    <Setter Property="Background" Value="#00141414"/>
+
                     <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" Value="#FF1B1B1B"/>
-                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.30" From="0.5" To="0.75"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.30" From="0.75" To="0.5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="Changelog_Btn" Content="News" HorizontalAlignment="Left" VerticalAlignment="Top" Width="178" Margin="181,3,0,0" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold" Grid.ColumnSpan="2">
+        <Button x:Name="Changelog_Btn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="77" Margin="223,3,0,0" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="7*"/>
+                    <ColumnDefinition Width="3*"/>
+                </Grid.ColumnDefinitions>
+                <TextBlock Text="News" Margin="0,-13,0.4,-2.2" Grid.ColumnSpan="2"/>
+                <Border Background="White" Margin="-6,6,-7.6,-6.2" Grid.ColumnSpan="2"/>
+            </Grid>
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="100" Height="45" CornerRadius="4" Background="{TemplateBinding Background}">
@@ -86,12 +136,24 @@
             </Button.Template>
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
+                    <Setter Property="Opacity" Value="0.5"/>
                     <Setter Property="Background" Value="#FF141414"/>
-                    <Setter Property="Cursor" Value="Hand"/>
+
                     <Style.Triggers>
-                        <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" Value="#FF1B1B1B"/>
-                        </Trigger>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.30" From="0.5" To="0.75"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.30" From="0.75" To="0.5"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
