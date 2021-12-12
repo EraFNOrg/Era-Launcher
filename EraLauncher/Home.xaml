@@ -15,10 +15,10 @@
             <ColumnDefinition Width="277*"/>
         </Grid.ColumnDefinitions>
         <DockPanel x:Name="VersionInformationBackground" HorizontalAlignment="Left" Height="459" LastChildFill="False" VerticalAlignment="Top" Width="359" Background="Black" Opacity="0.3" Margin="0,24,0,0" Grid.ColumnSpan="2"/>
-        <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="61,83,0,0" VerticalAlignment="Top" Foreground="White" FontSize="32" FontWeight="Bold" Height="53" Width="131"/>
+        <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="65,84,0,0" VerticalAlignment="Top" Foreground="White" FontSize="32" FontWeight="Bold" Height="53" Width="131"/>
         <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="289" LastChildFill="False" Margin="-26,458,-27,-27" VerticalAlignment="Top" Width="1357" Background="#FF1B1B1B" Grid.ColumnSpan="5"/>
-        <Label x:Name="GameVersion" Content="Select Game Version:" HorizontalAlignment="Left" Margin="61,118,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" Opacity="0.74" FontSize="23" Height="43" Width="235"/>
-        <Button Content="Launch" Margin="61,321,96.6,336" Foreground="white" FontSize="15" FontWeight="Medium" >
+        <Label x:Name="GameVersion" Content="Select Game Version." HorizontalAlignment="Left" Margin="65,119,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.74" FontSize="23" Height="43" Width="235" FontWeight="SemiBold"/>
+        <Button x:Name="LaunchButton" Content="Launch" Margin="72,287,69.4,370" Foreground="white" FontSize="15" FontWeight="Medium" >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="200" Height="50" CornerRadius="4" Background="{TemplateBinding Background}">
@@ -38,19 +38,28 @@
                 </Style>
             </Button.Style>
         </Button>
-        <ListView x:Name="VersionsList" HorizontalAlignment="Stretch" VerticalAlignment="Top" Height="262" Margin="0,458,10,0" Grid.ColumnSpan="5" Background="{x:Null}" BorderBrush="#00ABADB3" Foreground="#16000000">
-            <ListView.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid Columns="10" HorizontalAlignment="Stretch"/>
-                </ItemsPanelTemplate>
-            </ListView.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <StackPanel Orientation="Horizontal" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Opacity="1">
-                        <Button Content="{Binding Id}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Background="{x:Null}" FontWeight="Bold" Foreground="White" Height="150" Width="200" Click="ExecuteVersion_Event"/>
-                    </StackPanel>
-                </DataTemplate>
-            </ListView.ItemTemplate>
+        <Label x:Name="LauncherInformation" Content="Proggect Era" HorizontalAlignment="Left" Margin="65,155,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.32" FontSize="14" Height="132" Width="235"/>
+        <ListView x:Name="VersionsList" VerticalAlignment="Top" Height="219" Margin="18,470,10,0"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.ColumnSpan="5" Padding="40,0,60,0">
+            <ListView.Resources>
+                <Style TargetType="{x:Type ScrollBar}">
+                    <Setter Property="Background" Value="#FF33334B"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type ScrollBar}">
+                                <Grid Visibility="Hidden" x:Name="Bg" SnapsToDevicePixels="true">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
+                                        <RowDefinition Height="0.00001*"/>
+                                        <RowDefinition MaxHeight="{DynamicResource {x:Static SystemParameters.VerticalScrollBarButtonHeightKey}}"/>
+                                    </Grid.RowDefinitions>
+                                    <Border BorderBrush="White" BorderThickness="5" Background="Gray" Grid.Row="1" CornerRadius="10"/>
+                                </Grid>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </ListView.Resources>
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="Template">
@@ -62,7 +71,19 @@
                     </Setter>
                 </Style>
             </ListView.ItemContainerStyle>
+            <ItemsControl.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <UniformGrid Columns="8" Rows="1" Width="1280" Height="172" Margin="20,10,0,0" />
+                </ItemsPanelTemplate>
+            </ItemsControl.ItemsPanel>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel Orientation="Vertical" Height="200">
+                        <TextBlock Text="{Binding Id}" Foreground="White" TextAlignment="Center" VerticalAlignment="Bottom"/>
+                        <Button x:Name="VersionButton" Content="{Binding Id}" Foreground="Transparent" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="50,0,0,0" Background="Transparent" Click="SelectVersion_Event"/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListView.ItemTemplate>
         </ListView>
-        <Label x:Name="LauncherInformation" Content="Proggect Era" HorizontalAlignment="Left" Margin="61,161,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.32" FontSize="14" Height="155" Width="235"/>
     </Grid>
 </Page>

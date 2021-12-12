@@ -30,8 +30,10 @@ namespace EraLauncher
 
             this.VersionsList.ItemsSource = new VersionData[]
 {
-            new VersionData{Id=3.2F},
-            new VersionData{Id=4.1F},
+            new VersionData{Id=3.2F, path="a"},
+            new VersionData{Id=5.2F, path="a"},
+            new VersionData{Id=7.2F, path="a"},
+
 };
         }
 
@@ -44,13 +46,6 @@ namespace EraLauncher
             };
         }
 
-        private void ExecuteVersion_Event(object sender, RoutedEventArgs e)
-        {
-            var Version = (Button)sender;
-            string abc = Version.Content.ToString();
-            float aID = float.Parse(abc);
-            ExecuteVersionPure(aID);
-        }
 
         private void ExecuteVersionPure(float ID)
         {
@@ -66,19 +61,34 @@ namespace EraLauncher
 
         private void MainPage_Btn_Event(object sender, RoutedEventArgs e)
         {
-            
+
         }
 
         private void Changelog_Btn_Event(object sender, RoutedEventArgs e)
         {
-            
+
+        }
+
+        private void SelectVersion_Event(object sender, RoutedEventArgs e)
+        {
+            var Version = (Button)sender;
+            string abc = Version.Content.ToString();
+            float aID = float.Parse(abc);
+            ExecuteVersionPure(aID);
         }
     }
 
     // Classes
     public class VersionData
     {
+        public string _path;
         private float _Id;
+        
+        public string path
+        {
+            get { return this._path;  }
+            set { this._path = value; }
+        }
         public float Id
         {
             get { return this._Id; }

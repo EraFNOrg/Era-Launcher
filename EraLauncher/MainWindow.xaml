@@ -14,8 +14,8 @@
             <ColumnDefinition Width="249*"/>
             <ColumnDefinition Width="277*"/>
         </Grid.ColumnDefinitions>
-        <Frame x:Name="PageContent" Content="Frame" HorizontalAlignment="Left" Height="707" Margin="10,3,0,0" VerticalAlignment="Top" Width="1294" Grid.ColumnSpan="5"/>
-        <DockPanel x:Name="UpperPanel" HorizontalAlignment="Center" Height="49" LastChildFill="False" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Background="#FF0F0F0F"/>
+        <Frame x:Name="PageContent" Content="Frame" HorizontalAlignment="Left" Height="710" Margin="10,0,0,0" VerticalAlignment="Top" Width="1294" Grid.ColumnSpan="5"/>
+        <DockPanel x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" LastChildFill="False" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Background="#FF0F0F0F"/>
         <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Grid.Column="4" Margin="225.8,3,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -56,7 +56,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="MainPage_Btn" Content="Main Page" HorizontalAlignment="Left" VerticalAlignment="Top" Width="178" Margin="190,1,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold" Grid.Column="1">
+        <Button x:Name="MainPage_Btn" Content="Play" HorizontalAlignment="Left" VerticalAlignment="Top" Width="178" Margin="70,3,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="100" Height="45" CornerRadius="4" Background="{TemplateBinding Background}">
@@ -76,7 +76,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="Changelog_Btn" Content="Changelog" HorizontalAlignment="Left" VerticalAlignment="Top" Width="178" Margin="301,1,0,0" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold" Grid.Column="1" Grid.ColumnSpan="3">
+        <Button x:Name="Changelog_Btn" Content="News" HorizontalAlignment="Left" VerticalAlignment="Top" Width="178" Margin="181,3,0,0" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold" Grid.ColumnSpan="2">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="100" Height="45" CornerRadius="4" Background="{TemplateBinding Background}">
