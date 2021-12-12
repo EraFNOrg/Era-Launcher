@@ -1,14 +1,14 @@
-﻿<Window x:Class="EraLauncher.Changelog"
+﻿<Page x:Class="EraLauncher.Changelog"
          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EraLauncher"
         mc:Ignorable="d"
-        Title="Fortnite Launcher" Height="720" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
-    <Grid x:Name="ChangelogGridBG" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="#FF0E0C0C" MouseMove="GridBG_MouseMove">
+        Title="Fortnite Launcher" Height="720" Width="1280" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919">
+    <Grid x:Name="ChangelogGridBG" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="#FF0E0C0C">
         <Label x:Name="Title" Content="What's new?" HorizontalAlignment="Left" Margin="61,50,0,0" VerticalAlignment="Top" Foreground="White" FontSize="64" FontWeight="Bold" Height="107" Width="429"/>
         <Label x:Name="Logs_Content" Content="Test 123, find some fucking FTP" HorizontalAlignment="Left" Margin="61,195,0,0" VerticalAlignment="Top" Foreground="White" FontSize="25" FontWeight="Bold" Height="481" Width="1188"/>
     </Grid>
-</Window>
+</Page>
 

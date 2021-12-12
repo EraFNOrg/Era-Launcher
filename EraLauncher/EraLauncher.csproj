@@ -50,7 +50,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>_icon.ico</ApplicationIcon>
+    <ApplicationIcon>Misc\Images\LauncherIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -95,6 +95,7 @@
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Misc\Classes\LauncherFunctions.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -127,16 +128,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="_icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="playbutton.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Bez nazwy-2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="maxresdefault.jpg" />
+    <Resource Include="Misc\Images\LauncherIcon.ico" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
@@ -150,5 +142,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

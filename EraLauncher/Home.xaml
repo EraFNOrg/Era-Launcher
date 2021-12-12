@@ -1,12 +1,12 @@
-﻿<Window x:Class="EraLauncher.Home"
+﻿<Page x:Class="EraLauncher.Home"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EraLauncher"
         mc:Ignorable="d"
-        Title="Fortnite Launcher" Height="720" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
-    <Grid x:Name="GridBG" HorizontalAlignment="Left" Height="720" Margin="-24,0,0,0" VerticalAlignment="Top" Width="1304" MouseMove="GridBG_MouseMove" Background="#FF0E0C0C">
+        Title="Fortnite Launcher" Height="720" Width="1280" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919">
+    <Grid x:Name="GridBG" HorizontalAlignment="Left" Height="720" Margin="-24,0,0,0" VerticalAlignment="Top" Width="1304" Background="#FF0E0C0C">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="354*"/>
             <ColumnDefinition Width="418*"/>
@@ -65,4 +65,4 @@
         </ListView>
         <Label x:Name="LauncherInformation" Content="Proggect Era" HorizontalAlignment="Left" Margin="61,161,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.32" FontSize="14" Height="155" Width="235"/>
     </Grid>
-</Window>
+</Page>

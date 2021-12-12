@@ -21,17 +21,16 @@ namespace EraLauncher
 
     public partial class MainWindow : Window
     {
-    
+        // Variables
+        LauncherFunctions lfn = new LauncherFunctions();
+        // EVENTS 
         private void GridBG_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.LeftButton == MouseButtonState.Pressed)
             {
                 this.DragMove();
-
-              
             }
         }
-
       
         private void Close_Button_Event(object sender, RoutedEventArgs e)
         {
@@ -45,12 +44,12 @@ namespace EraLauncher
 
         private void MainPage_Btn_Event(object sender, RoutedEventArgs e)
         {
-            this.ContentPanel = new Home();
+            lfn.ExecutePage(new Home(), PageContent);
         }
-
         private void Changelog_Btn_Event(object sender, RoutedEventArgs e)
         {
-            
+            lfn.ExecutePage(new Changelog(), PageContent);
         }
+        // End EVENTS
     }
 }

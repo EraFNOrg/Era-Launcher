@@ -14,6 +14,7 @@
             <ColumnDefinition Width="249*"/>
             <ColumnDefinition Width="277*"/>
         </Grid.ColumnDefinitions>
+        <Frame x:Name="PageContent" Content="Frame" HorizontalAlignment="Left" Height="707" Margin="10,3,0,0" VerticalAlignment="Top" Width="1294" Grid.ColumnSpan="5"/>
         <DockPanel x:Name="UpperPanel" HorizontalAlignment="Center" Height="49" LastChildFill="False" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Background="#FF0F0F0F"/>
         <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Grid.Column="4" Margin="225.8,3,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold">
             <Button.Template>
@@ -95,6 +96,5 @@
                 </Style>
             </Button.Style>
         </Button>
-        <StackPanel x:Name="ContentPanel" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5"/>
     </Grid>
 </Window>
