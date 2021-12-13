@@ -23,5 +23,15 @@ namespace EraLauncher
         {
             InitializeComponent();
         }
+
     }
+
+    //public static class Test
+    //{
+       // public static void Update(Changelog Logs_Content)
+       // {
+       //     Logs_Content.Text = "blah blah, era, we love, matid best developa";
+       // }
+   // }            //it dosent work at all i think :|
+
 }

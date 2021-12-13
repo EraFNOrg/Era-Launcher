@@ -65,3 +65,9 @@ D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\Changelog.baml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\Home.baml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\AddVersionPage.g.cs
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\AddVersionPage.baml
+C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\obj\Release\AddVersionPage.g.cs
+C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\obj\Release\Home.g.cs
+C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\obj\Release\AddVersionPage.baml
+C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\obj\Release\Home.baml
+C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\bin\Release\RestSharp.dll
+C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\bin\Release\RestSharp.xml

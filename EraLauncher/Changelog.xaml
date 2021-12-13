@@ -20,7 +20,7 @@
             </Border.RenderTransform>
         </Border>
         <Label x:Name="Title" Content="What's new?" HorizontalAlignment="Left" Margin="35,87,0,0" VerticalAlignment="Top" Foreground="White" FontSize="40" FontWeight="Bold" Height="107" Width="429" Opacity="0.8"/>
-        <Label x:Name="Logs_Content" Content="・ Added xyz Support" HorizontalAlignment="Left" Margin="35,154,0,0" VerticalAlignment="Top" Foreground="White" FontSize="25" FontWeight="Bold" Height="178" Width="619" Opacity="0.6"/>
+        <Label x:Name="Logs_Content" Content="・ Added API support (Sizzy, you know what to do)" HorizontalAlignment="Left" Margin="35,154,0,0" VerticalAlignment="Top" Foreground="White" FontSize="25" FontWeight="Bold" Height="178" Width="619" Opacity="0.6"/>
     </Grid>
 </Page>
 
