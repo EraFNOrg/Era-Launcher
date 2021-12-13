@@ -168,5 +168,11 @@
   <ItemGroup>
     <Resource Include="ERALauncher_kopia.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="another_banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Chapter-2-Fortnite-event-0-scaled.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -103,14 +103,14 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.15" From="0.5" To="0.75"/>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.10" From="0.5" To="0.75"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.15" From="0.75" To="0.5"/>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.10" From="0.75" To="0.5"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
@@ -139,14 +139,14 @@
                         <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.15" From="0.5" To="0.75"/>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.10" From="0.5" To="0.75"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>
                         <EventTrigger RoutedEvent="MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard>
-                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.15" From="0.75" To="0.5"/>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.10" From="0.75" To="0.5"/>
                                 </Storyboard>
                             </BeginStoryboard>
                         </EventTrigger>

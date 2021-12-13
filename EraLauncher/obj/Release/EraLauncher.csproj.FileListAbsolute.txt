@@ -71,3 +71,6 @@ C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\obj\Release\AddVersionPage.baml
 C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\obj\Release\Home.baml
 C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\bin\Release\RestSharp.dll
 C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\bin\Release\RestSharp.xml
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\RestSharp.dll
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\RestSharp.xml
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\EraLauncher.csproj.CopyComplete

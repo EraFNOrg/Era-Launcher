@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("eralauncher_kopia.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("chapter-2-fortnite-event-0-scaled.jpg")]
 
 

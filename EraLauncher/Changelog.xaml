@@ -7,20 +7,59 @@
         mc:Ignorable="d"
         Title="Fortnite Launcher" Height="720" Width="1280" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919">
     <Grid x:Name="ChangelogGridBG" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="#FF0E0C0C">
-        <Image HorizontalAlignment="Left" Height="720" Margin="0,-115,-13,115" VerticalAlignment="Bottom" Width="1293" Source="maxresdefault.jpg" Stretch="Fill"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="395" Margin="-23,337,-25,-12" VerticalAlignment="Top" Width="1328" Background="#FF100F11"/>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="556" Margin="-26,-150,0,0" VerticalAlignment="Top" Width="746" Background="#FF100F11" Opacity="0.4" RenderTransformOrigin="0.5,0.5">
-            <Border.RenderTransform>
+        <Grid HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="1040" Margin="-6,16,0,0">
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="FontSize" From="{Binding FontSize}" To="40.8" Duration="00:00:00.15"/>
+                                <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="Opacity" From="{Binding Opacity}" To="0.90" Duration="00:00:00.15"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <EventTrigger.Actions>
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="FontSize" From="{Binding FontSize}" To="40" Duration="00:00:00.15"/>
+                                <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="Opacity" From="{Binding Opacity}" To="0.80" Duration="00:00:00.15"/>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger.Actions>
+                </EventTrigger>
+            </Grid.Triggers>
+            <Grid.Style>
+                <Style TargetType="Grid">
+                    <Style.Triggers>
+                    </Style.Triggers>
+                </Style>
+            </Grid.Style>
+            <Border HorizontalAlignment="Left" Height="655"  VerticalAlignment="Bottom" Width="1210" Margin="45,-275,-215,0" >
+                <Border.Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="20"/>
+                    </Style>
+                </Border.Style>
+                <Border.Background>
+                    <ImageBrush ImageSource="Chapter-2-Fortnite-event-0-scaled.jpg"/>
+                </Border.Background>
+            </Border>
+            <Label x:Name="LatestNewsText" Content="Project Era | 2.0" HorizontalAlignment="Left" Margin="926,274,-196,0" VerticalAlignment="Top" Height="81" Width="310" FontSize="40" FontWeight="Bold" Foreground="White" Opacity="0.8"/>
+        </Grid>
+
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="395" Margin="-6,365,-42,-40" VerticalAlignment="Top" Width="1328" Background="#FF100F11"/>
+        <Label x:Name="Logs_Content" Content="・ Added API support (Sizzy, you know what to do)" HorizontalAlignment="Left" Margin="246,512,0,0" VerticalAlignment="Top" Foreground="White" FontSize="25" FontWeight="Bold" Height="178" Width="619" Opacity="0.6" RenderTransformOrigin="0.5,0.5">
+            <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
-                    <SkewTransform/>
-                    <RotateTransform Angle="-3.623"/>
-                    <TranslateTransform/>
+                    <SkewTransform AngleX="9.09"/>
+                    <RotateTransform/>
+                    <TranslateTransform X="14.24"/>
                 </TransformGroup>
-            </Border.RenderTransform>
-        </Border>
-        <Label x:Name="Title" Content="What's new?" HorizontalAlignment="Left" Margin="35,87,0,0" VerticalAlignment="Top" Foreground="White" FontSize="40" FontWeight="Bold" Height="107" Width="429" Opacity="0.8"/>
-        <Label x:Name="Logs_Content" Content="・ Added API support (Sizzy, you know what to do)" HorizontalAlignment="Left" Margin="35,154,0,0" VerticalAlignment="Top" Foreground="White" FontSize="25" FontWeight="Bold" Height="178" Width="619" Opacity="0.6"/>
+            </Label.RenderTransform>
+        </Label>
     </Grid>
 </Page>
 
