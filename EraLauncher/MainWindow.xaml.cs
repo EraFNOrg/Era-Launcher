@@ -15,16 +15,18 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using EraLauncher.Misc.Classes;
 
 namespace EraLauncher
 {
-
     public partial class MainWindow : Window
     {
         // Variables
+
         Home homevar = new Home();
         Changelog clvar = new Changelog();
         LauncherFunctions lfn = new LauncherFunctions();
+        static EraAPI eraapi;
         // EVENTS 
         private void GridBG_MouseMove(object sender, MouseEventArgs e)
         {
@@ -55,7 +57,7 @@ namespace EraLauncher
         private void PageContent_Loaded(object sender, RoutedEventArgs e)
         {
             App.ParentWindowRef = this;
-            this.PageContent.Navigate(new Home());
+            this.PageContent.Navigate(homevar);
         }
         // End EVENTS
     }

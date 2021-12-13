@@ -15,6 +15,8 @@
                             <Storyboard>
                                 <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="FontSize" From="{Binding FontSize}" To="40.8" Duration="00:00:00.15"/>
                                 <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="Opacity" From="{Binding Opacity}" To="0.90" Duration="00:00:00.15"/>
+                                <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1215" Duration="00:00:00.15"/>
+                                <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="660" Duration="00:00:00.15"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
@@ -25,6 +27,8 @@
                             <Storyboard>
                                 <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="FontSize" From="{Binding FontSize}" To="40" Duration="00:00:00.15"/>
                                 <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="Opacity" From="{Binding Opacity}" To="0.80" Duration="00:00:00.15"/>
+                                <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1210" Duration="00:00:00.15"/>
+                                <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="655" Duration="00:00:00.15"/>
                             </Storyboard>
                         </BeginStoryboard>
                     </EventTrigger.Actions>
@@ -36,10 +40,11 @@
                     </Style.Triggers>
                 </Style>
             </Grid.Style>
-            <Border HorizontalAlignment="Left" Height="655"  VerticalAlignment="Bottom" Width="1210" Margin="45,-275,-215,0" >
+            <Border x:Name="ImageBG" Height="655" Width="1210" Margin="45,-275,-215,0" >
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>
+                        <Setter Property="Cursor" Value="Hand"/>
                     </Style>
                 </Border.Style>
                 <Border.Background>

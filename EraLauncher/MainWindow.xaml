@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EraLauncher"
         mc:Ignorable="d"
-        Title="Fortnite Launcher" Height="720" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
+        Title="Fortnite Launcher" Height="610" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
     <Grid x:Name="ApplicationBackground" HorizontalAlignment="Left" Height="720" Margin="-24,0,0,0" VerticalAlignment="Top" Width="1304" MouseMove="GridBG_MouseMove" Background="#FF0E0C0C">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="354*"/>
@@ -15,7 +15,14 @@
             <ColumnDefinition Width="277*"/>
         </Grid.ColumnDefinitions>
         <Frame x:Name="PageContent" Content="Frame" HorizontalAlignment="Left" Height="710" Margin="10,0,0,0" VerticalAlignment="Top" Width="1294" Grid.ColumnSpan="5" Loaded="PageContent_Loaded"/>
-        <DockPanel x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" LastChildFill="False" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Background="#FF0F0F0F"/>
+        <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Background="#FF0F0F0F">
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="5"/>
+                </Style>
+            </Border.Style>
+            <Label x:Name="kurwa" Content="Label" Margin="346,10,-346,-10" Foreground="White"/>
+        </Border>
         <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Grid.Column="4" Margin="225.8,3,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="42" Foreground="White" FontSize="10">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -123,6 +130,15 @@
                 <TextBlock Text="News" Margin="-26,-22,26,7"/>
                 <Border Background="White" Margin="-34,-3,20,3" />
             </Grid>
+            <Button.Triggers>
+                <EventTrigger RoutedEvent="MouseDown">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:01" From="0" To="1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Button.Triggers>
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="100" Height="45" CornerRadius="4" Background="{TemplateBinding Background}">
@@ -154,5 +170,6 @@
                 </Style>
             </Button.Style>
         </Button>
+        <Border x:Name="PageContentAnimationSwitch" HorizontalAlignment="Left" Height="710" Margin="-1299,15,0,-5" VerticalAlignment="Top" Width="1294" Loaded="PageContent_Loaded" Background="#FF171717"/>
     </Grid>
 </Window>

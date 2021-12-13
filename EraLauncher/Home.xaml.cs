@@ -21,8 +21,10 @@ namespace EraLauncher
 {
     public partial class Home : Page
     {
-        public string CurrentLauncherDetails = "Project Era";
+
+        public string CurrentLauncherDetails;
         public VersionData CurrentVersion;
+        EraAPI homeapi;
         public Home()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace EraLauncher
             new VersionData{Id=7.2F, path="a"},
 
 };
+
         }
 
         // Start Versions code ---------------------------------------

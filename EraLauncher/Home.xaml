@@ -60,7 +60,7 @@
             </Button.Style>
         </Button>
         <Label x:Name="LauncherInformation" Content="Proggect Era" HorizontalAlignment="Left" Margin="65,120,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.5" FontSize="14" Height="132" Width="235"/>
-        <ListView x:Name="VersionsList" VerticalAlignment="Top" Height="227" Margin="18,461,10,0"  Background="{x:Null}" BorderBrush="Black" Foreground="{x:Null}" Grid.ColumnSpan="5" Padding="0">
+        <ListView x:Name="VersionsList" VerticalAlignment="Top" Height="249" Margin="18,461,10,0"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.ColumnSpan="5" Padding="0">
             <ListView.Resources>
                 <Style TargetType="{x:Type ScrollBar}">
                     <Setter Property="Background" Value="#FF33334B"/>
@@ -83,7 +83,6 @@
             </ListView.Resources>
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
-                    <Setter Property="Padding" Value="200,0,50,0"/>
                     <Setter Property="Template">
                         <Setter.Value>
                             <ControlTemplate TargetType="{x:Type ListViewItem}">
@@ -95,7 +94,7 @@
             </ListView.ItemContainerStyle>
             <ListView.ItemsPanel>
                 <ItemsPanelTemplate>
-                    <UniformGrid Columns="8" Rows="1" Width="1280" Height="172" Margin="20,10,0,0" />
+                    <UniformGrid Columns="8" Rows="1" Width="1280" Height="172" />
                 </ItemsPanelTemplate>
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
@@ -107,7 +106,7 @@
                             <Button x:Name="VersionButton" Content="{Binding Id}" Foreground="Transparent" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="100,0,100,0" Click="SelectVersion_Event" BorderThickness="3" Opacity="1">
                                 <Button.Template>
                                     <ControlTemplate TargetType="{x:Type Button}">
-                                        <Border Width="150" Height="175" Margin="0, -25, 0, 0" CornerRadius="2" Background="Transparent" BorderBrush="White" BorderThickness="2" Opacity="0">
+                                        <Border Width="150" Height="175" Margin="0, -29, 0, 0" CornerRadius="2" Background="Transparent" BorderBrush="White" BorderThickness="2" Opacity="0">
                                             <Border.Style>
                                                 <Style TargetType="Border">
                                                     <Style.Triggers>
@@ -128,7 +127,7 @@
                                                     </Style.Triggers>
                                                 </Style>
                                             </Border.Style>
-                                            
+
                                             <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                                         </Border>
                                     </ControlTemplate>
