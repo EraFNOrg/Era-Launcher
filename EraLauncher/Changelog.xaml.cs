@@ -22,6 +22,9 @@ namespace EraLauncher
         public Changelog()
         {
             InitializeComponent();
+
+            Logs_Content.Text = "- Looting" +
+                "- danii put yo changelog here";
         }
 
     }

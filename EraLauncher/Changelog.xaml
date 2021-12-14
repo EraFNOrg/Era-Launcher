@@ -7,40 +7,37 @@
         mc:Ignorable="d"
         Title="Fortnite Launcher" Height="720" Width="1280" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919">
     <Grid x:Name="ChangelogGridBG" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="#FF0E0C0C">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="7*"/>
+        </Grid.RowDefinitions>
         <Grid HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="1040" Margin="-6,16,0,0">
             <Grid.Triggers>
-                <EventTrigger RoutedEvent="MouseEnter">
-                    <EventTrigger.Actions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="FontSize" From="{Binding FontSize}" To="40.8" Duration="00:00:00.15"/>
-                                <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="Opacity" From="{Binding Opacity}" To="0.90" Duration="00:00:00.15"/>
-                                <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1215" Duration="00:00:00.15"/>
-                                <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="660" Duration="00:00:00.15"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger.Actions>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="FontSize" From="{Binding FontSize}" To="40.8" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="Opacity" From="{Binding Opacity}" To="0.90" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1225" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="670" Duration="00:00:00.15"/>
+                        </Storyboard>
+                    </BeginStoryboard>
                 </EventTrigger>
-                <EventTrigger RoutedEvent="MouseLeave">
-                    <EventTrigger.Actions>
-                        <BeginStoryboard>
-                            <Storyboard>
-                                <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="FontSize" From="{Binding FontSize}" To="40" Duration="00:00:00.15"/>
-                                <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="Opacity" From="{Binding Opacity}" To="0.80" Duration="00:00:00.15"/>
-                                <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1210" Duration="00:00:00.15"/>
-                                <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="655" Duration="00:00:00.15"/>
-                            </Storyboard>
-                        </BeginStoryboard>
-                    </EventTrigger.Actions>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="FontSize" From="{Binding FontSize}" To="40" Duration="00:00:00.12"/>
+                            <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="Opacity" From="{Binding Opacity}" To="0.80" Duration="00:00:00.12"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1210" Duration="00:00:00.12"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="655" Duration="00:00:00.12"/>
+                        </Storyboard>
+                    </BeginStoryboard>
                 </EventTrigger>
             </Grid.Triggers>
             <Grid.Style>
-                <Style TargetType="Grid">
-                    <Style.Triggers>
-                    </Style.Triggers>
-                </Style>
+                <Style TargetType="{x:Type Grid}"/>
             </Grid.Style>
-            <Border x:Name="ImageBG" Height="655" Width="1210" Margin="45,-275,-215,0" >
+            <Border x:Name="ImageBG" Height="655" Width="1210" Margin="45,-143,-215,-132" HorizontalAlignment="Center" VerticalAlignment="Center" >
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>
@@ -53,18 +50,10 @@
             </Border>
             <Label x:Name="LatestNewsText" Content="Project Era | 2.0" HorizontalAlignment="Left" Margin="926,274,-196,0" VerticalAlignment="Top" Height="81" Width="310" FontSize="40" FontWeight="Bold" Foreground="White" Opacity="0.8"/>
         </Grid>
-
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="395" Margin="-6,365,-42,-40" VerticalAlignment="Top" Width="1328" Background="#FF100F11"/>
-        <Label x:Name="Logs_Content" Content="・ Added API support (Sizzy, you know what to do)" HorizontalAlignment="Left" Margin="246,512,0,0" VerticalAlignment="Top" Foreground="White" FontSize="25" FontWeight="Bold" Height="178" Width="619" Opacity="0.6" RenderTransformOrigin="0.5,0.5">
-            <Label.RenderTransform>
-                <TransformGroup>
-                    <ScaleTransform/>
-                    <SkewTransform AngleX="9.09"/>
-                    <RotateTransform/>
-                    <TranslateTransform X="14.24"/>
-                </TransformGroup>
-            </Label.RenderTransform>
-        </Label>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="395" Margin="0,380,-48,-55" VerticalAlignment="Top" Width="1328" Background="#FF100F11" Grid.RowSpan="2"/>
+        <Label Content="Changelog" HorizontalAlignment="Left" Margin="49,390,0,0" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="1.474,2.192" FontWeight="Bold" FontSize="30" Opacity="0.7"/>
+        <TextBlock x:Name="Logs_Content" Text="・ Added API support (Sizzy, you know what to do)" HorizontalAlignment="Left" Margin="40,5,0,0" VerticalAlignment="Top" Foreground="White" FontSize="15" FontWeight="SemiBold" Height="178" Width="619" Opacity="0.6" RenderTransformOrigin="0.5,0.5" TextWrapping="WrapWithOverflow" Grid.Row="1">
+        </TextBlock>
     </Grid>
 </Page>
 

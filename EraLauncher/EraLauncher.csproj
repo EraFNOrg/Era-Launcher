@@ -174,5 +174,14 @@
   <ItemGroup>
     <Resource Include="Chapter-2-Fortnite-event-0-scaled.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="aa.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Splash kopia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="LauncherAddButton.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

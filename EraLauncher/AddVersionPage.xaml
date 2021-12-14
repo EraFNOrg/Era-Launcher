@@ -5,7 +5,58 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EraLauncher"
         mc:Ignorable="d"
-        Title="Fortnite Launcher" Height="720" Width="1280" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919">
-    <Grid x:Name="AVPGridBG" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="#FF0E0C0C" Opacity="0.3"/>
+        Title="Fortnite Launcher" Height="720" Width="1280" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="Transparent">
+    <Grid x:Name="AVPGridBG" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1280" Background="Transparent" Opacity="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="11*"/>
+            <RowDefinition Height="109*"/>
+        </Grid.RowDefinitions>
+        <Border x:Name="BorderBG_Copy" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="720" Margin="-10,0,-148,0" VerticalAlignment="Top" Width="1438" Background="Black" Opacity="0" Grid.RowSpan="2">
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="0.5" Duration="00:00:00.20">
+                            </DoubleAnimation>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+            <Border.Effect>
+                <BlurEffect Radius="50" KernelType="Gaussian"/>
+            </Border.Effect>
+            <Border.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Border.Style>
+        </Border>
+        <CheckBox Content="CheckBox" HorizontalAlignment="Left" Height="5" Margin="-675,284,0,0" VerticalAlignment="Top" Width="5" Grid.Row="1"/>
+        <Border x:Name="BorderBG" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Center" Height="268" Margin="398,127,368,259" VerticalAlignment="Center" Width="514" Grid.Row="1" Background="#FF131313">
+            <Border Margin="29,88,29,135" Background="#FF292929">
+                <Border.Style>
+                    <Style TargetType="Border">
+                        <Setter Property="CornerRadius" Value="6"/>
+                    </Style>
+                </Border.Style>
+                <TextBox  TextWrapping="Wrap" Text="Path"  Grid.Row="1" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="#FFC3C3C3" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="35" Width="454" Margin="0,5,0,3" SelectionBrush="#FF847CD1" HorizontalContentAlignment="Center" FontSize="14" />
+            </Border>
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Height" From="240" To="255" Duration="00:00:00.20"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Width" From="470" To="485" Duration="00:00:00.20"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+            <Border.Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="8"/>
+                </Style>
+            </Border.Style>
+        </Border>
+    </Grid>
 </Page>
 

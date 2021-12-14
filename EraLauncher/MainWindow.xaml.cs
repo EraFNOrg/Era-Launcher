@@ -30,10 +30,6 @@ namespace EraLauncher
         // EVENTS 
         private void GridBG_MouseMove(object sender, MouseEventArgs e)
         {
-            if (e.LeftButton == MouseButtonState.Pressed)
-            {
-                this.DragMove();
-            }
         }
       
         private void Close_Button_Event(object sender, RoutedEventArgs e)
@@ -58,6 +54,14 @@ namespace EraLauncher
         {
             App.ParentWindowRef = this;
             this.PageContent.Navigate(homevar);
+        }
+
+        private void UpperPanel_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.LeftButton == MouseButtonState.Pressed)
+            {
+                this.DragMove();
+            }
         }
         // End EVENTS
     }
