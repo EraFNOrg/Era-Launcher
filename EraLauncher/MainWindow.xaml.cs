@@ -23,7 +23,7 @@ namespace EraLauncher
     {
         // Variables
 
-        Home homevar = new Home();
+        public Home homevar = new Home();
         Changelog clvar = new Changelog();
         LauncherFunctions lfn = new LauncherFunctions();
         static EraAPI eraapi;
@@ -45,10 +45,12 @@ namespace EraLauncher
         private void MainPage_Btn_Event(object sender, RoutedEventArgs e)
         {
             lfn.ExecutePage(homevar, PageContent);
+            homevar.MainWindowRef = this;
         }
         private void Changelog_Btn_Event(object sender, RoutedEventArgs e)
         {
             lfn.ExecutePage(clvar, PageContent);
+            clvar.MainWindowRef = this;
         }
         private void PageContent_Loaded(object sender, RoutedEventArgs e)
         {
@@ -62,6 +64,10 @@ namespace EraLauncher
             {
                 this.DragMove();
             }
+        }
+
+        private void OnLoaded(object sender, RoutedEventArgs e)
+        {
         }
         // End EVENTS
     }

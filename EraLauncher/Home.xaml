@@ -1,4 +1,4 @@
-﻿<Page x:Class="EraLauncher.Home"
+﻿<Page x:Name="HomePage" x:Class="EraLauncher.Home"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Margin="0,-10,0,0">
             <Border.Background>
-                <ImageBrush ImageSource="aa.jpg"/>
+                <ImageBrush ImageSource="2.png"/>
             </Border.Background>
         </Border>
         <DockPanel x:Name="VersionInformationBackground" HorizontalAlignment="Left" Height="490" LastChildFill="False" VerticalAlignment="Top" Width="424" Background="Black" Opacity="0.603" Margin="0,-7,0,0"/>
@@ -64,7 +64,7 @@
             </Button.Style>
         </Button>
         <TextBlock x:Name="LauncherInformation" Text="Fortnite includes Battle Royale, the completely free 100-player PvP mode. One giant map. A Battle Bus. Last one standing wins" HorizontalAlignment="Left" Margin="71,128,0,0" VerticalAlignment="Top" Foreground="White" FontSize="13" Height="132" Width="235" TextWrapping="Wrap" FontWeight="Light" FontFamily="Candara Light"/>
-        <ListView x:Name="VersionsList" VerticalAlignment="Top" Height="249" Margin="18,461,10,0"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.ColumnSpan="5" Padding="25,0,0,0" ItemsSource="{Binding Versionsa}">
+        <ListView x:Name="VersionsList" VerticalAlignment="Top" Height="249" Margin="10,461,88,0"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.ColumnSpan="5" Padding="25,0,0,0" ItemsSource="{Binding Versionsa}">
             <ListView.Resources>
                 <Style TargetType="{x:Type ScrollBar}">
                     <Setter Property="Background" Value="#FF33334B"/>
@@ -103,7 +103,7 @@
             </ListView.ItemsPanel>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid>
+                    <Grid >
                         <Image x:Name="VersionSplash" Source="Splash.bmp"/>
                         <Image x:Name="GradientVersion" Source="Splash kopia.png"/>
                         <TextBlock Text="{Binding Id}" Foreground="White" Margin="75, 150, 50, 0" FontWeight="Bold" FontSize="10" />
@@ -145,10 +145,43 @@
         </ListView>
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="3" Margin="70,371,0,0" VerticalAlignment="Top" Width="254" Background="White" Opacity="0.4"/>
         <Frame x:Name="AdditionalSettingsFrameContent" Content="Frame" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Visibility="Hidden"/>
-        <Button x:Name="AddVersionButton" Content="" HorizontalAlignment="Left" Margin="175,398,0,0" VerticalAlignment="Top" Width="28" Height="27" Click="OnPressAddVersion">
-            <Button.Background>
-                <ImageBrush ImageSource="LauncherAddButton.png"/>
-            </Button.Background>
+        <Grid HorizontalAlignment="Left" Height="730" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Margin="0,-10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="7*"/>
+                <RowDefinition Height="66*"/>
+            </Grid.RowDefinitions>
+        </Grid>
+        <Button Grid.Column="4" HorizontalAlignment="Left" Margin="193.8,554,0,0" VerticalAlignment="Top" Width="50" Height="50" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" FontSize="28" Foreground="White" Click="Button_Click">
+            <TextBlock Text="+" Margin="0,-7,0,0"/>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border  CornerRadius="2" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Background" Value="#FF1F2025"/>
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" Duration="00:00:00.15" From="#FF1F2025" To="#FF252731"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" Duration="00:00:00.15" From="#FF252731" To="#FF1F2025"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
         </Button>
     </Grid>
 </Page>

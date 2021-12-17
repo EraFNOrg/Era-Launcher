@@ -5,20 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EraLauncher"
         mc:Ignorable="d"
-        Title="Fortnite Launcher" Height="610" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
+        Title="Fortnite Launcher" Height="610" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize" Loaded="OnLoaded">
     <Grid x:Name="ApplicationBackground" HorizontalAlignment="Left" Height="720" Margin="-24,0,0,0" VerticalAlignment="Top" Width="1304" MouseMove="GridBG_MouseMove" Background="#FF0E0C0C">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="354*"/>
-            <ColumnDefinition Width="418*"/>
+            <ColumnDefinition Width="387*"/>
+            <ColumnDefinition Width="30*"/>
             <ColumnDefinition Width="6*"/>
             <ColumnDefinition Width="249*"/>
             <ColumnDefinition Width="277*"/>
         </Grid.ColumnDefinitions>
-        <Frame x:Name="PageContent" Content="Frame" HorizontalAlignment="Left" Height="710" Margin="10,0,0,0" VerticalAlignment="Top" Width="1294" Grid.ColumnSpan="5" Loaded="PageContent_Loaded"/>
-        <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Background="#FF0F0F0F" MouseMove="UpperPanel_MouseMove">
+        <Frame x:Name="PageContent" Content="Frame" HorizontalAlignment="Left" Height="710" Margin="10,0,0,0" VerticalAlignment="Top" Width="1294" Grid.ColumnSpan="6" Loaded="PageContent_Loaded"/>
+        <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="6" Background="#FF0F0F0F" MouseMove="UpperPanel_MouseMove">
 
         </Border>
-        <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Grid.Column="4" Margin="234,-2,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="42" Foreground="White" FontSize="10">
+        <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Grid.Column="5" Margin="233.8,-2,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="42" Foreground="White" FontSize="10">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="35" Height="25" CornerRadius="4" Background="{TemplateBinding Background}">
@@ -49,7 +50,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="MinimizeButton" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Grid.Column="4" Margin="192,-2,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold">
+        <Button x:Name="MinimizeButton" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Grid.Column="5" Margin="191.8,-2,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="35" Height="25" CornerRadius="4" Background="{TemplateBinding Background}">
@@ -129,7 +130,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="58" Margin="282,24,14,674" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="22" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
+        <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="58" Margin="282,24,14.4,674" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="22" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
             <Grid>
                 <TextBlock Text="News" Margin="-20,-25,20,10"/>
                 <Border Background="White" Margin="-35,-4,9,2" />

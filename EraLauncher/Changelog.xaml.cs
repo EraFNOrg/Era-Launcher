@@ -19,6 +19,7 @@ namespace EraLauncher
     /// </summary>
     public partial class Changelog : Page
     {
+        public MainWindow MainWindowRef;
         public Changelog()
         {
             InitializeComponent();

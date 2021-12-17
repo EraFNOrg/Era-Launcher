@@ -24,8 +24,10 @@ namespace EraLauncher
 
         public string CurrentLauncherDetails;
         public VersionData CurrentVersion;
+        public MainWindow MainWindowRef;
         List<VersionData> builds = new List<VersionData>();
         EraAPI homeapi;
+        
         public Home()
         {
             InitializeComponent();
@@ -37,6 +39,8 @@ namespace EraLauncher
             AddBuild(4.1F, "");
             AddBuild(7.2F, "");
             AddBuild(8.51F, "");
+            AddBuild(4.1F, "");
+
             /*           this.VersionsList.ItemsSource = new VersionData[]
            {
                        new VersionData{Id=3.2F, path="a"},
@@ -124,8 +128,14 @@ namespace EraLauncher
 
         private void OnPressAddVersion(object sender, RoutedEventArgs e)
         {
-            AdditionalSettingsFrameContent.Content = new AddVersionPage();
-            AdditionalSettingsFrameContent.Visibility = Visibility.Visible;
+            //AdditionalSettingsFrameContent.Content = new AddVersionPage();
+            //AdditionalSettingsFrameContent.Visibility = Visibility.Visible;
+        }
+
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            AddBuild(2.0F, "a");
         }
     }
 
