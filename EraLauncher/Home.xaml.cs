@@ -31,23 +31,15 @@ namespace EraLauncher
         public Home()
         {
             InitializeComponent();
-
-
-//            this.LauncherInformation.Text = CurrentLauncherDetails;
-
-            builds.Add(new VersionData { Id = 5.1F, path = "/Pulpit" });
+            if(MainWindowRef != null)
+            {
+                AddBuild(10.41F, "");
+            }
+            builds.Add(new VersionData { Id = 5.1F, path = "/Template" });
             AddBuild(4.1F, "");
             AddBuild(7.2F, "");
             AddBuild(8.51F, "");
             AddBuild(4.1F, "");
-
-            /*           this.VersionsList.ItemsSource = new VersionData[]
-           {
-                       new VersionData{Id=3.2F, path="a"},
-                       new VersionData{Id=5.2F, path="a"},
-                       new VersionData{Id=7.2F, path="a"},
-
-           };*/
 
         }
 
@@ -73,37 +65,12 @@ namespace EraLauncher
 
         // Events
 
-        private void MainPage_Btn_Event(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void Changelog_Btn_Event(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void SelectVersion_Event(object sender, RoutedEventArgs e)
         {
             var Version = (Button)sender;
             string abc = Version.Content.ToString();
             float aID = float.Parse(abc);
             ExecuteVersionPure(aID);
-        }
-
-        private void EditVersion_Event(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void TestButtonAnimationEvent(object sender, MouseEventArgs e)
-        {
-           
-        }
-
-
-        private void pls(object sender, RoutedEventArgs e)
-        {
         }
 
         private void AddBuild(float aID, string path)
@@ -113,29 +80,25 @@ namespace EraLauncher
             VersionsList.ItemsSource = builds;
         }
 
-        private void Buttton_Click(object sender, RoutedEventArgs e)
-        {
-
-                    string abc = "a";
-                    if(abc.Any(char.IsDigit) && abc.Length < 4)
-                        {
-                        abc.Replace(".", ",");
-                        float aID = float.Parse(abc);
-                        // && abc.Length < 4
-                        AddBuild(aID, "");
-                    }
-        }
-
-        private void OnPressAddVersion(object sender, RoutedEventArgs e)
-        {
-            //AdditionalSettingsFrameContent.Content = new AddVersionPage();
-            //AdditionalSettingsFrameContent.Visibility = Visibility.Visible;
-        }
 
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            // test float replacement for version adding
+           /* string abc = "a";
+            if (abc.Any(char.IsDigit) && abc.Length < 4)
+            {
+                abc.Replace(".", ",");
+                float aID = float.Parse(abc);
+                // && abc.Length < 4
+                AddBuild(aID, "");
+            }*/
             AddBuild(2.0F, "a");
+        }
+
+        private void OnDiscordButtonClick(object sender, RoutedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://www.discord.gg/erafn");
         }
     }
 

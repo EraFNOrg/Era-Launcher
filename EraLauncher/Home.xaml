@@ -16,7 +16,7 @@
         </Grid.ColumnDefinitions>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="5" Margin="0,-10,0,0">
             <Border.Background>
-                <ImageBrush ImageSource="2.png"/>
+                <ImageBrush ImageSource="Chapter-2-Fortnite-event-0-scaled.jpg"/>
             </Border.Background>
         </Border>
         <DockPanel x:Name="VersionInformationBackground" HorizontalAlignment="Left" Height="490" LastChildFill="False" VerticalAlignment="Top" Width="424" Background="Black" Opacity="0.603" Margin="0,-7,0,0"/>
@@ -105,7 +105,7 @@
                 <DataTemplate>
                     <Grid >
                         <Image x:Name="VersionSplash" Source="Splash.bmp"/>
-                        <Image x:Name="GradientVersion" Source="Splash kopia.png"/>
+                        <Image x:Name="GradientVersion" Source="Misc/Images/SplashGradient.png"/>
                         <TextBlock Text="{Binding Id}" Foreground="White" Margin="75, 150, 50, 0" FontWeight="Bold" FontSize="10" />
                         <StackPanel Orientation="Vertical" Height="200">
                             <Button x:Name="VersionButton" Content="{Binding Id}" Foreground="Transparent" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="100,0,100,0" Click="SelectVersion_Event" BorderThickness="3" Opacity="1">
@@ -182,6 +182,40 @@
                     </Style.Triggers>
                 </Style>
             </Button.Style>
+        </Button>
+        <Button Content="" HorizontalAlignment="Left" Margin="186,400,0,0" VerticalAlignment="Top" Width="18" BorderBrush="{x:Null}" Height="13" Click="OnDiscordButtonClick">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border  CornerRadius="2" Background="{TemplateBinding Background}" >
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Button.Background>
+                <ImageBrush ImageSource="Misc/Images/DiscordIcon.png"/>
+            </Button.Background>
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Setter Property="Cursor" Value="Hand"/>
+                    <Style.Triggers>
+                        <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                   <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.15" From="1" To="0.75"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.15" From="0.75" To="1"/>
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+
         </Button>
     </Grid>
 </Page>

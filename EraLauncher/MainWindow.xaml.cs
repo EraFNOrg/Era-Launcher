@@ -26,11 +26,8 @@ namespace EraLauncher
         public Home homevar = new Home();
         Changelog clvar = new Changelog();
         LauncherFunctions lfn = new LauncherFunctions();
-        static EraAPI eraapi;
+         EraAPI ERAPI = new EraAPI();
         // EVENTS 
-        private void GridBG_MouseMove(object sender, MouseEventArgs e)
-        {
-        }
       
         private void Close_Button_Event(object sender, RoutedEventArgs e)
         {
@@ -66,9 +63,11 @@ namespace EraLauncher
             }
         }
 
-        private void OnLoaded(object sender, RoutedEventArgs e)
+        private void OnStartAnimationBackgroundLoaded(object sender, RoutedEventArgs e)
         {
+            StartAnimGrid.Visibility = Visibility.Visible;
         }
+
         // End EVENTS
     }
 }

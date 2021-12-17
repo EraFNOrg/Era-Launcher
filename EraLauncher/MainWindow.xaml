@@ -5,8 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:EraLauncher"
         mc:Ignorable="d"
-        Title="Fortnite Launcher" Height="610" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize" Loaded="OnLoaded">
-    <Grid x:Name="ApplicationBackground" HorizontalAlignment="Left" Height="720" Margin="-24,0,0,0" VerticalAlignment="Top" Width="1304" MouseMove="GridBG_MouseMove" Background="#FF0E0C0C">
+        Title="Fortnite Launcher" Height="610" Width="1280" WindowStyle="None" MinHeight="720" MinWidth="1280" MaxWidth="1280" MaxHeight="720" Background="#FF191919" ResizeMode="NoResize">
+    <Grid x:Name="ApplicationBackground" HorizontalAlignment="Left" Height="720" Margin="-24,0,0,0" VerticalAlignment="Top" Width="1304" Background="#FF0E0C0C">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="354*"/>
             <ColumnDefinition Width="387*"/>
@@ -18,6 +18,27 @@
         <Frame x:Name="PageContent" Content="Frame" HorizontalAlignment="Left" Height="710" Margin="10,0,0,0" VerticalAlignment="Top" Width="1294" Grid.ColumnSpan="6" Loaded="PageContent_Loaded"/>
         <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="6" Background="#FF0F0F0F" MouseMove="UpperPanel_MouseMove">
 
+        </Border>
+        <Border HorizontalAlignment="Left" Height="41" Margin="47,6,0,0" VerticalAlignment="Top" Width="41">
+            <Border.Background>
+                <ImageBrush ImageSource="Misc/Images/EraLogo.png"/>
+            </Border.Background>
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.12" From="1" To="0.90"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.12" From="0.90" To="1"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
         </Border>
         <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Grid.Column="5" Margin="233.8,-2,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="42" Foreground="White" FontSize="10">
             <Button.Template>
@@ -130,7 +151,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="58" Margin="282,24,14.4,674" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="22" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
+        <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="58" Margin="289,24,7.4,674" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="22" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
             <Grid>
                 <TextBlock Text="News" Margin="-20,-25,20,10"/>
                 <Border Background="White" Margin="-35,-4,9,2" />
@@ -176,5 +197,27 @@
             </Button.Style>
         </Button>
         <Border x:Name="PageContentAnimationSwitch" HorizontalAlignment="Left" Height="710" Margin="-1299,15,0,-5" VerticalAlignment="Top" Width="1294" Loaded="PageContent_Loaded" Background="#FF171717"/>
+        <Grid x:Name="StartAnimGrid" Height="783" Width="1304" Visibility="Collapsed" Loaded="OnStartAnimationBackgroundLoaded">
+            <Border x:Name="StartAnimationBackground" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="6" Background="#FF0F0F0F" MouseMove="UpperPanel_MouseMove" Margin="1,0,-0.595,-63">
+            </Border>
+            <Grid.Triggers>
+                <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard>
+                    <Storyboard>
+                        <DoubleAnimation BeginTime="00:00:01" Duration="00:00:01" From="1" To="0" Storyboard.TargetProperty="Opacity"/>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            <EventTrigger RoutedEvent="Loaded">
+                <BeginStoryboard>
+                    <Storyboard BeginTime="00:00:02">
+                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+                            <DiscreteObjectKeyFrame Value="{x:Static Visibility.Hidden}" />
+                        </ObjectAnimationUsingKeyFrames>
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger>
+            </Grid.Triggers>
+        </Grid>
     </Grid>
 </Window>
