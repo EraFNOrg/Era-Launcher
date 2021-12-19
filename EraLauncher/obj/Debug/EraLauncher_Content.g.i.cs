@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("discic.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tempsplash.bmp")]
 
 

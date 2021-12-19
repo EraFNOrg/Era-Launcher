@@ -26,8 +26,11 @@ namespace EraLauncher
         public Home homevar = new Home();
         Changelog clvar = new Changelog();
         LauncherFunctions lfn = new LauncherFunctions();
-         EraAPI ERAPI = new EraAPI();
+        EraAPI ERAPI = new EraAPI();
+        
         // EVENTS 
+
+
       
         private void Close_Button_Event(object sender, RoutedEventArgs e)
         {
@@ -42,17 +45,11 @@ namespace EraLauncher
         private void MainPage_Btn_Event(object sender, RoutedEventArgs e)
         {
             lfn.ExecutePage(homevar, PageContent);
-            homevar.MainWindowRef = this;
         }
         private void Changelog_Btn_Event(object sender, RoutedEventArgs e)
         {
             lfn.ExecutePage(clvar, PageContent);
             clvar.MainWindowRef = this;
-        }
-        private void PageContent_Loaded(object sender, RoutedEventArgs e)
-        {
-            App.ParentWindowRef = this;
-            this.PageContent.Navigate(homevar);
         }
 
         private void UpperPanel_MouseMove(object sender, MouseEventArgs e)
@@ -66,6 +63,11 @@ namespace EraLauncher
         private void OnStartAnimationBackgroundLoaded(object sender, RoutedEventArgs e)
         {
             StartAnimGrid.Visibility = Visibility.Visible;
+        }
+
+        private void PageLoaded(object sender, RoutedEventArgs e)
+        {
+            MainPage_Btn_Event(this, new RoutedEventArgs());
         }
 
         // End EVENTS

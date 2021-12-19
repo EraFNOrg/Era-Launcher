@@ -24,8 +24,6 @@ namespace EraLauncher
         {
             InitializeComponent();
 
-            Logs_Content.Text = "- Looting" +
-                "- danii put yo changelog here";
         }
 
     }

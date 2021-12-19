@@ -15,7 +15,7 @@
             <ColumnDefinition Width="249*"/>
             <ColumnDefinition Width="277*"/>
         </Grid.ColumnDefinitions>
-        <Frame x:Name="PageContent" Content="Frame" HorizontalAlignment="Left" Height="710" Margin="10,0,0,0" VerticalAlignment="Top" Width="1294" Grid.ColumnSpan="6" Loaded="PageContent_Loaded"/>
+        <Frame x:Name="PageContent" Content="Frame" Grid.ColumnSpan="6" Loaded="PageLoaded"/>
         <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="6" Background="#FF0F0F0F" MouseMove="UpperPanel_MouseMove">
 
         </Border>
@@ -102,7 +102,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="MainPage_Btn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Margin="195,24,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="23" Foreground="White" FontFamily="Segoe UI Semibold">
+        <Button x:Name="MainPage_Btn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Margin="108,25,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="23" Foreground="White" FontFamily="Segoe UI Semibold">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
@@ -151,7 +151,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="58" Margin="289,24,7.4,674" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="22" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
+        <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="58" Margin="187,25,109.4,673" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="22" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
             <Grid>
                 <TextBlock Text="News" Margin="-20,-25,20,10"/>
                 <Border Background="White" Margin="-35,-4,9,2" />
@@ -196,27 +196,38 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Border x:Name="PageContentAnimationSwitch" HorizontalAlignment="Left" Height="710" Margin="-1299,15,0,-5" VerticalAlignment="Top" Width="1294" Loaded="PageContent_Loaded" Background="#FF171717"/>
-        <Grid x:Name="StartAnimGrid" Height="783" Width="1304" Visibility="Collapsed" Loaded="OnStartAnimationBackgroundLoaded">
-            <Border x:Name="StartAnimationBackground" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.ColumnSpan="6" Background="#FF0F0F0F" MouseMove="UpperPanel_MouseMove" Margin="1,0,-0.595,-63">
+        <Grid x:Name="StartAnimGrid" Visibility="Collapsed" Loaded="OnStartAnimationBackgroundLoaded" MouseMove="UpperPanel_MouseMove" Grid.ColumnSpan="6" Margin="-64,-12,-0.595,0">
+            <Border x:Name="BGA" Background="#FF0C0C0C" Width="1369" Height="720" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Border.RenderTransform>
+                    <TranslateTransform x:Name="BGATransform" X="0" Y="0"/>
+                </Border.RenderTransform>
             </Border>
+            <Border x:Name="EraLOGOA" Margin="559,243,560.395,239" Height="250" Width="250" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Border.Background>
+                    <ImageBrush ImageSource="Misc/Images/EraLogo.png"/>
+                </Border.Background>
+            </Border>
+
             <Grid.Triggers>
-                <EventTrigger RoutedEvent="Loaded">
-                <BeginStoryboard>
-                    <Storyboard>
-                        <DoubleAnimation BeginTime="00:00:01" Duration="00:00:01" From="1" To="0" Storyboard.TargetProperty="Opacity"/>
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger>
-            <EventTrigger RoutedEvent="Loaded">
-                <BeginStoryboard>
-                    <Storyboard BeginTime="00:00:02">
-                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
-                            <DiscreteObjectKeyFrame Value="{x:Static Visibility.Hidden}" />
-                        </ObjectAnimationUsingKeyFrames>
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.10" From="1304" To="0" Storyboard.TargetProperty="Width" Storyboard.TargetName="BGA"/>
+                                <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.10" From="250" To="0" Storyboard.TargetProperty="Width" Storyboard.TargetName="EraLOGOA"/>
+                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.10" From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="EraLOGOA"/>
+                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.10" From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BGA"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard BeginTime="00:00:01.50">
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
+                                <DiscreteObjectKeyFrame Value="{x:Static Visibility.Hidden}" />
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
             </Grid.Triggers>
         </Grid>
     </Grid>

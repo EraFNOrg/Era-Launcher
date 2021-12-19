@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>EraLauncher</RootNamespace>
     <AssemblyName>EraLauncher</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -29,6 +29,7 @@
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -53,12 +54,26 @@
     <ApplicationIcon>Misc\Images\LauncherIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="INIFileParser, Version=2.5.2.0, Culture=neutral, PublicKeyToken=79af7b307b65cf3c, processorArchitecture=MSIL">
+      <HintPath>..\packages\ini-parser.2.5.2\lib\net20\INIFileParser.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Core.1.1.0.2\lib\Microsoft.WindowsAPICodePack.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.Shell, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp, Version=106.15.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
       <HintPath>..\packages\RestSharp.106.15.0\lib\net452\RestSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -77,6 +92,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="AddVersionPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Changelog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -89,6 +108,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="AddVersionPage.xaml.cs">
+      <DependentUpon>AddVersionPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -150,25 +172,20 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="maxresdefault.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Splash.bmp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="ERALauncher_kopia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Chapter-2-Fortnite-event-0-scaled.jpg" />
+    <Resource Include="trash-icon-15.png" />
+    <Resource Include="zHCy5MUTETn8dj7rtet2N.png" />
+    <Resource Include="Misc\Images\VolcanoBG.png" />
+    <Resource Include="Misc\Images\T-FolderIcon.png" />
+    <Resource Include="Misc\Images\Chapter-2-Fortnite-event-0-1-scaled.jpg" />
+    <Resource Include="Misc\Images\T-Icon-Vehicle-QuadBike-L.png" />
+    <Resource Include="Misc\Images\T-Icon-Vehicle-ShoppingCart-L.png" />
+    <Resource Include="Misc\Images\t-danii.png" />
+    <Resource Include="Misc\Images\t-trash.png" />
+    <Resource Include="images-removebg-preview.png" />
+    <Content Include="TEMPSPLASH.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Misc\Images\SplashGradient.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="LauncherAddButton.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Misc\Images\DiscordIcon.png" />

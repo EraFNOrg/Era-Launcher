@@ -12,32 +12,11 @@
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
         <Grid HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="1040" Margin="-6,16,0,0">
-            <Grid.Triggers>
-                <EventTrigger RoutedEvent="UIElement.MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="FontSize" From="{Binding FontSize}" To="40.8" Duration="00:00:00.15"/>
-                            <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="Opacity" From="{Binding Opacity}" To="0.90" Duration="00:00:00.15"/>
-                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1225" Duration="00:00:00.15"/>
-                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="670" Duration="00:00:00.15"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="UIElement.MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="FontSize" From="{Binding FontSize}" To="40" Duration="00:00:00.12"/>
-                            <DoubleAnimation Storyboard.TargetName="LatestNewsText" Storyboard.TargetProperty="Opacity" From="{Binding Opacity}" To="0.80" Duration="00:00:00.12"/>
-                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1210" Duration="00:00:00.12"/>
-                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="655" Duration="00:00:00.12"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </Grid.Triggers>
             <Grid.Style>
                 <Style TargetType="{x:Type Grid}"/>
             </Grid.Style>
             <Border x:Name="ImageBG" Height="655" Width="1210" Margin="45,-143,-215,-132" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="410" Margin="0,104,-76.4,0" VerticalAlignment="Top" Width="1286" Background="Black" Opacity="0.4"/>
                 <Border.Style>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="20"/>
@@ -45,15 +24,40 @@
                     </Style>
                 </Border.Style>
                 <Border.Background>
-                    <ImageBrush ImageSource="Chapter-2-Fortnite-event-0-scaled.jpg"/>
+                    <ImageBrush ImageSource="Misc/Images/Chapter-2-Fortnite-event-0-1-scaled.jpg"/>
                 </Border.Background>
             </Border>
-            <Label x:Name="LatestNewsText" Content="Project Era | 2.0" HorizontalAlignment="Left" Margin="926,274,-196,0" VerticalAlignment="Top" Height="81" Width="310" FontSize="40" FontWeight="Bold" Foreground="White" Opacity="0.8"/>
+            <Label x:Name="LatestNewsText" Content="A first look at Project ERA 2.0" HorizontalAlignment="Left" Margin="72,42,0,0" VerticalAlignment="Top" Height="54" Width="485" FontSize="34" FontWeight="Bold" Foreground="White" BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Opacity="0.9">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform AngleY="-0.073"/>
+                        <RotateTransform/>
+                        <TranslateTransform Y="-0.199"/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
         </Grid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="395" Margin="0,380,-48,-55" VerticalAlignment="Top" Width="1328" Background="#FF100F11" Grid.RowSpan="2"/>
-        <Label Content="Changelog" HorizontalAlignment="Left" Margin="49,390,0,0" VerticalAlignment="Top" Foreground="White" RenderTransformOrigin="1.474,2.192" FontWeight="Bold" FontSize="30" Opacity="0.7"/>
-        <TextBlock x:Name="Logs_Content" Text="・ Added API support (Sizzy, you know what to do)" HorizontalAlignment="Left" Margin="40,5,0,0" VerticalAlignment="Top" Foreground="White" FontSize="15" FontWeight="SemiBold" Height="178" Width="619" Opacity="0.6" RenderTransformOrigin="0.5,0.5" TextWrapping="WrapWithOverflow" Grid.Row="1">
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="393" Margin="0,382,-48,-55" VerticalAlignment="Top" Width="1328" Background="#FF100F11" Grid.RowSpan="2"/>
+        <TextBlock x:Name="Logs_Content" Text="test" HorizontalAlignment="Left" Margin="-782,79,0,0" VerticalAlignment="Top" Foreground="White" FontSize="15" FontWeight="SemiBold" Height="178" Width="619" Opacity="0.6" RenderTransformOrigin="0.5,0.5" TextWrapping="WrapWithOverflow" Grid.Row="1">
         </TextBlock>
+        <ScrollViewer HorizontalScrollBarVisibility="Auto" Margin="1427,231,-1427,136" Grid.RowSpan="2">
+            <StackPanel x:Name="ScrollPageLength" VerticalAlignment="Top" HorizontalAlignment="Left" Height="681" Width="18">
+                <Separator />
+            </StackPanel>
+        </ScrollViewer>
+        <TextBlock x:Name="LatestNewsText_Copy" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." HorizontalAlignment="Left" Margin="71,108,0,0" VerticalAlignment="Top" Height="187" Width="454" FontSize="15" Foreground="White" FontFamily="Malgun Gothic" FontWeight="ExtraLight" TextWrapping="Wrap"/>
+        <TextBlock x:Name="LatestNewsText_Copy1" Text="Want to know more about Era 2.0 beta? Visit our discord" HorizontalAlignment="Left" Margin="416,413,0,0" VerticalAlignment="Top" Height="97" Width="485" FontSize="25" Foreground="White" RenderTransformOrigin="0.5,0.5" Opacity="0.9" Grid.RowSpan="2" TextWrapping="Wrap"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="215" Margin="48,413,0,0" VerticalAlignment="Top" Width="204" Grid.RowSpan="2">
+            <Border.Background>
+                <ImageBrush ImageSource="Misc/Images/T-Icon-Vehicle-QuadBike-L.png"/>
+            </Border.Background>
+        </Border>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="215" Margin="1033,413,0,0" VerticalAlignment="Top" Width="204" Grid.RowSpan="2">
+            <Border.Background>
+                <ImageBrush ImageSource="Misc/Images/T-Icon-Vehicle-ShoppingCart-L.png"/>
+            </Border.Background>
+        </Border>
     </Grid>
 </Page>
 
