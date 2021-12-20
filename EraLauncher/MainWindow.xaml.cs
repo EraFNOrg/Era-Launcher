@@ -27,6 +27,9 @@ namespace EraLauncher
         Changelog clvar = new Changelog();
         LauncherFunctions lfn = new LauncherFunctions();
         EraAPI ERAPI = new EraAPI();
+        public bool AllowNavigation = false;
+        public bool KeepCancel = false;
+        
         
         // EVENTS 
 
@@ -49,7 +52,6 @@ namespace EraLauncher
         private void Changelog_Btn_Event(object sender, RoutedEventArgs e)
         {
             lfn.ExecutePage(clvar, PageContent);
-            clvar.MainWindowRef = this;
         }
 
         private void UpperPanel_MouseMove(object sender, MouseEventArgs e)
@@ -65,10 +67,30 @@ namespace EraLauncher
             StartAnimGrid.Visibility = Visibility.Visible;
         }
 
-        private void PageLoaded(object sender, RoutedEventArgs e)
+        private void PageL(object sender, RoutedEventArgs e)
         {
-            MainPage_Btn_Event(this, new RoutedEventArgs());
+            App.ParentWindowRef = this;
+            App.ParentWindowRef.PageContent.Navigate(homevar);
         }
+
+        private void test(object sender, MouseButtonEventArgs e)
+        {
+        }
+
+        private void a(object sender, KeyEventArgs e)
+        {
+            MessageBox.Show("wowmega");
+        }
+
+private void Navigating(object sender, NavigatingCancelEventArgs e)
+        {
+            if (e.NavigationMode == NavigationMode.Back)
+            {
+                e.Cancel = true;
+            }
+        }
+
+
 
         // End EVENTS
     }

@@ -86,3 +86,5 @@ D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\EraLauncher.pdb
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.dll
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.pdb
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.xml
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\SettingsPage.g.cs
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\SettingsPage.baml

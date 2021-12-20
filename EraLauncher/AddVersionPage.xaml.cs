@@ -27,7 +27,10 @@ namespace EraLauncher
         public string CurrentVerstr = "Version name";
         public AddVersionPage()
         {
+
             InitializeComponent();
+            ((MainWindow)App.Current.MainWindow).KeepCancel = true;
+            ((MainWindow)App.Current.MainWindow).AllowNavigation = false;
         }
 
 

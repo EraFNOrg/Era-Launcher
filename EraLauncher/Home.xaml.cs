@@ -168,7 +168,16 @@ namespace EraLauncher
 
         private void RemoveBuildEvent(object sender, RoutedEventArgs e)
         {
-            RemoveBuildPure();
+            AdditionalSettingsFrameContent.Content = new SettingsPage();
+            AdditionalSettingsFrameContent.Visibility = Visibility.Visible;
+        }
+
+        private void HandleNavigatiingAdditionalSettingsFrame(object sender, NavigatingCancelEventArgs e)
+        {
+            if (e.NavigationMode == NavigationMode.Forward)
+            {
+                e.Cancel = true;
+            }
         }
     }
 

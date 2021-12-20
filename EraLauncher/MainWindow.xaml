@@ -15,7 +15,7 @@
             <ColumnDefinition Width="249*"/>
             <ColumnDefinition Width="277*"/>
         </Grid.ColumnDefinitions>
-        <Frame x:Name="PageContent" Content="Frame" Grid.ColumnSpan="6" Loaded="PageLoaded"/>
+        <Frame x:Name="PageContent" Content="Frame" Grid.ColumnSpan="6" Loaded="PageL" Navigating="Navigating"/>
         <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="6" Background="#FF0F0F0F" MouseMove="UpperPanel_MouseMove">
 
         </Border>
