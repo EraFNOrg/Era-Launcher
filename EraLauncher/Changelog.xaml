@@ -23,9 +23,6 @@
                         <Setter Property="Cursor" Value="Hand"/>
                     </Style>
                 </Border.Style>
-                <Border.Background>
-                    <ImageBrush ImageSource="Misc/Images/Chapter-2-Fortnite-event-0-1-scaled.jpg"/>
-                </Border.Background>
             </Border>
             <Label x:Name="LatestNewsText" Content="A first look at Project ERA 2.0" HorizontalAlignment="Left" Margin="72,42,0,0" VerticalAlignment="Top" Height="54" Width="485" FontSize="34" FontWeight="Bold" Foreground="White" BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Opacity="0.9">
                 <Label.RenderTransform>

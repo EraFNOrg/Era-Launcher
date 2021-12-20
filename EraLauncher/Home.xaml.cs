@@ -29,31 +29,28 @@ namespace EraLauncher
 
         public string CurrentLauncherDetails;
         public VersionData CurrentVersion;
-        List<VersionData> builds = new List<VersionData>();
-        EraAPI homeapi;
-        
-        // versions 
-        int ba = 0;
-        int baxl = 8;
-        static string configpath = @"%localAppdata%\ProjectEra\";
+        public List<VersionData> builds = new List<VersionData>();
+        LauncherFunctionsLibrary lfn = new LauncherFunctionsLibrary();
+        public string templastsavedkeyname;
+        public SectionData templastsavedsection;
+
+
+        int OgraniczenieWersji = 8; // Versions limit
+        public string configpath = @"%localAppdata%\ProjectEra\launcherconfig.ini"; // Path for the config ini
 
         public Home()
         {
             InitializeComponent();
 
-            // global ini variable
+            #region LauncherConfiguration
             var parser = new FileIniDataParser();
-
- 
-
-            // Configuration
             string configFile = @"%localAppdata%\ProjectEra\launcherconfig.ini";
             string configfinalstr = Environment.ExpandEnvironmentVariables(configFile);
             if (!File.Exists(configfinalstr))
             {
-                parser.WriteFile(Environment.ExpandEnvironmentVariables(configpath + "launcherconfig.ini"), new IniData());
+                parser.WriteFile(Environment.ExpandEnvironmentVariables(configpath), new IniData());
             }
-            IniData bdata = parser.ReadFile(Environment.ExpandEnvironmentVariables(configpath + "launcherconfig.ini"));
+            IniData bdata = parser.ReadFile(Environment.ExpandEnvironmentVariables(configpath));
             foreach (var section in bdata.Sections)
             {
                if(section.SectionName == "VERSIONS")
@@ -61,89 +58,78 @@ namespace EraLauncher
                     foreach (var key in section.Keys)
                     {
                        string[] alist = key.Value.Split(new string[] { "||" }, StringSplitOptions.None);
-                        AddBuild(alist[0], alist[1], "xyz");
+                       AddBuild(new VersionData { Id = alist[0], path=alist[1] });
                     }
                 }
             }
-
-             /* ENCRYPTION TEST, i just want to look one day at the piece of code i was making when my brain was melting ~~ sizzy
-               string tempba = data["VERSIONS"]["sctyshlnc"];
-                   string[] list = tempba.Split(new string[] { "///" }, StringSplitOptions.None);
-                   string[] list2 = list[2].Split(new string[] { "//" }, StringSplitOptions.None);
-                   string final = list2[0];
-                   int baint;
-                   bool isNumer = int.TryParse(final, out baint);
-                   if (isNumer)
-                   {
-                       ba = baint/33;
-                       GameName.Content = ba.ToString();
-                   }*/
-
+            #endregion
 
         }
 
-        // Pure executing version
-        private void ExecuteVersionPure(string ID)
-        {
-            string StringF = ID;
-            string StringEF = StringF.Replace(",", ".");
-            this.GameVersion.Content = StringEF;
-        }
 
 
         // Events
 
-        // Writes data to config
-        public void WriteToConfig(string CATEGORY, string ITEM, string CONTENT)
-        {
-            string ConfigurationPath = Environment.ExpandEnvironmentVariables(configpath + "launcherconfig.ini");
-            var parser = new FileIniDataParser();
-            IniData data = parser.ReadFile(ConfigurationPath);
-            data[CATEGORY][ITEM] = CONTENT;
-            parser.WriteFile(ConfigurationPath, data);
-        }
         private void SelectVersion_Event(object sender, RoutedEventArgs e)
         {
             var Version = (Button)sender;
             string abc = Version.Content.ToString();
-            ExecuteVersionPure(abc);
-        }
-        public int AddBuild(string aID, string path, string asplashpath)
-        {
-            if(Directory.Exists(path + "/FortniteGame/Binaries/Win64/"))
+            foreach (VersionData m in builds)
+            {
+                if (m.Id == abc)
                 {
-                string ConfigurationPath = Environment.ExpandEnvironmentVariables(configpath + "launcherconfig.ini");
+                    CurrentVersion = m;
+                    lfn.ExecuteVersionPure(m);
+                }
+
+            }
+        }
+        public void AddBuild(VersionData vdata)
+        {
+            if(Directory.Exists(vdata.path + "/FortniteGame/Binaries/Win64/"))
+                {
+                vdata.Id.Replace(",", ".");
+                string ConfigurationPath = Environment.ExpandEnvironmentVariables(configpath);
                 var parser = new FileIniDataParser();
                 IniData data = parser.ReadFile(ConfigurationPath);
-                int bc = builds.Count + 1;
-                if (bc < baxl + 1)
+                int VersionsCount = builds.Count + 1;
+                if (VersionsCount < OgraniczenieWersji + 1)
                 {
-                    string versiona = bc.ToString();
-                    string final = "v" + versiona;
-                    data["VERSIONS"][final] = aID + "||" + path;
+                    string VersionIndexStr = "v" + VersionsCount.ToString();
+                    data["VERSIONS"][VersionIndexStr] = vdata.Id + "||" + vdata.path;
                     parser.WriteFile(ConfigurationPath, data);
                     VersionsList.ItemsSource = null;
-                    string splashpath = path + @"\FortniteGame\Content\Splash\Splash.bmp";
-                    //    MessageBox.Show(splashpath);
-                    var rv = new VersionData { Id = aID, path = path, splashpath = splashpath };
-                    builds.Add(rv);
+                    // to do = move this to the versiondata class
+                    builds.Add(vdata);
                     VersionsList.ItemsSource = builds;
-                    return builds.IndexOf(rv);
                 }
             }
-            return 0;
         }
 
-        public void RemoveBuildPure()
+        public void RemoveCurrentBuildFromConfig()
         {
-           // var toremove = builds.Find(x => x == build);
-            //builds.Remove(toremove);
-
-           int a = AddBuild("PLACEHOLDER", "TEST", "A");
-
+            
+            string ConfigurationPath = Environment.ExpandEnvironmentVariables(configpath);
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile(ConfigurationPath);
+            foreach(var section in data.Sections)
+            {
+                if(section.SectionName == "VERSIONS")
+                {
+                    foreach(var key in section.Keys)
+                    {
+                        if(key.Value == CurrentVersion.Id + "||" + CurrentVersion.path)
+                        {
+                            section.Keys.RemoveKey(key.KeyName);
+                            parser.WriteFile(ConfigurationPath, data);
+                            break;
+                        }
+                    }
+                }
+            }
         }
 
-
+        
         private void OnDiscordButtonClick(object sender, RoutedEventArgs e)
         {
             System.Diagnostics.Process.Start("http://www.discord.gg/erafn");
@@ -151,33 +137,38 @@ namespace EraLauncher
 
         private void AddVersionClick(object sender, RoutedEventArgs e)
         {
-            // test float replacement for version adding
-            /* string abc = "a";
-             if (abc.Any(char.IsDigit) && abc.Length < 4)
-             {
-                 abc.Replace(".", ",");
-                 float aID = float.Parse(abc);
-                 // && abc.Length < 4
-                 AddBuild(aID, "");
-             }*/
             AdditionalSettingsFrameContent.Content = new AddVersionPage();
             AdditionalSettingsFrameContent.Visibility = Visibility.Visible;
-          //  AddBuild(2.0F, "a");
         }
 
 
         private void RemoveBuildEvent(object sender, RoutedEventArgs e)
         {
-            AdditionalSettingsFrameContent.Content = new SettingsPage();
-            AdditionalSettingsFrameContent.Visibility = Visibility.Visible;
+            if(CurrentVersion != null)
+            {
+                AdditionalSettingsFrameContent.Content = new SettingsPage();
+                AdditionalSettingsFrameContent.Visibility = Visibility.Visible;
+            }
+            else
+                MessageBox.Show("You must select a version profile first!", "ERA Launcher", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
-        private void HandleNavigatiingAdditionalSettingsFrame(object sender, NavigatingCancelEventArgs e)
+        private void HandleNavigatingAdditionalSettingsFrame(object sender, NavigatingCancelEventArgs e)
         {
-            if (e.NavigationMode == NavigationMode.Forward)
+            if (e.NavigationMode == NavigationMode.Back)
             {
                 e.Cancel = true;
             }
+        }
+
+        private void OnBGImageLoadedTEMP(object sender, RoutedEventArgs e)
+        {
+            Random rnd = new Random();
+            int index = rnd.Next(3, 5);
+
+            // SCUFFEEEEED, WE WILL MOVE IT TO FTP TOMORROW WITH MATID ~~ sizzy
+
+            BackgroundImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/Misc/Images/BackgroundImagesTEMP/" + index + ".jpg"));
         }
     }
 
@@ -185,8 +176,9 @@ namespace EraLauncher
     public class VersionData
     {
         public string _path;
-        private string _Id;
-        private float _splashpath;
+        public string _Id;
+        public string _splashpath;
+
 
         public string path
         {
@@ -196,12 +188,13 @@ namespace EraLauncher
 
         public string splashpath
         {
-            get { return this._path; }
-            set { this._path = value; }
+            
+            get { return path + @"\FortniteGame\Content\Splash\Splash.bmp"; }
+            set { this._splashpath = value; }
         }
         public string Id
         {
-            get { return this._Id; }
+            get { return this._Id.Replace(",", "."); }
             set { this._Id = value; }
         }
     }

@@ -23,13 +23,12 @@ namespace EraLauncher
     /// </summary>
     public partial class AddVersionPage : Page
     {
-        public string CurrentPath;
+        public string LastGamePath;
         public string CurrentVerstr = "Version name";
         public AddVersionPage()
         {
 
             InitializeComponent();
-            ((MainWindow)App.Current.MainWindow).KeepCancel = true;
             ((MainWindow)App.Current.MainWindow).AllowNavigation = false;
         }
 
@@ -37,44 +36,42 @@ namespace EraLauncher
 
         private void BrowseEvent(object sender, RoutedEventArgs e)
         {
-
             CommonOpenFileDialog dialog = new CommonOpenFileDialog();
                 dialog.IsFolderPicker = true;
                 dialog.Multiselect = false;
-            CommonFileDialogResult re = dialog.ShowDialog();
-
-            if (re==CommonFileDialogResult.Ok)
+            CommonFileDialogResult res = dialog.ShowDialog();
+            if (res==CommonFileDialogResult.Ok)
                 {
-                    CurrentPath = dialog.FileName;
+                LastGamePath = dialog.FileName;
                     PathBox.Text = dialog.FileName;
                 }
         }
 
         private void AttemptAdd(object sender, RoutedEventArgs e)
         {
-            string abc = CurrentVerstr;
-
-            if (Directory.Exists(CurrentPath + "/FortniteGame/Binaries/Win64/"))
+            // Path to look for, checking if the direcotyr exists
+            if (Directory.Exists(LastGamePath + "/FortniteGame/Binaries/Win64/"))
             {
-                if (abc.Length < 16 - 1)
+                // Gotta do -1, since the first index is 0 and i don't want to make it 15 ~~ sizzy
+                if (CurrentVerstr.Length < 16 - 1)
                 {
-                    string g = abc.Replace(".", ",");
-                    // && abc.Length < 4
-                    ((MainWindow)App.Current.MainWindow).homevar.AddBuild(g, CurrentPath, "xyz");
-                    ((MainWindow)App.Current.MainWindow).homevar.AdditionalSettingsFrameContent.Visibility = Visibility.Hidden;
-                    ((MainWindow)App.Current.MainWindow).homevar.AdditionalSettingsFrameContent.Content = null;
+                    ((MainWindow)App.Current.MainWindow).homevar.AddBuild(new VersionData { Id= CurrentVerstr.Replace(".", ",") , path=LastGamePath });
+                    AttemptClose(this, new RoutedEventArgs());
                 }
                 else
                 {
+                    // Notification about the version name being incorrect
                     System.Windows.Forms.MessageBox.Show("Your version name has more than 16 characters!", "ERA Launcher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
 
             }
             else
             {
+                // Notification about the version path being incorrect
                 System.Windows.Forms.MessageBox.Show("Please make sure the path you selected contains folders FortniteGame & Engine", "ERA Launcher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
 
         private void OnTextChanged(object sender, TextChangedEventArgs e)
         {
@@ -87,7 +84,6 @@ namespace EraLauncher
 
         private void AttemptClose(object sender, RoutedEventArgs e)
         {
-            ((MainWindow)App.Current.MainWindow).homevar.AdditionalSettingsFrameContent.Visibility = Visibility.Hidden;
             ((MainWindow)App.Current.MainWindow).homevar.AdditionalSettingsFrameContent.Content = null;
         }
     }

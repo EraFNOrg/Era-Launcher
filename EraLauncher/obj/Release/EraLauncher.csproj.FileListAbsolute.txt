@@ -55,7 +55,6 @@ D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\Changelog.g.cs
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\Home.g.cs
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\MainWindow.g.cs
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\App.g.cs
-D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\EraLauncher_Content.g.cs
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\EraLauncher_MarkupCompile.cache
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\EraLauncher_MarkupCompile.lref
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\EraLauncher.csproj.AssemblyReference.cache
@@ -88,3 +87,4 @@ D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.Windows
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.xml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\SettingsPage.g.cs
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\SettingsPage.baml
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\EraLauncher_Content.g.cs

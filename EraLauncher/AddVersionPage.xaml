@@ -37,8 +37,12 @@
                 <EventTrigger RoutedEvent="Loaded">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation Storyboard.TargetProperty="Height" From="250" To="257" Duration="00:00:00.20"/>
-                            <DoubleAnimation Storyboard.TargetProperty="Width" From="561" To="566" Duration="00:00:00.20"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Height" From="200" To="257" Duration="00:00:00.10"/>
+                            <DoubleAnimation Storyboard.TargetProperty="Width" From="500" To="566" Duration="00:00:00.10"/>
+                            <DoubleAnimation BeginTime="00:00:00.20" Storyboard.TargetProperty="Height" From="257" To="253" Duration="00:00:00.10"/>
+                            <DoubleAnimation BeginTime="00:00:00.20" Storyboard.TargetProperty="Width" From="566" To="563" Duration="00:00:00.10"/>
+                            <DoubleAnimation BeginTime="00:00:00.40" Storyboard.TargetProperty="Width" From="563" To="566" Duration="00:00:00.10"/>
+                            <DoubleAnimation BeginTime="00:00:00.40" Storyboard.TargetProperty="Height" From="253" To="257" Duration="00:00:00.10"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
@@ -76,7 +80,7 @@
                     </Button.Style>
                 </Button>
                 <Label Content="Add a version." HorizontalAlignment="Left" Margin="25,28,0,0" VerticalAlignment="Top" Width="312" FontSize="22" Foreground="White" FontWeight="Bold" Height="39"/>
-                <Button x:Name="BrowseButton" Content="..." HorizontalAlignment="Left" Margin="479,78,0,0" VerticalAlignment="Top" Width="28" Height="29" Click="BrowseEvent" Foreground="#FF222A3C" BorderBrush="{x:Null}">
+                <Button x:Name="BrowseButton" Content="" HorizontalAlignment="Left" Margin="479,78,0,0" VerticalAlignment="Top" Width="28" Height="29" Click="BrowseEvent" Foreground="#FF222A3C" BorderBrush="{x:Null}">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border  CornerRadius="2" Background="{TemplateBinding Background}" >
@@ -127,7 +131,7 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <Button x:Name="Close" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Margin="510,12,0,0" RenderTransformOrigin="3.727,0.4" Click="AttemptClose" Height="24" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="9">
+                <Button x:Name="Close" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="30" Margin="516,12,0,0" RenderTransformOrigin="3.727,0.4" Click="AttemptClose" Height="24" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="9">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border  CornerRadius="4" Background="{TemplateBinding Background}">

@@ -48,6 +48,5 @@ D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\Microsoft.WindowsAP
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\Microsoft.WindowsAPICodePack.Shell.xml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
-D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Debug\EraLauncher_Content.g.cs
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Debug\SettingsPage.g.cs
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Debug\SettingsPage.baml

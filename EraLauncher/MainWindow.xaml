@@ -15,7 +15,7 @@
             <ColumnDefinition Width="249*"/>
             <ColumnDefinition Width="277*"/>
         </Grid.ColumnDefinitions>
-        <Frame x:Name="PageContent" Content="Frame" Grid.ColumnSpan="6" Loaded="PageL" Navigating="Navigating"/>
+        <Frame x:Name="PageContent" Content="Frame" Grid.ColumnSpan="6" Navigating="Navigating" Loaded="HandlePageContentLoaded"/>
         <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="6" Background="#FF0F0F0F" MouseMove="UpperPanel_MouseMove">
 
         </Border>
@@ -40,7 +40,7 @@
                 </EventTrigger>
             </Border.Triggers>
         </Border>
-        <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Grid.Column="5" Margin="233.8,-2,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="42" Foreground="White" FontSize="10">
+        <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Grid.Column="5" Margin="234.195,0,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="45" Foreground="White" FontSize="10">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="35" Height="25" CornerRadius="4" Background="{TemplateBinding Background}">
@@ -71,7 +71,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="MinimizeButton" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Grid.Column="5" Margin="191.8,-2,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="42" Foreground="White" FontFamily="Segoe UI Semibold">
+        <Button x:Name="MinimizeButton" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Grid.Column="5" Margin="192.195,0,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="45" Foreground="White" FontFamily="Segoe UI Semibold">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="35" Height="25" CornerRadius="4" Background="{TemplateBinding Background}">
@@ -212,16 +212,16 @@
                 <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.10" From="1304" To="0" Storyboard.TargetProperty="Width" Storyboard.TargetName="BGA"/>
-                                <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.10" From="250" To="0" Storyboard.TargetProperty="Width" Storyboard.TargetName="EraLOGOA"/>
-                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.10" From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="EraLOGOA"/>
-                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.10" From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BGA"/>
+                            <DoubleAnimation BeginTime="00:00:00.50" Duration="00:00:00.10" From="1304" To="0" Storyboard.TargetProperty="Width" Storyboard.TargetName="BGA"/>
+                            <DoubleAnimation BeginTime="00:00:00.50" Duration="00:00:00.10" From="250" To="0" Storyboard.TargetProperty="Width" Storyboard.TargetName="EraLOGOA"/>
+                            <DoubleAnimation BeginTime="00:00:00.50" Duration="00:00:00.10" From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="EraLOGOA"/>
+                            <DoubleAnimation BeginTime="00:00:00.50" Duration="00:00:00.10" From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BGA"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                     <BeginStoryboard>
-                        <Storyboard BeginTime="00:00:01.50">
+                        <Storyboard BeginTime="00:00:00.62">
                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
                                 <DiscreteObjectKeyFrame Value="{x:Static Visibility.Hidden}" />
                             </ObjectAnimationUsingKeyFrames>

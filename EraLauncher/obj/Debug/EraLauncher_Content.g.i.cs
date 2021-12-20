@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tempsplash.bmp")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("t-soldier-hid-001-athena-commando-f-l.png")]
 
 

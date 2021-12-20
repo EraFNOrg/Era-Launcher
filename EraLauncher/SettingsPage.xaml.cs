@@ -13,8 +13,11 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Forms;
-using System.IO;
 using Microsoft.WindowsAPICodePack.Dialogs;
+using IniParser;
+using IniParser.Model;
+using System.Net;
+using System.IO;
 
 namespace EraLauncher
 {
@@ -25,9 +28,11 @@ namespace EraLauncher
     {
         public string CurrentPath;
         public string CurrentVerstr = "Version name";
+        LauncherFunctionsLibrary lfn = new LauncherFunctionsLibrary();
         public SettingsPage()
         {
             InitializeComponent();
+
         }
 
         private void BrowseEvent(object sender, RoutedEventArgs e)
@@ -45,36 +50,38 @@ namespace EraLauncher
             }
         }
 
-     /*   private void AttemptAdd(object sender, RoutedEventArgs e)
+        private void HandleRemove(object sender, RoutedEventArgs e)
         {
-            string abc = CurrentVerstr;
 
-            if (Directory.Exists(CurrentPath + "/FortniteGame/Binaries/Win64/"))
-            {
-                if (abc.Length < 16 - 1)
-                {
-                    string g = abc.Replace(".", ",");
-                    // && abc.Length < 4
-                    ((MainWindow)App.Current.MainWindow).homevar.AddBuild(g, CurrentPath, "xyz");
-                    ((MainWindow)App.Current.MainWindow).homevar.AdditionalSettingsFrameContent.Visibility = Visibility.Hidden;
-                    ((MainWindow)App.Current.MainWindow).homevar.AdditionalSettingsFrameContent.Content = null;
-                }
-                else
-                {
-                    System.Windows.Forms.MessageBox.Show("Your version name has more than 16 characters!", "ERA Launcher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                }
+        }
 
-            }
-            else
-            {
-                System.Windows.Forms.MessageBox.Show("Please make sure the path you selected contains folders FortniteGame & Engine", "ERA Launcher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            }
-        }*/
-
-
-
-        private void AttemptRemove(object sender, RoutedEventArgs e)
+        private void HandleClose(object sender, RoutedEventArgs e)
         {
+            ((MainWindow)App.Current.MainWindow).homevar.AdditionalSettingsFrameContent.Content = null;
+        }
+
+        private void PathBoxLoaded(object sender, RoutedEventArgs e)
+        {
+            string path = ((MainWindow)App.Current.MainWindow).homevar.CurrentVersion.path;
+            PathBox.Text = path;
+            string id = ((MainWindow)App.Current.MainWindow).homevar.CurrentVersion.Id;
+            VersionBox.Text = id;
+        }
+
+        private void HandleRemoveProfile(object sender, RoutedEventArgs e)
+        {
+            VersionData vers = ((MainWindow)App.Current.MainWindow).homevar.CurrentVersion;
+            bool exists = ((MainWindow)App.Current.MainWindow).homevar.builds.Contains(vers);
+            if(exists)
+            {
+                ((MainWindow)App.Current.MainWindow).homevar.VersionsList.ItemsSource = null;
+                ((MainWindow)App.Current.MainWindow).homevar.builds.Remove(vers);
+                ((MainWindow)App.Current.MainWindow).homevar.RemoveCurrentBuildFromConfig();
+                    ((MainWindow)App.Current.MainWindow).homevar.VersionsList.ItemsSource = ((MainWindow)App.Current.MainWindow).homevar.builds;
+                ((MainWindow)App.Current.MainWindow).homevar.CurrentVersion = null;
+                lfn.ExecuteVersionPure(new VersionData { Id = "Select Game Version.", path = "placeholder" });
+                ((MainWindow)App.Current.MainWindow).homevar.AdditionalSettingsFrameContent.Content = null;
+            }
 
         }
     }

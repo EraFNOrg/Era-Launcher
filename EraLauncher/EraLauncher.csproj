@@ -126,7 +126,7 @@
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Misc\Classes\LauncherFunctions.cs" />
+    <Compile Include="Misc\Classes\LauncherFunctionsLibrary.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -179,17 +179,9 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="trash-icon-15.png" />
-    <Resource Include="zHCy5MUTETn8dj7rtet2N.png" />
-    <Resource Include="Misc\Images\VolcanoBG.png" />
     <Resource Include="Misc\Images\T-FolderIcon.png" />
-    <Resource Include="Misc\Images\Chapter-2-Fortnite-event-0-1-scaled.jpg" />
     <Resource Include="Misc\Images\T-Icon-Vehicle-QuadBike-L.png" />
     <Resource Include="Misc\Images\T-Icon-Vehicle-ShoppingCart-L.png" />
-    <Resource Include="Misc\Images\t-danii.png" />
-    <Resource Include="Misc\Images\t-trash.png" />
-    <Resource Include="images-removebg-preview.png" />
-    <Content Include="TEMPSPLASH.bmp" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Misc\Images\SplashGradient.png" />
@@ -199,6 +191,19 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Misc\Images\EraLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Misc\Images\nav-settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Misc\Images\T-Soldier-HID-001-Athena-Commando-F-L.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Misc\Images\BackgroundImagesTEMP\1.jpg" />
+    <Content Include="Misc\Images\BackgroundImagesTEMP\2.jpg" />
+    <Resource Include="Misc\Images\BackgroundImagesTEMP\3.jpg" />
+    <Resource Include="Misc\Images\BackgroundImagesTEMP\4.jpg" />
+    <Resource Include="Misc\Images\BackgroundImagesTEMP\5.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

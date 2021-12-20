@@ -21,20 +21,22 @@ namespace EraLauncher
 {
     public partial class MainWindow : Window
     {
-        // Variables
 
+        public MainWindow()
+        {
+
+            InitializeComponent();
+        }
+        #region variables
         public Home homevar = new Home();
         Changelog clvar = new Changelog();
-        LauncherFunctions lfn = new LauncherFunctions();
+        LauncherFunctionsLibrary lfn = new LauncherFunctionsLibrary();
         EraAPI ERAPI = new EraAPI();
         public bool AllowNavigation = false;
         public bool KeepCancel = false;
-        
-        
-        // EVENTS 
-
-
-      
+        #endregion
+        // --
+        #region Events
         private void Close_Button_Event(object sender, RoutedEventArgs e)
         {
             this.Close();
@@ -67,20 +69,6 @@ namespace EraLauncher
             StartAnimGrid.Visibility = Visibility.Visible;
         }
 
-        private void PageL(object sender, RoutedEventArgs e)
-        {
-            App.ParentWindowRef = this;
-            App.ParentWindowRef.PageContent.Navigate(homevar);
-        }
-
-        private void test(object sender, MouseButtonEventArgs e)
-        {
-        }
-
-        private void a(object sender, KeyEventArgs e)
-        {
-            MessageBox.Show("wowmega");
-        }
 
 private void Navigating(object sender, NavigatingCancelEventArgs e)
         {
@@ -90,8 +78,10 @@ private void Navigating(object sender, NavigatingCancelEventArgs e)
             }
         }
 
-
-
-        // End EVENTS
+        private void HandlePageContentLoaded(object sender, RoutedEventArgs e)
+        {
+            lfn.ExecutePage(homevar, PageContent);
+        }
+        #endregion
     }
 }

@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("tempsplash.bmp")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("misc/images/backgroundimagestemp/2.jpg")]
 
 
