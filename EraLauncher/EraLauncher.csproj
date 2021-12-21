@@ -66,9 +66,6 @@
     <Reference Include="Microsoft.WindowsAPICodePack.ShellExtensions, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.WindowsAPICodePack-Shell.1.1.0.0\lib\Microsoft.WindowsAPICodePack.ShellExtensions.dll</HintPath>
     </Reference>
-    <Reference Include="RestSharp, Version=106.15.0.0, Culture=neutral, PublicKeyToken=598062e77f915f75, processorArchitecture=MSIL">
-      <HintPath>..\packages\RestSharp.106.15.0\lib\net452\RestSharp.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -92,6 +89,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Misc\Classes\EraAPI.cs" />
     <Compile Include="SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -201,11 +199,7 @@
     <Resource Include="Misc\Images\Icons\Minimize_Hovered.png" />
     <Resource Include="Misc\Images\Icons\Close.PNG" />
     <Resource Include="Misc\Images\Icons\Close_Hovered.PNG" />
-    <Resource Include="Misc\Images\BackgroundImagesTEMP\1.jpg" />
-    <Content Include="Misc\Images\BackgroundImagesTEMP\2.jpg" />
-    <Resource Include="Misc\Images\BackgroundImagesTEMP\3.jpg" />
-    <Resource Include="Misc\Images\BackgroundImagesTEMP\4.jpg" />
-    <Resource Include="Misc\Images\BackgroundImagesTEMP\5.jpg" />
+    <Resource Include="Chapter-2-Fortnite-event-0-1-scaled.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

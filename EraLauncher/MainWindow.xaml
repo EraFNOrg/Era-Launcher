@@ -20,7 +20,7 @@
         <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="38" VerticalAlignment="Top" Width="1309" Grid.ColumnSpan="7" Background="#FF161617" MouseMove="UpperPanel_MouseMove" Margin="0,0,-4.595,0">
 
         </Border>
-        <Border HorizontalAlignment="Left" Height="41" Margin="45,0,0,0" VerticalAlignment="Top" Width="41">
+        <Border HorizontalAlignment="Left" Height="41" Margin="44,0,0,0" VerticalAlignment="Top" Width="41">
             <Border.Background>
                 <ImageBrush ImageSource="Misc/Images/EraLogo.png"/>
             </Border.Background>
@@ -41,7 +41,7 @@
                 </EventTrigger>
             </Border.Triggers>
         </Border>
-        <Button x:Name="CloseButton"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="37" Grid.Column="5" Margin="236.8,-2,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="34" Foreground="{x:Null}" FontSize="10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="2">
+        <Button x:Name="CloseButton"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="34" Grid.Column="5" Margin="239.8,-1,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="31" Foreground="{x:Null}" FontSize="10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="2">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border  CornerRadius="2" Background="{TemplateBinding Background}" >
@@ -56,9 +56,11 @@
                 </Image.Resources>
                 <Image.Style>
                     <Style TargetType="{x:Type Image}">
+
                         <Setter Property="Source" Value="{StaticResource add}" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Cursor" Value="Hand"/>
                                 <Setter Property="Source" Value="{StaticResource tile}" />
                             </Trigger>
                         </Style.Triggers>
@@ -66,7 +68,7 @@
                 </Image.Style>
             </Image>
         </Button>
-        <Button x:Name="MinimizeButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Grid.Column="5" Margin="201.8,-2,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="34" Foreground="{x:Null}" FontFamily="Segoe UI Semibold" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="MinimizeButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Grid.Column="5" Margin="207.8,-1,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="31" Foreground="{x:Null}" FontFamily="Segoe UI Semibold" Background="{x:Null}" BorderBrush="{x:Null}">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border  CornerRadius="2" Background="{TemplateBinding Background}" >
@@ -84,6 +86,7 @@
                         <Setter Property="Source" Value="{StaticResource add}" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Cursor" Value="Hand"/>
                                 <Setter Property="Source" Value="{StaticResource tile}" />
                             </Trigger>
                         </Style.Triggers>
@@ -225,21 +228,20 @@
                     <ImageBrush ImageSource="Misc/Images/EraLogo.png"/>
                 </Border.Background>
             </Border>
-
             <Grid.Triggers>
                 <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                     <BeginStoryboard>
                         <Storyboard>
-                            <DoubleAnimation BeginTime="00:00:00.50" Duration="00:00:00.10" From="1304" To="0" Storyboard.TargetProperty="Width" Storyboard.TargetName="BGA"/>
-                            <DoubleAnimation BeginTime="00:00:00.50" Duration="00:00:00.10" From="250" To="0" Storyboard.TargetProperty="Width" Storyboard.TargetName="EraLOGOA"/>
-                            <DoubleAnimation BeginTime="00:00:00.50" Duration="00:00:00.10" From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="EraLOGOA"/>
-                            <DoubleAnimation BeginTime="00:00:00.50" Duration="00:00:00.10" From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BGA"/>
+                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.15" From="1304" To="0" Storyboard.TargetProperty="Width" Storyboard.TargetName="BGA"/>
+                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.15" From="250" To="0" Storyboard.TargetProperty="Width" Storyboard.TargetName="EraLOGOA"/>
+                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.15" From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="EraLOGOA"/>
+                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.15" From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BGA"/>
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger>
                 <EventTrigger RoutedEvent="FrameworkElement.Loaded">
                     <BeginStoryboard>
-                        <Storyboard BeginTime="00:00:00.62">
+                        <Storyboard BeginTime="00:00:01.2">
                             <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
                                 <DiscreteObjectKeyFrame Value="{x:Static Visibility.Hidden}" />
                             </ObjectAnimationUsingKeyFrames>

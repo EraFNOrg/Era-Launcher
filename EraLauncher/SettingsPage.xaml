@@ -54,9 +54,9 @@
                     <ColumnDefinition Width="198*"/>
                     <ColumnDefinition Width="367*"/>
                 </Grid.ColumnDefinitions>
-                <Ellipse Margin="17,3,96.6,168.2">
+                <Ellipse Margin="17,3,96.6,168.2" Loaded="OnEclipseLoaded">
                     <Ellipse.Fill>
-                        <ImageBrush ImageSource="Misc/Images/T-Soldier-HID-001-Athena-Commando-F-L.png">
+                        <ImageBrush x:Name="SkinImage" ImageSource="Misc/Images/T-Soldier-HID-001-Athena-Commando-F-L.png">
                         </ImageBrush>
                     </Ellipse.Fill>
                 </Ellipse>
@@ -162,6 +162,7 @@
                                 <Setter Property="Source" Value="{StaticResource add}" />
                                 <Style.Triggers>
                                     <Trigger Property="IsMouseOver" Value="true">
+                                        <Setter Property="Cursor" Value="Hand"/>
                                         <Setter Property="Source" Value="{StaticResource tile}" />
                                     </Trigger>
                                 </Style.Triggers>

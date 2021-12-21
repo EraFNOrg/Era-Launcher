@@ -64,13 +64,11 @@ D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\EraLauncher.pdb
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\INIFileParser.dll
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.ShellExtensions.dll
-D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\RestSharp.dll
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\INIFileParser.xml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.Shell.pdb
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.Shell.xml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.ShellExtensions.pdb
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.ShellExtensions.xml
-D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\RestSharp.xml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\AddVersionPage.baml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\Changelog.baml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\Home.baml
@@ -87,7 +85,6 @@ D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.Windows
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.xml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\SettingsPage.g.cs
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\SettingsPage.baml
-D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\EraLauncher_Content.g.cs
 C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\bin\Release\INIFileParser.dll
 C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.dll
 C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\bin\Release\Microsoft.WindowsAPICodePack.Shell.dll

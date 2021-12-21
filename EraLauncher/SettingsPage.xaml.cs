@@ -18,6 +18,7 @@ using IniParser;
 using IniParser.Model;
 using System.Net;
 using System.IO;
+using EraLauncher.Misc.Classes;
 
 
 namespace EraLauncher
@@ -29,6 +30,7 @@ namespace EraLauncher
     {
         public string NewPath;
         public string CurrentVerstr = "Version name";
+        public EraAPI api = new EraAPI();
 
         LauncherFunctionsLibrary lfn = new LauncherFunctionsLibrary();
         public SettingsPage()
@@ -176,5 +178,20 @@ namespace EraLauncher
         }
 
         #endregion
+
+        private void OnEclipseLoaded(object sender, RoutedEventArgs e)
+        {
+            List<string> apiitems = api.GetEraCloudstorage();
+            var fullpathspec = api.GetItemContentFromCloudstorageList(apiitems[22]);
+            string xdspec = fullpathspec.ToString();
+            string okspec = @xdspec;
+            BitmapImage bitmapspec = new BitmapImage();
+            bitmapspec.BeginInit();
+            bitmapspec.UriSource = new Uri(okspec, UriKind.Absolute);
+            bitmapspec.EndInit();
+
+            SkinImage.ImageSource = bitmapspec;
+
+        }
     }
 }

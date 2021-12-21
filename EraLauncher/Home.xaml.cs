@@ -170,12 +170,12 @@ namespace EraLauncher
 
         private void OnBGImageLoadedTEMP(object sender, RoutedEventArgs e)
         {
-            Random rnd = new Random();
+        /*    Random rnd = new Random();
             int index = rnd.Next(3, 5);
 
             // SCUFFEEEEED, WE WILL MOVE IT TO FTP TOMORROW WITH MATID ~~ sizzy
 
-            BackgroundImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/Misc/Images/BackgroundImagesTEMP/" + index + ".jpg"));
+            BackgroundImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/Misc/Images/BackgroundImagesTEMP/" + index + ".jpg"));*/
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

@@ -17,9 +17,7 @@ D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\EraLauncher.exe.con
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\EraLauncher.exe
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\EraLauncher.pdb
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\INIFileParser.dll
-D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\RestSharp.dll
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\INIFileParser.xml
-D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\RestSharp.xml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Debug\EraLauncher.csproj.AssemblyReference.cache
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Debug\Changelog.g.cs
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Debug\Home.g.cs
@@ -50,4 +48,3 @@ D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\Microsoft.WindowsAP
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Debug\Microsoft.WindowsAPICodePack.ShellExtensions.xml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Debug\SettingsPage.g.cs
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Debug\SettingsPage.baml
-D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Debug\EraLauncher_Content.g.cs
