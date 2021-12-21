@@ -32,6 +32,7 @@ namespace EraLauncher
         #endregion
         public MainWindow()
         {
+            // tutaj 
             InitializeComponent();
 
         }
