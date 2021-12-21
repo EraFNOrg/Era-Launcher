@@ -17,10 +17,10 @@
             <ColumnDefinition Width="9*"/>
         </Grid.ColumnDefinitions>
         <Frame x:Name="PageContent" Content="Frame" Grid.ColumnSpan="7" Navigating="Navigating" Loaded="HandlePageContentLoaded" Margin="0,0,-0.595,0"/>
-        <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="38" VerticalAlignment="Top" Width="1309" Grid.ColumnSpan="7" Background="#FF161617" MouseMove="UpperPanel_MouseMove" Margin="0,0,-4.595,0">
+        <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1309" Grid.ColumnSpan="7" Background="#FF0F0F0F" MouseMove="UpperPanel_MouseMove" Margin="0,0,-5,0">
 
         </Border>
-        <Border HorizontalAlignment="Left" Height="41" Margin="44,0,0,0" VerticalAlignment="Top" Width="41">
+        <Border HorizontalAlignment="Left" Height="46" Margin="48,4,0,0" VerticalAlignment="Top" Width="46">
             <Border.Background>
                 <ImageBrush ImageSource="Misc/Images/EraLogo.png"/>
             </Border.Background>
@@ -60,7 +60,6 @@
                         <Setter Property="Source" Value="{StaticResource add}" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Cursor" Value="Hand"/>
                                 <Setter Property="Source" Value="{StaticResource tile}" />
                             </Trigger>
                         </Style.Triggers>
@@ -86,7 +85,6 @@
                         <Setter Property="Source" Value="{StaticResource add}" />
                         <Style.Triggers>
                             <Trigger Property="IsMouseOver" Value="true">
-                                <Setter Property="Cursor" Value="Hand"/>
                                 <Setter Property="Source" Value="{StaticResource tile}" />
                             </Trigger>
                         </Style.Triggers>
@@ -123,7 +121,7 @@
                 </Style>
             </Button.Style>-->
         </Button>
-        <Button x:Name="MainPage_Btn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Margin="100,17,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="23" Foreground="White" FontFamily="Segoe UI Semibold">
+        <Button x:Name="MainPage_Btn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Margin="99,24,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="23" Foreground="White" FontFamily="Segoe UI Semibold">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
@@ -152,7 +150,7 @@
                     <ColumnDefinition Width="7*"/>
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="PLAY" Margin="-17,-25,5.2,9.8"/>
+                <TextBlock Text="Play" Margin="-17,-25,5.2,9.8"/>
                 <Border Background="White" Margin="-31,-3,-14.8,1.8" Grid.ColumnSpan="2"/>
             </Grid>
             <Button.Template>
@@ -172,9 +170,9 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Margin="185,17,105.4,681" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="22" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
+        <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Margin="184,24,106.4,674" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="22" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
             <Grid>
-                <TextBlock Text="NEWS" Margin="-17,-25,16.6,9.8"/>
+                <TextBlock Text="News" Margin="-17,-25,16.6,9.8"/>
                 <Border Background="White" Margin="-32,-3,5.6,1.8" />
             </Grid>
             <Button.Triggers>

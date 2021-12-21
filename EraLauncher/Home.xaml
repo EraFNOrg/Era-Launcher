@@ -14,10 +14,10 @@
             <ColumnDefinition Width="249*"/>
             <ColumnDefinition Width="277*"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="BackgroundImage" HorizontalAlignment="Left" Height="761" VerticalAlignment="Top" Width="1335" Grid.ColumnSpan="5" Margin="-9,-97,-22,0" Loaded="OnBGImageLoadedTEMP">
+        <Image x:Name="BackgroundImage" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1310" Grid.ColumnSpan="5" Margin="0,-66,-6,0" Loaded="OnBGImageLoadedTEMP">
         </Image>
-        <DockPanel x:Name="VersionInformationBackground" HorizontalAlignment="Left" Height="490" LastChildFill="False" VerticalAlignment="Top" Width="392" Background="Black" Opacity="0.7" Margin="0,-7,0,0"/>
-        <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="62,58,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" FontSize="28" FontWeight="SemiBold" Height="53" Width="150" RenderTransformOrigin="0.5,0.5" FontFamily="Noto Sans TC Bold">
+        <DockPanel x:Name="VersionInformationBackground" HorizontalAlignment="Left" Height="490" LastChildFill="False" VerticalAlignment="Top" Width="426" Background="Black" Opacity="0.7" Margin="0,-7,0,0"/>
+        <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="72,60,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" FontSize="28" FontWeight="Bold" Height="53" Width="150" RenderTransformOrigin="0.5,0.5">
             <Label.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -27,9 +27,9 @@
                 </TransformGroup>
             </Label.RenderTransform>
         </Label>
-        <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="369" LastChildFill="False" Margin="-55,456,-31,-105" VerticalAlignment="Top" Width="1390" Background="#FF161617" Grid.ColumnSpan="5"/>
-        <Label x:Name="GameVersion" Content="Select Game Version." HorizontalAlignment="Left" Margin="63,92,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.74" FontSize="20" Height="43" Width="235"/>
-        <Button x:Name="LaunchButton" Content="Launch" Margin="38,301,56.4,327" Foreground="white" FontSize="17" FontWeight="Medium" Click="HandleGameLaunch" >
+        <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="383" LastChildFill="False" Margin="-55,442,-31,-105" VerticalAlignment="Top" Width="1390" Background="#FF161617" Grid.ColumnSpan="5"/>
+        <Label x:Name="GameVersion" Content="Select Game Version." HorizontalAlignment="Left" Margin="73,94,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.74" FontSize="20" Height="43" Width="235" FontWeight="SemiBold"/>
+        <Button x:Name="LaunchButton" Content="Launch" Margin="48,299,46.4,329" Foreground="white" FontSize="17" FontWeight="Medium" Click="HandleGameLaunch" >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="270" Height="65" CornerRadius="2" Background="{TemplateBinding Background}">
@@ -60,8 +60,8 @@
                 </Style>
             </Button.Style>
         </Button>
-        <TextBlock x:Name="LauncherInformation" Text="Fortnite includes Battle Royale, the completely free 100-player PvP mode. One giant map. A Battle Bus. Last one standing wins. " HorizontalAlignment="Left" Margin="69,129,0,0" VerticalAlignment="Top" Foreground="White" Height="132" Width="261" TextWrapping="Wrap" Opacity="0.65" FontSize="11"/>
-        <ListView x:Name="VersionsList" Height="261"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.ColumnSpan="5" Padding="24,0,0,0" ItemsSource="{Binding Versionsa}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="1284" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="0,0,-6,-6">
+        <TextBlock x:Name="LauncherInformation" Text="Fortnite includes Battle Royale, the completely free 100-player PvP mode. One giant map. A Battle Bus. Last one standing wins. " HorizontalAlignment="Left" Margin="79,133,0,0" VerticalAlignment="Top" Foreground="White" Height="132" Width="261" TextWrapping="Wrap" Opacity="0.65" FontSize="11"/>
+        <ListView x:Name="VersionsList" Height="271"  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Grid.ColumnSpan="5" Padding="24,0,0,0" ItemsSource="{Binding Versionsa}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="1284" ScrollViewer.CanContentScroll="True" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="0,0,-6,-6">
             <ListView.ItemContainerStyle>
                 <Style TargetType="{x:Type ListViewItem}">
                     <Setter Property="Template">
@@ -123,14 +123,18 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="3" Margin="69,392,0,0" VerticalAlignment="Top" Width="272" Background="White" Opacity="0.2"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="3" Margin="79,390,0,0" VerticalAlignment="Top" Width="272" Background="White" Opacity="0.2"/>
         <Grid HorizontalAlignment="Left" Height="730" VerticalAlignment="Bottom" Width="1304" Grid.ColumnSpan="5" Margin="0,-66,0,56">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="45*"/>
+                <ColumnDefinition Width="1259*"/>
+            </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="7*"/>
                 <RowDefinition Height="66*"/>
             </Grid.RowDefinitions>
         </Grid>
-        <Button x:Name="AddVersionButton" HorizontalAlignment="Left" Margin="202,470,0,0" VerticalAlignment="Top" Width="25" Height="25" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" FontSize="28" Foreground="White" Click="AddVersionClick">
+        <Button x:Name="AddVersionButton" HorizontalAlignment="Left" Margin="202,455,0,0" VerticalAlignment="Top" Width="25" Height="25" VerticalContentAlignment="Top" HorizontalContentAlignment="Left" FontSize="28" Foreground="White" Click="AddVersionClick">
             <TextBlock Text="+" FontSize="14" Margin="0,-3,0,0"/>
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -162,7 +166,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="202,418,0,0" VerticalAlignment="Top" Width="18" BorderBrush="{x:Null}" Height="13" Click="OnDiscordButtonClick" RenderTransformOrigin="0.985,0.636">
+        <Button Content="" HorizontalAlignment="Left" Margin="212,416,0,0" VerticalAlignment="Top" Width="18" BorderBrush="{x:Null}" Height="13" Click="OnDiscordButtonClick" RenderTransformOrigin="0.985,0.636">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border  CornerRadius="2" Background="{TemplateBinding Background}" >
@@ -196,9 +200,9 @@
             </Button.Style>
 
         </Button>
-        <Label Content="GAME VERSIONS" HorizontalAlignment="Left" Margin="53,465,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" Opacity="0.75"/>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="3" Margin="239,481,0,0" VerticalAlignment="Top" Width="1062" Background="White" Opacity="0.4" Grid.ColumnSpan="5"/>
-        <Button x:Name="RemoveBuild"  Margin="301,301,86.4,327" Foreground="white" FontSize="15" FontWeight="Medium" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Click="RemoveBuildEvent" >
+        <Label Content="GAME VERSIONS" HorizontalAlignment="Left" Margin="53,450,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" Opacity="0.75"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="3" Margin="239,466,0,0" VerticalAlignment="Top" Width="1062" Background="White" Opacity="0.4" Grid.ColumnSpan="5"/>
+        <Button x:Name="RemoveBuild"  Margin="311,299,76.4,329" Foreground="white" FontSize="15" FontWeight="Medium" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Click="RemoveBuildEvent" >
             <Border Width="13" Height="13" Margin="0,0,210,0">
                 <Border.Background>
                     <ImageBrush ImageSource="Misc/Images/nav-settings.png"/>
