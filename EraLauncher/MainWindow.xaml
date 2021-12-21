@@ -41,7 +41,7 @@
                 </EventTrigger>
             </Border.Triggers>
         </Border>
-        <Button x:Name="CloseButton"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="37" Grid.Column="5" Margin="239.8,-6,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="34" Foreground="{x:Null}" FontSize="10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="2">
+        <Button x:Name="CloseButton"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="37" Grid.Column="5" Margin="236.8,-2,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="34" Foreground="{x:Null}" FontSize="10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="2">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border  CornerRadius="2" Background="{TemplateBinding Background}" >
@@ -66,7 +66,7 @@
                 </Image.Style>
             </Image>
         </Button>
-        <Button x:Name="MinimizeButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Grid.Column="5" Margin="204.8,-6,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="34" Foreground="{x:Null}" FontFamily="Segoe UI Semibold" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="MinimizeButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="35" Grid.Column="5" Margin="201.8,-2,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="34" Foreground="{x:Null}" FontFamily="Segoe UI Semibold" Background="{x:Null}" BorderBrush="{x:Null}">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border  CornerRadius="2" Background="{TemplateBinding Background}" >
