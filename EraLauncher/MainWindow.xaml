@@ -40,39 +40,56 @@
                 </EventTrigger>
             </Border.Triggers>
         </Border>
-        <Button x:Name="CloseButton" Content="X" HorizontalAlignment="Left" VerticalAlignment="Top" Width="43" Grid.Column="5" Margin="234.195,0,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="45" Foreground="White" FontSize="10">
+        <Button x:Name="CloseButton"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="34" Grid.Column="5" Margin="243.195,-4,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="31" Foreground="{x:Null}" FontSize="10" Background="{x:Null}" BorderBrush="{x:Null}">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Width="35" Height="25" CornerRadius="4" Background="{TemplateBinding Background}">
+                    <Border  CornerRadius="2" Background="{TemplateBinding Background}" >
                         <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
             </Button.Template>
-            <Button.Style>
-                <Style TargetType="{x:Type Button}">
-                    <Setter Property="Background" Value="#FF141414"/>
-                    <Setter Property="Cursor" Value="Hand"/>
-                    <Style.Triggers>
-                        <EventTrigger RoutedEvent="MouseEnter">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" Duration="00:00:00.15" From="#FF141414" To="#FF1B1B1B"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                        <EventTrigger RoutedEvent="MouseLeave">
-                            <BeginStoryboard>
-                                <Storyboard>
-                                    <ColorAnimation Storyboard.TargetProperty="Background.Color" Duration="00:00:00.15" From="#FF1B1B1B" To="#FF141414"/>
-                                </Storyboard>
-                            </BeginStoryboard>
-                        </EventTrigger>
-                    </Style.Triggers>
-                </Style>
-            </Button.Style>
+            <Image>
+                <Image.Resources>
+                    <BitmapImage UriSource="pack://application:,,,/Misc/Images/Icons/Close.png" x:Key="add" DecodePixelWidth="200"  DecodePixelHeight="100" />
+                    <BitmapImage UriSource="pack://application:,,,/Misc/Images/Icons/Close_Hovered.png" x:Key="tile" DecodePixelWidth="200"  DecodePixelHeight="100" />
+                </Image.Resources>
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="{StaticResource add}" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Source" Value="{StaticResource tile}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
         </Button>
-        <Button x:Name="MinimizeButton" Content="-" HorizontalAlignment="Left" VerticalAlignment="Top" Width="42" Grid.Column="5" Margin="192.195,0,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="45" Foreground="White" FontFamily="Segoe UI Semibold">
+        <Button x:Name="MinimizeButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Grid.Column="5" Margin="211.195,-4,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="31" Foreground="{x:Null}" FontFamily="Segoe UI Semibold" Background="{x:Null}" BorderBrush="{x:Null}">
             <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border  CornerRadius="2" Background="{TemplateBinding Background}" >
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+            <Image>
+                <Image.Resources>
+                    <BitmapImage UriSource="pack://application:,,,/Misc/Images/Icons/Minimize.png" x:Key="add" DecodePixelWidth="200"  DecodePixelHeight="100" />
+                    <BitmapImage UriSource="pack://application:,,,/Misc/Images/Icons/Minimize_Hovered.png" x:Key="tile" DecodePixelWidth="200"  DecodePixelHeight="100" />
+                </Image.Resources>
+                <Image.Style>
+                    <Style TargetType="{x:Type Image}">
+                        <Setter Property="Source" Value="{StaticResource add}" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Source" Value="{StaticResource tile}" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <!--<Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="35" Height="25" CornerRadius="4" Background="{TemplateBinding Background}">
                         <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
@@ -100,7 +117,7 @@
                         </EventTrigger>
                     </Style.Triggers>
                 </Style>
-            </Button.Style>
+            </Button.Style>-->
         </Button>
         <Button x:Name="MainPage_Btn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="62" Margin="108,25,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="23" Foreground="White" FontFamily="Segoe UI Semibold">
             <Button.Triggers>

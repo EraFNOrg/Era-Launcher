@@ -35,7 +35,7 @@ namespace EraLauncher
 
 
         int OgraniczenieWersji = 8; // Versions limit
-        public string configpath = @"%localAppdata%\ProjectEra\launcherconfig.ini"; // Path for the config ini
+        public string configpath = @"%localAppdata%\ProjectEra\launcherconfig"; // Path for the config ini
 
         public Home()
         {
@@ -43,26 +43,34 @@ namespace EraLauncher
 
             #region LauncherConfiguration
             var parser = new FileIniDataParser();
-            string configFile = @"%localAppdata%\ProjectEra\launcherconfig.ini";
-            string configfinalstr = Environment.ExpandEnvironmentVariables(configFile);
-            if (!File.Exists(configfinalstr))
-            {
-                parser.WriteFile(Environment.ExpandEnvironmentVariables(configpath), new IniData());
-            }
-            IniData bdata = parser.ReadFile(Environment.ExpandEnvironmentVariables(configpath));
-            foreach (var section in bdata.Sections)
-            {
-               if(section.SectionName == "VERSIONS")
-                {
-                    foreach (var key in section.Keys)
-                    {
-                       string[] alist = key.Value.Split(new string[] { "||" }, StringSplitOptions.None);
-                       AddBuild(new VersionData { Id = alist[0], path=alist[1] });
-                    }
-                }
-            }
-            #endregion
 
+
+
+            // i skidded this cuz its 21th and im lazy
+            string folder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
+            string specificFolder = System.IO.Path.Combine(folder, "ProjectEra");
+            Directory.CreateDirectory(specificFolder);
+                 string configFile = @"%localAppdata%\ProjectEra\launcherconfig";
+                  string configfinalstr = Environment.ExpandEnvironmentVariables(configFile);
+
+                  if (!File.Exists(configfinalstr))
+                  {
+                      parser.WriteFile(Environment.ExpandEnvironmentVariables(configpath), new IniData());
+                  }
+                  IniData bdata = parser.ReadFile(Environment.ExpandEnvironmentVariables(configpath));
+                  foreach (var section in bdata.Sections)
+                  {
+                     if(section.SectionName == "VERSIONS")
+                      {
+                          foreach (var key in section.Keys)
+                          {
+                             string[] alist = key.Value.Split(new string[] { "||" }, StringSplitOptions.None);
+                             AddBuild(new VersionData { Id = alist[0], path=alist[1] });
+                          }
+                      }
+                  }
+                  #endregion
+            
         }
 
 
@@ -149,7 +157,7 @@ namespace EraLauncher
                 AdditionalSettingsFrameContent.Visibility = Visibility.Visible;
             }
             else
-                MessageBox.Show("You must select a version profile first!", "ERA Launcher", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("Unable to perform action. You must select a version profile first!", "ERA Launcher", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
         private void HandleNavigatingAdditionalSettingsFrame(object sender, NavigatingCancelEventArgs e)
@@ -168,6 +176,27 @@ namespace EraLauncher
             // SCUFFEEEEED, WE WILL MOVE IT TO FTP TOMORROW WITH MATID ~~ sizzy
 
             BackgroundImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/Misc/Images/BackgroundImagesTEMP/" + index + ".jpg"));
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            foreach(VersionData versionData in builds)
+            {
+                System.Windows.Forms.MessageBox.Show(versionData.path);
+            }
+        }
+
+        private void HandleGameLaunch(object sender, RoutedEventArgs e)
+        {
+            // Here, danii
+            if (CurrentVersion != null)
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("Unable to perform action. You must select a version profile first!", "ERA Launcher", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 

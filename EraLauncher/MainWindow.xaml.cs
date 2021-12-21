@@ -79,6 +79,7 @@ private void Navigating(object sender, NavigatingCancelEventArgs e)
 
         private void HandlePageContentLoaded(object sender, RoutedEventArgs e)
         {
+            lfn.ExecutePage(homevar, PageContent);
         }
         #endregion
     }

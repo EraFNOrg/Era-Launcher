@@ -61,14 +61,14 @@ namespace EraLauncher
                 else
                 {
                     // Notification about the version name being incorrect
-                    System.Windows.Forms.MessageBox.Show("Your version name has more than 16 characters!", "ERA Launcher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    System.Windows.Forms.MessageBox.Show("Your version name has more than 16 characters!", "ERA Launcher", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
             }
             else
             {
                 // Notification about the version path being incorrect
-                System.Windows.Forms.MessageBox.Show("Please make sure the path you selected contains folders FortniteGame & Engine", "ERA Launcher", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                System.Windows.Forms.MessageBox.Show("Unable to perform this action. Please make sure the path you selected contains folders FortniteGame & Engine", "ERA Launcher", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

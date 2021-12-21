@@ -197,6 +197,10 @@
     <Resource Include="Misc\Images\T-Soldier-HID-001-Athena-Commando-F-L.png" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Misc\Images\Icons\Minimize.png" />
+    <Resource Include="Misc\Images\Icons\Minimize_Hovered.png" />
+    <Resource Include="Misc\Images\Icons\Close.PNG" />
+    <Resource Include="Misc\Images\Icons\Close_Hovered.PNG" />
     <Resource Include="Misc\Images\BackgroundImagesTEMP\1.jpg" />
     <Content Include="Misc\Images\BackgroundImagesTEMP\2.jpg" />
     <Resource Include="Misc\Images\BackgroundImagesTEMP\3.jpg" />

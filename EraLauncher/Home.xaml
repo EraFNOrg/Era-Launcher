@@ -29,10 +29,10 @@
         </Label>
         <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="392" LastChildFill="False" Margin="-55,433,-31,-105" VerticalAlignment="Top" Width="1390" Background="#FF1A1A1A" Grid.ColumnSpan="5"/>
         <Label x:Name="GameVersion" Content="Select Game Version." HorizontalAlignment="Left" Margin="65,89,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.74" FontSize="20" Height="43" Width="235"/>
-        <Button x:Name="LaunchButton" Content="Launch" Margin="30,261,64.4,367" Foreground="white" FontSize="17" FontWeight="Medium" >
+        <Button x:Name="LaunchButton" Content="Launch" Margin="50,261,44.4,367" Foreground="white" FontSize="17" FontWeight="Medium" Click="HandleGameLaunch" >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
-                    <Border Width="252" Height="65" CornerRadius="2" Background="{TemplateBinding Background}">
+                    <Border Width="290" Height="65" CornerRadius="2" Background="{TemplateBinding Background}">
                         <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
                     </Border>
                 </ControlTemplate>
@@ -123,7 +123,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
-        <Border BorderThickness="1" HorizontalAlignment="Left" Height="3" Margin="70,362,0,0" VerticalAlignment="Top" Width="254" Background="White" Opacity="0.4"/>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="3" Margin="73,365,0,0" VerticalAlignment="Top" Width="287" Background="White" Opacity="0.4"/>
         <Grid HorizontalAlignment="Left" Height="730" VerticalAlignment="Bottom" Width="1304" Grid.ColumnSpan="5" Margin="0,-66,0,56">
             <Grid.RowDefinitions>
                 <RowDefinition Height="7*"/>
@@ -162,7 +162,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button Content="" HorizontalAlignment="Left" Margin="186,395,0,0" VerticalAlignment="Top" Width="18" BorderBrush="{x:Null}" Height="13" Click="OnDiscordButtonClick">
+        <Button Content="" HorizontalAlignment="Left" Margin="202,397,0,0" VerticalAlignment="Top" Width="18" BorderBrush="{x:Null}" Height="13" Click="OnDiscordButtonClick" RenderTransformOrigin="0.985,0.636">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border  CornerRadius="2" Background="{TemplateBinding Background}" >
@@ -198,7 +198,7 @@
         </Button>
         <Label Content="GAME VERSIONS" HorizontalAlignment="Left" Margin="53,451,0,0" VerticalAlignment="Top" Foreground="White" FontSize="18" Opacity="0.75"/>
         <Border BorderThickness="1" HorizontalAlignment="Left" Height="3" Margin="239,467,0,0" VerticalAlignment="Top" Width="1062" Background="White" Opacity="0.4" Grid.ColumnSpan="5"/>
-        <Button x:Name="RemoveBuild"  Margin="284,262,103.4,368" Foreground="white" FontSize="15" FontWeight="Medium" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Click="RemoveBuildEvent" >
+        <Button x:Name="RemoveBuild"  Margin="321,262,66.4,368" Foreground="white" FontSize="15" FontWeight="Medium" RenderTransformOrigin="0.5,0.5" BorderBrush="{x:Null}" Click="RemoveBuildEvent" >
             <Border Width="13" Height="13" Margin="0,0,210,0">
                 <Border.Background>
                     <ImageBrush ImageSource="Misc/Images/nav-settings.png"/>
