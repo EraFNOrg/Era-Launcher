@@ -15,7 +15,6 @@ using System.Windows.Shapes;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using EraLauncher.Misc.Classes;
 using IniParser;
 using IniParser.Model;
 using System.Net;

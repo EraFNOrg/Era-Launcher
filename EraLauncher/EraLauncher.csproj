@@ -121,8 +121,6 @@
     <Compile Include="Changelog.xaml.cs">
       <DependentUpon>Changelog.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Misc\Classes\EraAPI.cs" />
-    <Compile Include="Misc\Classes\FTPUrl.cs" />
     <Compile Include="Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
