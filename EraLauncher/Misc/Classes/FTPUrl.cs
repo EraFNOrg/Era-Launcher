@@ -8,7 +8,7 @@ namespace EraLauncher
 {
     class FTPUrl
     {
-        internal const string FTPServer = "http://127.0.0.1:80";
+        internal const string FTPServer = "http://www.manora.tk";
         internal const string LauVersionOffline = "none";
         internal const string ChangelogTextOffline = "none";
     }
