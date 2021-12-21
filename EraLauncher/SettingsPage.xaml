@@ -11,7 +11,7 @@
             <RowDefinition Height="11*"/>
             <RowDefinition Height="109*"/>
         </Grid.RowDefinitions>
-        <Border x:Name="BorderBG_Copy" BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="700" Margin="0,10,0,0" VerticalAlignment="Top" Width="1280" Background="Black" Opacity="0" Grid.RowSpan="2">
+        <Border x:Name="BorderBG_Copy" BorderThickness="1" HorizontalAlignment="Left" Height="700" Margin="0,10,-180,0" VerticalAlignment="Top" Width="1460" Background="Black" Opacity="0" Grid.RowSpan="2">
             <Border.Triggers>
                 <EventTrigger RoutedEvent="Loaded">
                     <BeginStoryboard>
@@ -52,13 +52,44 @@
                     <ColumnDefinition Width="198*"/>
                     <ColumnDefinition Width="367*"/>
                 </Grid.ColumnDefinitions>
-                <Ellipse Margin="8,-4,92.6,162.2">
+                <Ellipse Margin="17,3,96.6,168.2">
                     <Ellipse.Fill>
                         <ImageBrush ImageSource="Misc/Images/T-Soldier-HID-001-Athena-Commando-F-L.png">
                         </ImageBrush>
                     </Ellipse.Fill>
                 </Ellipse>
-                <Button x:Name="DeleteButton" Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Margin="17,204,0,0" RenderTransformOrigin="3.727,0.4" Height="28" Foreground="White" FontFamily="Segoe UI Semibold" Click="HandleRemoveProfile" FontSize="10">
+                <Button x:Name="AddButton" Content="Save" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Margin="32,202,0,0" RenderTransformOrigin="3.727,0.4" Click="AttemptAdd" Height="28" Foreground="White" FontFamily="Segoe UI Semibold" FontSize="9">
+                    <Button.Template>
+                        <ControlTemplate TargetType="{x:Type Button}">
+                            <Border  CornerRadius="4" Background="{TemplateBinding Background}">
+                                <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                    <Button.Style>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Background" Value="#FF141414"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="Background.Color" Duration="00:00:00.15" From="#FF141414" To="#FF1B1B1B"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard>
+                                            <ColorAnimation Storyboard.TargetProperty="Background.Color" Duration="00:00:00.15" From="#FF1B1B1B" To="#FF141414"/>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+                <Button x:Name="DeleteButton" Content="Remove" HorizontalAlignment="Left" VerticalAlignment="Top" Width="92" Margin="139,202,0,0" RenderTransformOrigin="3.727,0.4" Height="28" Foreground="White" FontFamily="Segoe UI Semibold" Click="HandleRemoveProfile" FontSize="10" Grid.ColumnSpan="2">
                     <Button.Template>
                         <ControlTemplate TargetType="{x:Type Button}">
                             <Border  CornerRadius="4" Background="{TemplateBinding Background}">
@@ -89,8 +120,8 @@
                         </Style>
                     </Button.Style>
                 </Button>
-                <Label x:Name="SettingsText" Content="Settings" HorizontalAlignment="Left" Margin="110,24,0,0" VerticalAlignment="Top" Width="312" FontSize="22" Foreground="White" FontWeight="Bold" Height="39" Grid.ColumnSpan="2"/>
-                <TextBox  x:Name="PathBox" TextWrapping="Wrap" Text="Path" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" SelectionBrush="#FF847CD1" HorizontalContentAlignment="Center" FontSize="14" Margin="17,98,221.8,119.2" Height="38" Width="326" Grid.ColumnSpan="2" Loaded="PathBoxLoaded">
+                <Label x:Name="SettingsText" Content="Settings" HorizontalAlignment="Left" Margin="112,29,0,0" VerticalAlignment="Top" Width="312" FontSize="22" Foreground="White" FontWeight="Bold" Height="39" Grid.ColumnSpan="2"/>
+                <TextBox  x:Name="PathBox" TextWrapping="Wrap" Text="Path" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" SelectionBrush="#FF847CD1" HorizontalContentAlignment="Center" FontSize="14" Margin="32,98,206.8,119.2" Height="38" Width="326" Grid.ColumnSpan="2" Loaded="PathBoxLoaded">
                     <TextBox.Template>
                         <ControlTemplate TargetType="{x:Type TextBox}">
                             <Grid Background="#FF111214">
@@ -99,11 +130,11 @@
                         </ControlTemplate>
                     </TextBox.Template>
                 </TextBox>
-                <TextBox  x:Name="VersionBox" TextWrapping="Wrap" Text="Version name" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" SelectionBrush="#FF847CD1" HorizontalContentAlignment="Center" FontSize="14" Margin="17,152,221.8,67.2" Height="36" Width="326" Grid.ColumnSpan="2">
+                <TextBox  x:Name="VersionBox" TextWrapping="Wrap" Text="Version name" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="White" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" SelectionBrush="#FF847CD1" HorizontalContentAlignment="Center" FontSize="14" Margin="32,152,206.8,67.2" Height="36" Width="326" Grid.ColumnSpan="2">
                     <TextBox.Template>
                         <ControlTemplate TargetType="{x:Type TextBox}">
                             <Grid Background="#FF111214">
-                                <TextBox x:Name="TestBox" Text="Version name" Height="Auto" Width="Auto" BorderThickness="0" Background="{x:Null}" Foreground="White" Margin="3,10,-0.4,0" FontWeight="SemiBold" FontSize="12" Opacity="0.8" SelectionBrush="#FF4D4659" CaretBrush="#B2AEAEAE" TextWrapping="WrapWithOverflow"/>
+                                <TextBox x:Name="TestBox" Text="{TemplateBinding Text}" Height="Auto" Width="Auto" BorderThickness="0" Background="{x:Null}" Foreground="White" Margin="3,10,-0.4,0" FontWeight="SemiBold" FontSize="12" Opacity="0.8" SelectionBrush="#FF4D4659" CaretBrush="#B2AEAEAE" TextWrapping="WrapWithOverflow"/>
                             </Grid>
                         </ControlTemplate>
                     </TextBox.Template>

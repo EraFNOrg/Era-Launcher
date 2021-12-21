@@ -4,7 +4,7 @@ using System.Net;
 
 namespace EraLauncher.Misc.Classes
 {
-    class EraAPI //syf, chaos i rozpierdol | MaTiD
+    public class EraAPI //syf, chaos i rozpierdol | MaTiD
     {
         #region Field Region
 

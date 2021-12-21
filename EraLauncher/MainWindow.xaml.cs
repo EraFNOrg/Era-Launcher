@@ -16,25 +16,25 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using EraLauncher.Misc.Classes;
+using RestSharp;
 
 namespace EraLauncher
 {
     public partial class MainWindow : Window
     {
-
-        public MainWindow()
-        {
-
-            InitializeComponent();
-        }
         #region variables
         public Home homevar = new Home();
         Changelog clvar = new Changelog();
         LauncherFunctionsLibrary lfn = new LauncherFunctionsLibrary();
-        EraAPI ERAPI = new EraAPI();
+        public EraAPI api = new EraAPI();
         public bool AllowNavigation = false;
         public bool KeepCancel = false;
         #endregion
+        public MainWindow()
+        {
+            InitializeComponent();
+
+        }
         // --
         #region Events
         private void Close_Button_Event(object sender, RoutedEventArgs e)

@@ -19,7 +19,7 @@
         <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1304" Grid.ColumnSpan="6" Background="#FF0F0F0F" MouseMove="UpperPanel_MouseMove">
 
         </Border>
-        <Border HorizontalAlignment="Left" Height="41" Margin="47,6,0,0" VerticalAlignment="Top" Width="41">
+        <Border HorizontalAlignment="Left" Height="41" Margin="33,4,0,0" VerticalAlignment="Top" Width="41">
             <Border.Background>
                 <ImageBrush ImageSource="Misc/Images/EraLogo.png"/>
             </Border.Background>
@@ -131,7 +131,7 @@
                     <ColumnDefinition Width="7*"/>
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Play" Margin="-27,-25,15,10"/>
+                <TextBlock Text="PLAY" Margin="-27,-25,15,10"/>
                 <Border Background="White" Margin="-42,-4,-2,2" Grid.ColumnSpan="2"/>
             </Grid>
             <Button.Template>
@@ -153,7 +153,7 @@
         </Button>
         <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="58" Margin="187,25,109.4,673" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="22" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
             <Grid>
-                <TextBlock Text="News" Margin="-20,-25,20,10"/>
+                <TextBlock Text="NEWS" Margin="-20,-25,20,10"/>
                 <Border Background="White" Margin="-35,-4,9,2" />
             </Grid>
             <Button.Triggers>
