@@ -181,7 +181,7 @@ namespace EraLauncher
 
         private void OnEclipseLoaded(object sender, RoutedEventArgs e)
         {
-            List<string> apiitems = api.GetEraCloudstorage();
+        /*    List<string> apiitems = api.GetEraCloudstorage();
             var fullpathspec = api.GetItemContentFromCloudstorageList(apiitems[22]);
             string xdspec = fullpathspec.ToString();
             string okspec = @xdspec;
@@ -190,7 +190,7 @@ namespace EraLauncher
             bitmapspec.UriSource = new Uri(okspec, UriKind.Absolute);
             bitmapspec.EndInit();
 
-            SkinImage.ImageSource = bitmapspec;
+            SkinImage.ImageSource = bitmapspec;*/
 
         }
     }

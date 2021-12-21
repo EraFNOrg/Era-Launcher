@@ -11,7 +11,7 @@
             <RowDefinition Height="11*"/>
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="ImageBG" HorizontalAlignment="Left" Height="720" Margin="-6,0,0,0" VerticalAlignment="Top" Width="1286" Grid.RowSpan="2" Source="Misc/Images/BackgroundImagesTEMP/1.jpg"/>
+        <Image x:Name="ImageBG" HorizontalAlignment="Left" Height="720" Margin="-6,0,0,0" VerticalAlignment="Top" Width="1286" Grid.RowSpan="2"/>
         <Grid HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="1040" Margin="-6,16,0,0">
             <Grid.Style>
                 <Style TargetType="{x:Type Grid}"/>
@@ -28,13 +28,9 @@
                 </Label.RenderTransform>
             </Label>
         </Grid>
-        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="426" Margin="0,349,-48,-55" VerticalAlignment="Top" Width="1328" Background="#FF100F11" Grid.RowSpan="2"/>
+        <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="374" Margin="0,401,-48,-55" VerticalAlignment="Top" Width="1328" Background="#FF100F11" Grid.RowSpan="2"/>
         <TextBlock x:Name="Logs_Content" Text="test" HorizontalAlignment="Left" Margin="-782,79,0,0" VerticalAlignment="Top" Foreground="White" FontSize="15" FontWeight="SemiBold" Height="178" Width="619" Opacity="0.6" RenderTransformOrigin="0.5,0.5" TextWrapping="WrapWithOverflow" Grid.Row="1"/>
         <TextBlock x:Name="ChangeLog" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." HorizontalAlignment="Left" Margin="55,108,0,0" VerticalAlignment="Top" Height="322" Width="374" FontSize="13" Foreground="White" TextWrapping="Wrap" Loaded="ChangelogTextNewsHandleLoaded" FontWeight="Light" Opacity="0.75"/>
-        <Label x:Name="KnownIssues" Content="Known bugs:" HorizontalAlignment="Left" Margin="55,10,0,0" VerticalAlignment="Top" Height="70" Width="1191" Grid.Row="1" FontWeight="SemiBold" FontSize="30" Foreground="White"/>
-        <TextBlock x:Name="KnownIssuesDescription" HorizontalAlignment="Left" Margin="61,58,0,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="175" Width="476" Grid.Row="1" Foreground="White" FontWeight="Medium" FontSize="18"/>
-        <Label x:Name="News" Content="Announcements:" HorizontalAlignment="Left" Margin="554,10,-465,0" VerticalAlignment="Top" Height="70" Width="1191" Grid.Row="1" FontWeight="SemiBold" FontSize="30" Foreground="White"/>
-        <TextBlock x:Name="Announcementsdesc" HorizontalAlignment="Left" Margin="556,58,-174,0" TextWrapping="Wrap" Text="TextBlock" VerticalAlignment="Top" Height="175" Width="898" Grid.Row="1" Foreground="White" FontWeight="Medium" FontSize="18"/>
     </Grid>
 </Page>
 
