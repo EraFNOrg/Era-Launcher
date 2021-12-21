@@ -26,8 +26,6 @@ namespace EraLauncher
         public Home homevar = new Home();
         Changelog clvar = new Changelog();
         LauncherFunctionsLibrary lfn = new LauncherFunctionsLibrary();
-        public EraAPI _api = new EraAPI();
-        FTPUrl ftpa = new FTPUrl();
         public bool AllowNavigation = false;
         public bool KeepCancel = false;
         #endregion
@@ -82,7 +80,6 @@ private void Navigating(object sender, NavigatingCancelEventArgs e)
 
         private void HandlePageContentLoaded(object sender, RoutedEventArgs e)
         {
-            lfn.ExecutePage(homevar, PageContent);
         }
         #endregion
     }

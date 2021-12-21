@@ -28,7 +28,6 @@ namespace EraLauncher
 
         private void ChangelogTextNewsHandleLoaded(object sender, RoutedEventArgs e)
         {
-            ChangeLog.Text = ((MainWindow)App.Current.MainWindow)._api.Changelog;
         }
     }
 
