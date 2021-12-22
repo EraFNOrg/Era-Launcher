@@ -18,7 +18,7 @@
             <ColumnDefinition Width="9*"/>
         </Grid.ColumnDefinitions>
         <Frame x:Name="PageContent" Content="Frame" Grid.ColumnSpan="8" Navigating="Navigating" Loaded="HandlePageContentLoaded" Margin="0,0,-1,0"/>
-        <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1309" Grid.ColumnSpan="8" Background="#FF111010" MouseMove="UpperPanel_MouseMove" Margin="0,0,-5,0">
+        <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1309" Grid.ColumnSpan="8" Background="#FF0C0C0E" MouseMove="UpperPanel_MouseMove" Margin="0,0,-5,0">
 
         </Border>
         <Border HorizontalAlignment="Left" Height="46" Margin="48,2,0,0" VerticalAlignment="Top" Width="46">
