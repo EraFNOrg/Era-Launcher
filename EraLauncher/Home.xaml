@@ -82,8 +82,8 @@
                 <DataTemplate>
                     <Grid >
                         <Image x:Name="VersionSplash" Source="{Binding splashpath}"/>
-                        <Image x:Name="GradientVersion" Source="Misc/Images/SplashGradient.png"/>
-                        <TextBlock x:Name="VersionNameTextBlock" Text="{Binding Id}"  Foreground="White" TextAlignment="Center"  FontWeight="Bold" TextWrapping="Wrap" FontSize="10" Margin="0,150,0,0">
+                        <Image x:Name="GradientVersion" Source="Misc/Images/SplashGradient.png" Opacity="60"/>
+                        <TextBlock x:Name="VersionNameTextBlock" Text="{Binding Id}"  Foreground="White" TextAlignment="Center"  FontWeight="Medium" TextWrapping="Wrap" FontSize="11" Margin="0,150,0,0">
                         </TextBlock>
                         <StackPanel Orientation="Vertical" Height="200">
                             <Button x:Name="VersionAddButton" Content="{Binding Id}" Foreground="Transparent" Width="200" Height="200" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="100,0,100,0" Click="SelectVersion_Event" BorderThickness="3" Opacity="1">

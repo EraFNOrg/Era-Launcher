@@ -37,7 +37,6 @@ namespace EraLauncher
         {
             // tutaj 
             InitializeComponent();
-
         }
         // --
         #region Events

@@ -153,7 +153,7 @@
                     <ColumnDefinition Width="7*"/>
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
-                <TextBlock Text="Play" Margin="-17,-25,5.2,9.8"/>
+                <TextBlock Text="PLAY" Margin="-17,-25,5.2,9.8"/>
                 <Border Background="White" Margin="-31,-3,-14.6,-0.2" Grid.ColumnSpan="2"/>
             </Grid>
             <Button.Template>
@@ -169,13 +169,16 @@
                     <Setter Property="Background" Value="#00141414"/>
 
                     <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Cursor" Value="Hand"/>
+                        </Trigger>
                     </Style.Triggers>
                 </Style>
             </Button.Style>
         </Button>
         <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Margin="189,22,101.4,675" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="23" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
             <Grid>
-                <TextBlock Text="News" Margin="-17,-25,16.6,9.8"/>
+                <TextBlock Text="NEWS" Margin="-17,-25,16.6,9.8"/>
                 <Border Background="White" Margin="-32,-3,5.6,-0.2" />
             </Grid>
             <Button.Triggers>
@@ -200,7 +203,10 @@
                     <Setter Property="Background" Value="#FF141414"/>
 
                     <Style.Triggers>
-                        <EventTrigger RoutedEvent="MouseEnter">
+                        <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+                            <EventTrigger RoutedEvent="MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard>
                                     <DoubleAnimation Storyboard.TargetProperty="Opacity" Duration="00:00:00.10" From="0.5" To="0.75"/>

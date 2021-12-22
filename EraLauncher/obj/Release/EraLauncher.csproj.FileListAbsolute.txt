@@ -103,3 +103,6 @@ C:\Users\mateu\Desktop\Era-Launcher\EraLauncher\obj\Release\EraLauncher.csproj.C
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Newtonsoft.Json.dll
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\Newtonsoft.Json.xml
 D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\obj\Release\EraLauncher_Content.g.cs
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\DiscordRPC.dll
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\DiscordRPC.pdb
+D:\repos\FortniteLauncher\Era-Launcher\EraLauncher\bin\Release\DiscordRPC.xml

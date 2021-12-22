@@ -179,8 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Misc\Images\T-FolderIcon.png" />
-    <Resource Include="Misc\Images\T-Icon-Vehicle-QuadBike-L.png" />
-    <Resource Include="Misc\Images\T-Icon-Vehicle-ShoppingCart-L.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Misc\Images\SplashGradient.png" />
