@@ -14,7 +14,7 @@
             <ColumnDefinition Width="249*"/>
             <ColumnDefinition Width="277*"/>
         </Grid.ColumnDefinitions>
-        <Image x:Name="BackgroundImage" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1310" Grid.ColumnSpan="5" Margin="0,0,-6,0" Loaded="OnBGImageLoadedTEMP">
+        <Image x:Name="BackgroundImage" HorizontalAlignment="Left" Height="720" VerticalAlignment="Top" Width="1316" Grid.ColumnSpan="5" Margin="0,-72,-12,0" Loaded="OnBGImageLoadedTEMP">
         </Image>
         <DockPanel x:Name="VersionInformationBackground" HorizontalAlignment="Left" Height="490" LastChildFill="False" VerticalAlignment="Top" Width="426" Background="Black" Opacity="0.85" Margin="0,-7,0,0"/>
         <Label x:Name="GameName" Content="Fortnite" HorizontalAlignment="Left" Margin="72,60,0,0" VerticalAlignment="Top" Foreground="#FFDDDDDD" FontSize="28" FontWeight="Bold" Height="53" Width="150" RenderTransformOrigin="0.5,0.5">

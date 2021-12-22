@@ -74,7 +74,7 @@ namespace EraLauncher
             StartAnimGrid.Visibility = Visibility.Visible;
             Random rnd = new Random();
 
-            homevar.BackgroundImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/Misc/Images/Backgrounds/" + rnd.Next(1, 10) + ".png"));
+            homevar.BackgroundImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/Misc/Images/Backgrounds/" + rnd.Next(1, 13) + ".png"));
             try
             {
                 dynamic requestui = api.GetJsonStringElement("https://eracentral.kyiro.repl.co/public/Launcher/launcher-userinterfacesettings.json");
