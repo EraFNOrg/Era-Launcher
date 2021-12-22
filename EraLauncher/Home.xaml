@@ -29,7 +29,7 @@
         </Label>
         <DockPanel x:Name="LowerVersionsPanel" HorizontalAlignment="Center" Height="391" LastChildFill="False" Margin="-55,434,-31,-105" VerticalAlignment="Top" Width="1390" Background="#FF111010" Grid.ColumnSpan="5"/>
         <Label x:Name="GameVersion" Content="Select Game Version." HorizontalAlignment="Left" Margin="73,94,0,0" VerticalAlignment="Top" Foreground="White" Opacity="0.8" FontSize="20" Height="43" Width="235" FontWeight="SemiBold"/>
-        <Button x:Name="LaunchButton" Content="Launch" Margin="48,299,46.4,329" Foreground="white" FontSize="17" FontWeight="Medium" Click="HandleGameLaunch" >
+        <Button x:Name="LaunchButton" Content="Launch" Margin="48,299,46.4,329" Foreground="white" FontSize="19" FontWeight="Medium" Click="HandleGameLaunch" >
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border Width="270" Height="65" CornerRadius="2" Background="{TemplateBinding Background}">

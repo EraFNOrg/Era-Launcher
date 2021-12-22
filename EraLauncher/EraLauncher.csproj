@@ -212,7 +212,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Misc\Images\Backgrounds\1.png" />
-    <Resource Include="Misc\Images\Backgrounds\10.png" />
+    <Resource Include="Misc\Images\Backgrounds\9.png" />
     <Resource Include="Misc\Images\Backgrounds\2.png" />
     <Resource Include="Misc\Images\Backgrounds\3.png" />
     <Resource Include="Misc\Images\Backgrounds\4.png" />
@@ -220,12 +220,10 @@
     <Resource Include="Misc\Images\Backgrounds\6.png" />
     <Resource Include="Misc\Images\Backgrounds\7.png" />
     <Resource Include="Misc\Images\Backgrounds\8.png" />
-    <Resource Include="Misc\Images\Backgrounds\9.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Misc\Images\Backgrounds\11.png" />
-    <Resource Include="Misc\Images\Backgrounds\12.png" />
-    <Resource Include="Misc\Images\Backgrounds\13.png" />
+    <Resource Include="Misc\Images\Backgrounds\10.png" />
+    <Content Include="Misc\Images\Backgrounds\11.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

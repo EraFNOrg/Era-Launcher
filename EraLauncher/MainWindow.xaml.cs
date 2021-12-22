@@ -71,68 +71,68 @@ namespace EraLauncher
         private void OnStartAnimationBackgroundLoaded(object sender, RoutedEventArgs e)
         {
 
-            StartAnimGrid.Visibility = Visibility.Visible;
+            StartAnimGrid.Visibility = Visibility.Hidden;
             Random rnd = new Random();
 
-            homevar.BackgroundImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/Misc/Images/Backgrounds/" + rnd.Next(1, 13) + ".png"));
-            try
-            {
-                dynamic requestui = api.GetJsonStringElement("https://eracentral.kyiro.repl.co/public/Launcher/launcher-userinterfacesettings.json");
-                homevar.BackgroundImage.Height = Convert.ToInt32(requestui.BackgroundImageHeight.ToString());
+            homevar.BackgroundImage.Source = new BitmapImage(new Uri(@"pack://application:,,,/Misc/Images/Backgrounds/" + rnd.Next(1, 11) + ".png"));
+                 try
+                 {
+                     dynamic requestui = api.GetJsonStringElement("https://eracentral.kyiro.repl.co/public/Launcher/launcher-userinterfacesettings.json");
+                     homevar.BackgroundImage.Height = Convert.ToInt32(requestui.BackgroundImageHeight.ToString());
 
-                    dynamic strrequest = api.GetJsonStringElement("https://eracentral.kyiro.repl.co/public/Launcher/launcher-defaultstrings.json");
-                    // news
-                    clvar.LatestNewsText.Content = strrequest.LatestNewsLargeTxt.ToString();
-                    clvar.ChangeLog.Text = strrequest.LatestNewsDescription.ToString();
-                    BitmapImage bm = new BitmapImage();
-                    bm.BeginInit();
-                    bm.UriSource = new Uri(@strrequest.NewsImageBGurl.ToString(), UriKind.Absolute);
-                    bm.EndInit();
-                    ImageBrush image = new ImageBrush();
-                    image.Stretch = Stretch.UniformToFill;
-                    image.ImageSource = bm;
-                        clvar.ImageBG.Background = image;
-                // clvar.ImageBG.Background.Sour = bm;
-                // end news
+                         dynamic strrequest = api.GetJsonStringElement("https://eracentral.kyiro.repl.co/public/Launcher/launcher-defaultstrings.json");
+                         // news
+                         clvar.LatestNewsText.Content = strrequest.LatestNewsLargeTxt.ToString();
+                         clvar.ChangeLog.Text = strrequest.LatestNewsDescription.ToString();
+                         BitmapImage bm = new BitmapImage();
+                         bm.BeginInit();
+                         bm.UriSource = new Uri(@strrequest.NewsImageBGurl.ToString(), UriKind.Absolute);
+                         bm.EndInit();
+                         ImageBrush image = new ImageBrush();
+                         image.Stretch = Stretch.UniformToFill;
+                         image.ImageSource = bm;
+                             clvar.ImageBG.Background = image;
+                     // clvar.ImageBG.Background.Sour = bm;
+                     // end news
 
+                /*
+                         dynamic requestbg = api.GetJsonStringElement("https://eracentral.kyiro.repl.co/public/Launcher/launcher-backgrounds.json");
+                     List<string> list = new List<string>();
 
-                    dynamic requestbg = api.GetJsonStringElement("https://eracentral.kyiro.repl.co/public/Launcher/launcher-backgrounds.json");
-                List<string> list = new List<string>();
-
-                foreach (var key in requestbg)
-                {
-                    list.Add(key.Value.ToString());
-                }
-
-
-                /* Random rnd = new Random();
-
-                 int from = Convert.ToInt32(requestui.RandomImageFrom);
-                 int to = Convert.ToInt32(requestui.RandomImageTo);
-                 var imgurl = @list[rnd.Next(from, to)];
-                 BitmapImage bitmap = new BitmapImage();
-                 bitmap.BeginInit();
-                 bitmap.UriSource = new Uri(imgurl, UriKind.Absolute);
-                 bitmap.EndInit();
-
-                 homevar.BackgroundImage.Source = bitmap;
-                 MessageBox.Show(bitmap.ToString());*/
+                     foreach (var key in requestbg)
+                     {
+                         list.Add(key.Value.ToString());
+                     }
 
 
+                     /* Random rnd = new Random();
+
+                      int from = Convert.ToInt32(requestui.RandomImageFrom);
+                      int to = Convert.ToInt32(requestui.RandomImageTo);
+                      var imgurl = @list[rnd.Next(from, to)];
+                      BitmapImage bitmap = new BitmapImage();
+                      bitmap.BeginInit();
+                      bitmap.UriSource = new Uri(imgurl, UriKind.Absolute);
+                      bitmap.EndInit();
+
+                      homevar.BackgroundImage.Source = bitmap;
+                      MessageBox.Show(bitmap.ToString());*/
 
 
 
-            }
-            catch
-            {
-                MessageBox.Show("Unable to download launcher content.", "ERA Launcher", MessageBoxButton.OK, MessageBoxImage.Stop);
-            }
-            finally
-            {
-                StartAnimGrid.Visibility = Visibility.Hidden;
-              // MessageBox.Show("Downloaded the content", "ERA Launcher", MessageBoxButton.OK, MessageBoxImage.Stop);
-            }
-           
+
+
+                 }
+                 catch
+                 {
+                     MessageBox.Show("Unable to download launcher content.", "ERA Launcher", MessageBoxButton.OK, MessageBoxImage.Stop);
+                 }
+                 finally
+                 {
+                     StartAnimGrid.Visibility = Visibility.Hidden;
+                   // MessageBox.Show("Downloaded the content", "ERA Launcher", MessageBoxButton.OK, MessageBoxImage.Stop);
+                 }
+
 
         }
 

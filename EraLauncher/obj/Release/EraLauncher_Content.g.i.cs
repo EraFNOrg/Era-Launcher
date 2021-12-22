@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("buttonbg.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("misc/images/backgrounds/11.png")]
 
 
