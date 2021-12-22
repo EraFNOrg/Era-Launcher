@@ -11,26 +11,78 @@
             <RowDefinition Height="11*"/>
             <RowDefinition Height="7*"/>
         </Grid.RowDefinitions>
-        <Image x:Name="ImageBG" HorizontalAlignment="Left" Height="720" Margin="-6,0,0,0" VerticalAlignment="Top" Width="1286" Grid.RowSpan="2"/>
+        <Border x:Name="ImageBG" HorizontalAlignment="Center" Height="655" Margin="46,-96,24,161" VerticalAlignment="Center" Width="1210" Grid.RowSpan="2">
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1215" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="660" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1213" BeginTime="00:00:00.15" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="657" BeginTime="00:00:00.15" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1215" BeginTime="00:00:00.30" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="660" BeginTime="00:00:00.30" Duration="00:00:00.15"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1210" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="655" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1212" BeginTime="00:00:00.15" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="657" BeginTime="00:00:00.15" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Width" From="{Binding Width}" To="1210" BeginTime="00:00:00.30" Duration="00:00:00.15"/>
+                            <DoubleAnimation Storyboard.TargetName="ImageBG" Storyboard.TargetProperty="Height" From="{Binding Height}" To="655" BeginTime="00:00:00.30" Duration="00:00:00.15"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+            <Border.Background>
+                <ImageBrush ImageSource="Chapter-2-Fortnite-event-0-1-scaled.jpg" Stretch="UniformToFill"/>
+            </Border.Background>
+            <Border.Style>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10"/>
+                </Style>
+            </Border.Style>
+        </Border>
         <Grid HorizontalAlignment="Left" Height="380" VerticalAlignment="Top" Width="1040" Margin="-6,16,0,0">
             <Grid.Style>
                 <Style TargetType="{x:Type Grid}"/>
             </Grid.Style>
-            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="463" Margin="-163,-23,0,-60" VerticalAlignment="Top" Width="661" Background="Black" Opacity="0.3"/>
-            <Label x:Name="LatestNewsText" Content="A first look at Project ERA 2.0" HorizontalAlignment="Left" Margin="56,41,0,0" VerticalAlignment="Top" Height="54" Width="485" FontSize="28" FontWeight="SemiBold" Foreground="White" BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Opacity="0.9">
-                <Label.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform/>
-                        <SkewTransform AngleY="-0.073"/>
-                        <RotateTransform/>
-                        <TranslateTransform Y="-0.199"/>
-                    </TransformGroup>
-                </Label.RenderTransform>
-            </Label>
+            <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="463" Margin="-1640,-163,0,0" VerticalAlignment="Top" Width="1583" Background="Black" Opacity="0.1"/>
         </Grid>
         <Border BorderBrush="Black" BorderThickness="1" HorizontalAlignment="Left" Height="374" Margin="0,401,-48,-55" VerticalAlignment="Top" Width="1328" Background="#FF100F11" Grid.RowSpan="2"/>
-        <TextBlock x:Name="Logs_Content" Text="test" HorizontalAlignment="Left" Margin="-782,79,0,0" VerticalAlignment="Top" Foreground="White" FontSize="15" FontWeight="SemiBold" Height="178" Width="619" Opacity="0.6" RenderTransformOrigin="0.5,0.5" TextWrapping="WrapWithOverflow" Grid.Row="1"/>
-        <TextBlock x:Name="ChangeLog" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." HorizontalAlignment="Left" Margin="55,108,0,0" VerticalAlignment="Top" Height="322" Width="374" FontSize="13" Foreground="White" TextWrapping="Wrap" Loaded="ChangelogTextNewsHandleLoaded" FontWeight="Light" Opacity="0.75"/>
+        <TextBlock x:Name="ChangeLog" Text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." HorizontalAlignment="Left" Margin="58,46,0,0" VerticalAlignment="Top" Height="232" Width="374" FontSize="13" Foreground="White" TextWrapping="Wrap" Loaded="ChangelogTextNewsHandleLoaded" FontWeight="Light" Opacity="0.75" Grid.Row="1"/>
+        <Label x:Name="LatestNewsText" Content="A first look at Project ERA 2.0" HorizontalAlignment="Left" Margin="52,427,0,0" VerticalAlignment="Top" Height="54" Width="486" FontSize="28" FontWeight="Bold" Foreground="White" BorderBrush="Black" RenderTransformOrigin="0.5,0.5" Opacity="0.9" Grid.RowSpan="2">
+            <Label.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="-0.073"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="-0.199"/>
+                </TransformGroup>
+            </Label.RenderTransform>
+        </Label>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="52" Margin="1578,48,-350,0" VerticalAlignment="Top" Width="52" Grid.Row="1">
+            <Border.Background>
+                <ImageBrush ImageSource="Misc/Images/EraLogo.png"/>
+            </Border.Background>
+        </Border>
+        <Border BorderThickness="1" HorizontalAlignment="Left" Height="240" Margin="979,0,0,0" VerticalAlignment="Top" Width="176" Grid.Row="1">
+            <Border.Background>
+                <ImageBrush ImageSource="Misc/Images/421-4212627_battle-bus-png-transparent-background-fortnite-battle-bus.png"/>
+            </Border.Background>
+            <Border.BorderBrush>
+                <ImageBrush/>
+            </Border.BorderBrush>
+        </Border>
+        <Button Content="JOIN OUR DISCORD SERVER" HorizontalAlignment="Left" Margin="-1375,228,0,0" VerticalAlignment="Top" Width="248" Height="52" BorderBrush="{x:Null}" Foreground="White" FontWeight="Bold" Grid.Row="1">
+            <Button.Background>
+                <ImageBrush ImageSource="ButtonBG.png"/>
+            </Button.Background>
+        </Button>
     </Grid>
 </Page>
 

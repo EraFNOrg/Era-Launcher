@@ -19,6 +19,8 @@ using IniParser.Model;
 using System.Net;
 using System.IO;
 using EraLauncher.Misc.Classes;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 
 namespace EraLauncher
@@ -181,16 +183,17 @@ namespace EraLauncher
 
         private void OnEclipseLoaded(object sender, RoutedEventArgs e)
         {
-        /*    List<string> apiitems = api.GetEraCloudstorage();
-            var fullpathspec = api.GetItemContentFromCloudstorageList(apiitems[22]);
-            string xdspec = fullpathspec.ToString();
-            string okspec = @xdspec;
-            BitmapImage bitmapspec = new BitmapImage();
-            bitmapspec.BeginInit();
-            bitmapspec.UriSource = new Uri(okspec, UriKind.Absolute);
-            bitmapspec.EndInit();
 
-            SkinImage.ImageSource = bitmapspec;*/
+            /*    List<string> apiitems = api.GetEraCloudstorage();
+                var fullpathspec = api.GetItemContentFromCloudstorageList(apiitems[22]);
+                string xdspec = fullpathspec.ToString();
+                string okspec = @xdspec;
+                BitmapImage bitmapspec = new BitmapImage();
+                bitmapspec.BeginInit();
+                bitmapspec.UriSource = new Uri(okspec, UriKind.Absolute);
+                bitmapspec.EndInit();
+
+                SkinImage.ImageSource = bitmapspec;*/
 
         }
     }

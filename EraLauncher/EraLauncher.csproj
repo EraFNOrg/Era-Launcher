@@ -204,5 +204,23 @@
     <Resource Include="Misc\Images\Icons\Close_Hovered.PNG" />
     <Resource Include="Chapter-2-Fortnite-event-0-1-scaled.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Misc\Images\421-4212627_battle-bus-png-transparent-background-fortnite-battle-bus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ButtonBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Misc\Images\Backgrounds\1.png" />
+    <Resource Include="Misc\Images\Backgrounds\10.png" />
+    <Resource Include="Misc\Images\Backgrounds\2.png" />
+    <Resource Include="Misc\Images\Backgrounds\3.png" />
+    <Resource Include="Misc\Images\Backgrounds\4.png" />
+    <Resource Include="Misc\Images\Backgrounds\5.png" />
+    <Resource Include="Misc\Images\Backgrounds\6.png" />
+    <Resource Include="Misc\Images\Backgrounds\7.png" />
+    <Resource Include="Misc\Images\Backgrounds\8.png" />
+    <Resource Include="Misc\Images\Backgrounds\9.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

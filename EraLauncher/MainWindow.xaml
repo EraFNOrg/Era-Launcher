@@ -9,18 +9,19 @@
     <Grid x:Name="ApplicationBackground" HorizontalAlignment="Left" Height="720" Margin="-24,0,0,0" VerticalAlignment="Top" Width="1304" Background="#FF0E0C0C">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="354*"/>
-            <ColumnDefinition Width="387*"/>
+            <ColumnDefinition Width="57*"/>
+            <ColumnDefinition Width="331*"/>
             <ColumnDefinition Width="30*"/>
             <ColumnDefinition Width="6*"/>
             <ColumnDefinition Width="249*"/>
             <ColumnDefinition Width="268*"/>
             <ColumnDefinition Width="9*"/>
         </Grid.ColumnDefinitions>
-        <Frame x:Name="PageContent" Content="Frame" Grid.ColumnSpan="7" Navigating="Navigating" Loaded="HandlePageContentLoaded" Margin="0,0,-0.595,0"/>
-        <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1309" Grid.ColumnSpan="7" Background="#FF0F0F0F" MouseMove="UpperPanel_MouseMove" Margin="0,0,-5,0">
+        <Frame x:Name="PageContent" Content="Frame" Grid.ColumnSpan="8" Navigating="Navigating" Loaded="HandlePageContentLoaded" Margin="0,0,-1,0"/>
+        <Border x:Name="UpperPanel" HorizontalAlignment="Center" Height="45" VerticalAlignment="Top" Width="1309" Grid.ColumnSpan="8" Background="#FF111010" MouseMove="UpperPanel_MouseMove" Margin="0,0,-5,0">
 
         </Border>
-        <Border HorizontalAlignment="Left" Height="46" Margin="48,4,0,0" VerticalAlignment="Top" Width="46">
+        <Border HorizontalAlignment="Left" Height="46" Margin="48,2,0,0" VerticalAlignment="Top" Width="46">
             <Border.Background>
                 <ImageBrush ImageSource="Misc/Images/EraLogo.png"/>
             </Border.Background>
@@ -41,7 +42,7 @@
                 </EventTrigger>
             </Border.Triggers>
         </Border>
-        <Button x:Name="CloseButton"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="34" Grid.Column="5" Margin="239.8,-1,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="31" Foreground="{x:Null}" FontSize="10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="2">
+        <Button x:Name="CloseButton"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="34" Grid.Column="6" Margin="239.8,-1,0,0" RenderTransformOrigin="3.727,0.4" Click="Close_Button_Event" Height="31" Foreground="{x:Null}" FontSize="10" Background="{x:Null}" BorderBrush="{x:Null}" Grid.ColumnSpan="2">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border  CornerRadius="2" Background="{TemplateBinding Background}" >
@@ -67,7 +68,7 @@
                 </Image.Style>
             </Image>
         </Button>
-        <Button x:Name="MinimizeButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Grid.Column="5" Margin="207.8,-1,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="31" Foreground="{x:Null}" FontFamily="Segoe UI Semibold" Background="{x:Null}" BorderBrush="{x:Null}">
+        <Button x:Name="MinimizeButton" HorizontalAlignment="Left" VerticalAlignment="Top" Width="32" Grid.Column="6" Margin="207.8,-1,0,0" RenderTransformOrigin="3.727,0.4" Click="Minimalize_Button_Event" Height="31" Foreground="{x:Null}" FontFamily="Segoe UI Semibold" Background="{x:Null}" BorderBrush="{x:Null}">
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
                     <Border  CornerRadius="2" Background="{TemplateBinding Background}" >
@@ -121,7 +122,7 @@
                 </Style>
             </Button.Style>-->
         </Button>
-        <Button x:Name="MainPage_Btn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Margin="99,24,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="23" Foreground="White" FontFamily="Segoe UI Semibold">
+        <Button x:Name="MainPage_Btn" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Margin="99,22,0,0" RenderTransformOrigin="3.727,0.4" Click="MainPage_Btn_Event" Height="23" Foreground="White" FontFamily="Segoe UI Semibold">
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseEnter">
                     <BeginStoryboard>
@@ -151,7 +152,7 @@
                     <ColumnDefinition Width="3*"/>
                 </Grid.ColumnDefinitions>
                 <TextBlock Text="Play" Margin="-17,-25,5.2,9.8"/>
-                <Border Background="White" Margin="-31,-3,-14.8,1.8" Grid.ColumnSpan="2"/>
+                <Border Background="White" Margin="-31,-3,-14.6,-0.2" Grid.ColumnSpan="2"/>
             </Grid>
             <Button.Template>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -170,10 +171,10 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Margin="184,24,106.4,674" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="22" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
+        <Button x:Name="Changelog_Btn" HorizontalAlignment="Center" VerticalAlignment="Center" Width="64" Margin="189,22,101.4,675" RenderTransformOrigin="3.727,0.4" Click="Changelog_Btn_Event" Height="23" Foreground="White" FontFamily="Segoe UI Semibold" Background="#00141414">
             <Grid>
                 <TextBlock Text="News" Margin="-17,-25,16.6,9.8"/>
-                <Border Background="White" Margin="-32,-3,5.6,1.8" />
+                <Border Background="White" Margin="-32,-3,5.6,-0.2" />
             </Grid>
             <Button.Triggers>
                 <EventTrigger RoutedEvent="MouseDown">
@@ -215,7 +216,7 @@
                 </Style>
             </Button.Style>
         </Button>
-        <Grid x:Name="StartAnimGrid" Visibility="Collapsed" Loaded="OnStartAnimationBackgroundLoaded" MouseMove="UpperPanel_MouseMove" Grid.ColumnSpan="7" Margin="-64,-12,-0.595,0">
+        <Grid x:Name="StartAnimGrid" Visibility="Collapsed" Loaded="OnStartAnimationBackgroundLoaded" MouseMove="UpperPanel_MouseMove" Grid.ColumnSpan="8" Margin="-64,-12,-1,0">
             <Border x:Name="BGA" Background="#FF0C0C0C" Width="1369" Height="720" HorizontalAlignment="Left" VerticalAlignment="Top">
                 <Border.RenderTransform>
                     <TranslateTransform x:Name="BGATransform" X="0" Y="0"/>
@@ -228,23 +229,6 @@
             </Border>
             <Grid.Triggers>
                 <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.15" From="1304" To="0" Storyboard.TargetProperty="Width" Storyboard.TargetName="BGA"/>
-                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.15" From="250" To="0" Storyboard.TargetProperty="Width" Storyboard.TargetName="EraLOGOA"/>
-                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.15" From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="EraLOGOA"/>
-                            <DoubleAnimation BeginTime="00:00:01" Duration="00:00:00.15" From="1" To="0" Storyboard.TargetProperty="Opacity" Storyboard.TargetName="BGA"/>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-                    <BeginStoryboard>
-                        <Storyboard BeginTime="00:00:01.2">
-                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="Visibility">
-                                <DiscreteObjectKeyFrame Value="{x:Static Visibility.Hidden}" />
-                            </ObjectAnimationUsingKeyFrames>
-                        </Storyboard>
-                    </BeginStoryboard>
                 </EventTrigger>
             </Grid.Triggers>
         </Grid>
